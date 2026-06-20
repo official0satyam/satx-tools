@@ -1,0 +1,82 @@
+{
+  "primary": {
+    "title": "EMI Calculator - Free Online Loan Payment Calculator",
+    "description": "Calculate monthly loan payments (EMI), total interest payable, and total repayment value with our free client-side calculator.",
+    "heading": "EMI Calculator",
+    "seo_content": "<p>Our EMI Calculator estimates monthly payments and total interest schedules. Here is the breakdown:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Monthly Installment (EMI)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>EMI = [P &times; r &times; (1 + r)^n] / [(1 + r)^n - 1]</code><br>Where: <code>P</code> = Principal, <code>r</code> = Monthly rate (Annual / 12 / 100), <code>n</code> = Tenure in months.<br><em>Example:</em> Borrowing $10,000 for 3 years at 10% interest rate results in an EMI of <strong>$322.67</strong>/month.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Total Interest & Payback</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formulas: <code>Total Payback = EMI &times; n</code> | <code>Total Interest = Total Payback - P</code><br><em>Example:</em> For the $10,000 loan above, total payback is <strong>$11,616.12</strong>, carrying <strong>$1,616.12</strong> in interest.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Personal loan calculation",
+        "description": "If you take a personal loan of $10,000 for 3 years at a 10% interest rate, your monthly EMI will be approximately $322.67, with a total interest of $1,616.19."
+      },
+      {
+        "title": "Short term business credit line",
+        "description": "For a business credit line of $50,000 at 8.5% interest rate over 5 years, the monthly payment will be $1,025.83."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the formula to calculate loan EMI?",
+        "answer": "The mathematical formula for monthly EMI is: EMI = [P &times; r &times; (1 + r)^n] / [(1 + r)^n - 1], where P is the Principal loan amount, r is the monthly interest rate (annual rate / 12 / 100), and n is the loan tenure in months."
+      },
+      {
+        "question": "How can I reduce my total interest payable?",
+        "answer": "You can reduce total interest payable by choosing a shorter loan tenure, making regular prepayments toward the principal, or negotiating a lower interest rate with your lender."
+      }
+    ]
+  },
+  "programmatic": {
+    "home-loan-calculator": {
+      "title": "Home Loan EMI Calculator - Estimate Mortgage Payments",
+      "description": "Plan your home purchase with our Home Loan EMI Calculator. Find monthly mortgage installments, total interest, and amortization details.",
+      "heading": "Home Loan EMI Calculator",
+      "seo_content": "<p>Plan your home purchase by estimating mortgage installments. Here is a standard calculation scenario:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Home Mortgage calculation</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\"><em>Example:</em> A home loan of $300,000 at 7% annual interest over 30 years results in a monthly payment of <strong>$1,995.91</strong>, with total interest of <strong>$418,527.00</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Standard home purchase",
+          "description": "A home loan of $300,000 at 7% annual interest over 30 years results in a monthly payment of $1,995.91, with total interest of $418,527."
+        },
+        {
+          "title": "15-year accelerated home loan",
+          "description": "Borrowing $200,000 at 6.5% interest over 15 years yields a monthly installment of $1,742.22, saving substantial interest compared to a 30-year option."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is the difference between home loan EMI and other EMIs?",
+          "answer": "Home loans typically feature much larger principal amounts and longer tenures (up to 30 years), meaning interest costs represent a larger fraction of total repayment."
+        },
+        {
+          "question": "Does my home loan EMI include property tax or insurance?",
+          "answer": "No, this calculator processes the base principal and interest loan repayment. Local property taxes and homeowner insurance premiums are usually managed separately."
+        }
+      ]
+    },
+    "car-loan-calculator": {
+      "title": "Car Loan EMI Calculator - Find Auto Loan Payments",
+      "description": "Calculate monthly car loan payments, interest charges, and total cost of ownership. Free auto installment tool.",
+      "heading": "Car Loan EMI Calculator",
+      "seo_content": "<p>A Car Loan EMI Calculator helps you compute the monthly installment needed to buy a new or used vehicle. Here is a standard auto finance example:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Car Loan calculation</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\"><em>Example:</em> A car loan of $25,000 at a 5% interest rate over 5 years results in a monthly payment of <strong>$471.78</strong>, with a total interest cost of <strong>$3,306.85</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "New sedan auto loan",
+          "description": "A car loan of $25,000 at a 5% interest rate over 5 years results in a monthly payment of $471.78, with a total interest cost of $3,306.85."
+        },
+        {
+          "title": "Used SUV auto loan",
+          "description": "For a used vehicle loan of $15,000 at 7.5% interest rate over 4 years, the monthly payment will be $362.68."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is a good tenure for a car loan?",
+          "answer": "A shorter tenure (e.g. 3 to 5 years) reduces interest costs, while a longer tenure (6 to 7 years) lowers the monthly payment but increases total interest paid."
+        },
+        {
+          "question": "Should I make a down payment on my car loan?",
+          "answer": "Yes, a larger down payment reduces the required loan principal, leading to smaller monthly payments and lower interest expense."
+        }
+      ]
+    }
+  }
+}

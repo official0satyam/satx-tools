@@ -1,0 +1,85 @@
+<div class="form-group">
+  <label>Upload Image</label>
+  <div id="img-dropzone" style="border: 2px dashed var(--primary); border-radius: 16px; padding: var(--space-lg); text-align: center; background: rgba(124, 58, 237, 0.02); cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+    <div style="font-weight: 700; font-family: var(--font-header); color: var(--text-color);">Drag & Drop Image Here</div>
+    <div style="font-size: 0.8rem; color: var(--text-muted);">supports JPEG, PNG, WebP, GIF</div>
+    <input type="file" id="img-input" accept="image/*" style="display: none;">
+  </div>
+</div>
+
+<!-- Controls (Visible after file loaded) -->
+<div id="img-controls" style="display: none; border: 2px solid var(--border-color); border-radius: 16px; padding: var(--space-md); margin-top: var(--space-md); background: var(--card-bg);">
+  <h3 style="font-size: 1rem; font-family: var(--font-header); margin-bottom: var(--space-md); color: var(--text-color); border-bottom: 2px solid var(--border-color); padding-bottom: var(--space-sm);">Compression Controls</h3>
+  
+  <div class="form-group">
+    <label for="img-quality" style="display: flex; justify-content: space-between;">
+      <span>Image Quality</span>
+      <span id="img-quality-lbl" style="color: var(--primary); font-weight: 800;">80%</span>
+    </label>
+    <input type="range" id="img-quality" min="10" max="100" step="1" value="80" class="input-control" oninput="processImage()">
+  </div>
+
+  <div class="grid-2col" style="margin-top: var(--space-md);">
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="img-width">Width (px)</label>
+      <input type="number" id="img-width" class="input-control" oninput="onSizeInput('width')">
+    </div>
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="img-height">Height (px)</label>
+      <input type="number" id="img-height" class="input-control" oninput="onSizeInput('height')">
+    </div>
+  </div>
+  
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-sm); font-size: 0.85rem;">
+    <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; cursor: pointer;">
+      <input type="checkbox" id="img-lock-ratio" checked> Lock Aspect Ratio
+    </label>
+  </div>
+
+  <div class="form-group" style="margin-top: var(--space-md); margin-bottom: 0;">
+    <label for="img-format">Output Format</label>
+    <select id="img-format" class="input-control" onchange="processImage()">
+      <option value="original" selected>Keep Original Format</option>
+      <option value="image/jpeg">JPEG (.jpg)</option>
+      <option value="image/png">PNG (.png)</option>
+      <option value="image/webp">WebP (.webp)</option>
+    </select>
+  </div>
+</div>
+
+<!-- Comparison Panel -->
+<div class="result-panel success" id="img-result-panel" style="display: none; margin-top: var(--space-md);">
+  <div class="result-label" style="text-align: left; margin-bottom: var(--space-md); color: var(--secondary); font-family: var(--font-header); font-size: 1.1rem; border-bottom: 2px dashed rgba(13, 148, 136, 0.2); padding-bottom: var(--space-sm);">Comparison Output</div>
+  
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); text-align: center; margin-bottom: var(--space-md);">
+    <div style="background: rgba(120, 120, 120, 0.05); padding: var(--space-sm); border-radius: 8px;">
+      <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Original Size</div>
+      <div id="img-orig-size" style="font-size: 1.25rem; font-weight: 800; color: var(--text-color);">0 KB</div>
+      <div id="img-orig-dim" style="font-size: 0.75rem; color: var(--text-muted);">0 x 0 px</div>
+    </div>
+    <div style="background: rgba(13, 148, 136, 0.05); padding: var(--space-sm); border-radius: 8px;">
+      <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Compressed Size</div>
+      <div id="img-comp-size" style="font-size: 1.25rem; font-weight: 800; color: var(--secondary);">0 KB</div>
+      <div id="img-comp-dim" style="font-size: 0.75rem; color: var(--text-muted);">0 x 0 px</div>
+    </div>
+  </div>
+
+  <div style="background: rgba(124, 58, 237, 0.05); padding: var(--space-sm); border-radius: 8px; text-align: center; margin-bottom: var(--space-md); font-weight: 700; font-size: 0.9rem; color: var(--primary);">
+    File size reduced by <span id="img-reduction">0%</span>!
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+    <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); align-self: flex-start; text-transform: uppercase;">Preview</div>
+    <div style="max-width: 100%; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; background: #e5e5e5; display: flex; align-items: center; justify-content: center; max-height: 350px;">
+      <img id="img-preview" style="max-width: 100%; max-height: 350px; display: block; object-fit: contain;">
+    </div>
+    
+    <div style="display: flex; gap: var(--space-sm); width: 100%; margin-top: var(--space-sm);">
+      <button onclick="downloadCompressedImage()" class="btn btn-primary" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download Compressed Image
+      </button>
+    </div>
+  </div>
+</div>

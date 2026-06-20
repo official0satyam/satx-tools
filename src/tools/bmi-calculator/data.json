@@ -1,0 +1,82 @@
+{
+  "primary": {
+    "title": "BMI Calculator - Free Body Mass Index Calculator",
+    "description": "Calculate Body Mass Index (BMI) using metric or imperial measurements. Color-coded health status index scales and calculations.",
+    "heading": "BMI Calculator",
+    "seo_content": "<p>Our BMI Calculator computes body mass indices and indicates weight classifications. Here is the reference guide:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. BMI Formulas (Metric & Imperial)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Metric Formula: <code>BMI = weight (kg) / height&sup2; (m&sup2;)</code><br>Imperial Formula: <code>BMI = (weight (lbs) / height&sup2; (in&sup2;)) &times; 703</code><br><em>Example:</em> An adult weighing 70 kg at a height of 175 cm (1.75 m) has a BMI of <strong>22.86</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. BMI Weight Classifications (WHO Chart)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Underweight: <code>BMI &lt; 18.5</code> | Normal: <code>18.5 - 24.9</code> | Overweight: <code>25 - 29.9</code> | Obese: <code>BMI &ge; 30</code>.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Standard metric assessment",
+        "description": "An adult weighing 70 kg at a height of 175 cm has a BMI of 22.86, placing them squarely in the healthy 'Normal weight' range."
+      },
+      {
+        "title": "Imperial system conversion",
+        "description": "A person weighing 180 lbs at 5 feet 10 inches tall has a BMI of 25.82, which classifies as slightly 'Overweight'."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the standard BMI classification chart?",
+        "answer": "According to the World Health Organization (WHO), the classifications are: Underweight (BMI &lt; 18.5), Normal weight (18.5 to 24.9), Overweight (25 to 29.9), and Obese (BMI &ge; 30)."
+      },
+      {
+        "question": "Is BMI a perfect indicator of body fat?",
+        "answer": "No, BMI is a general correlation tool. It does not measure body fat directly and does not distinguish between muscle mass and fat mass, meaning athletes or bodybuilders might get a high BMI score despite low body fat."
+      }
+    ]
+  },
+  "programmatic": {
+    "ideal-weight-calculator": {
+      "title": "Ideal Weight Calculator - Find Your Healthy Weight Range",
+      "description": "Calculate your ideal body weight based on height, gender, and standard medical index formulas. Free client-side tool.",
+      "heading": "Ideal Weight Calculator",
+      "seo_content": "<p>Finding your ideal body weight assists in establishing clear, healthy lifestyle targets. Here is an example range calculation:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Healthy weight range</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\"><em>Example:</em> For a height of 170 cm (5 feet 7 inches), the healthy BMI-based weight range is between <strong>53.5 kg (118 lbs)</strong> and <strong>72 kg (159 lbs)</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Ideal weight range for a 170 cm adult",
+          "description": "For a height of 170 cm (5 feet 7 inches), the healthy BMI-based weight range is between 53.5 kg (118 lbs) and 72 kg (159 lbs)."
+        },
+        {
+          "title": "Devine formula estimate",
+          "description": "According to the traditional Devine formula, the ideal weight for a 6-foot-tall (183 cm) male is approximately 77.6 kg (171 lbs)."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How is ideal weight calculated by medical formulas?",
+          "answer": "Classic formulas (like Devine) use a baseline weight for 5 feet of height and add a fixed weight increment (e.g. 2.3 kg or 5 lbs) for every additional inch."
+        },
+        {
+          "question": "Why is the BMI range a better target than a single formula?",
+          "answer": "The BMI range provides a flexible 18.5-24.9 gap, which accounts for differences in bone density, muscle distribution, and body frame sizes."
+        }
+      ]
+    },
+    "weight-loss-calculator": {
+      "title": "Weight Loss Calculator - Track Fitness Goals",
+      "description": "Plan your fitness timeline. Estimate the weight drop needed to transition into a healthy weight category.",
+      "heading": "Weight Loss Calculator",
+      "seo_content": "<p>Estimate the weight drop needed to transition into a healthy weight category. Here is a standard weight reduction scenario:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Target Weight Reduction</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\"><em>Example:</em> A person weighing 85 kg at a height of 170 cm has a BMI of 29.4. To reach a normal BMI of 24.9, they need to lose <strong>13 kg</strong>, bringing their weight down to <strong>72 kg</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Moving from Overweight to Normal",
+          "description": "A person weighing 85 kg at a height of 170 cm has a BMI of 29.4. To reach a normal BMI of 24.9, they need to lose 13 kg, bringing their weight down to 72 kg."
+        },
+        {
+          "title": "Transitioning out of Obese category",
+          "description": "For a height of 5'8\" and weight of 210 lbs (BMI 31.9), dropping 13 lbs is needed to exit the Obese range, and 46 lbs is needed to enter Normal weight."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is a safe rate of weight loss?",
+          "answer": "Medical professionals generally recommend losing weight at a slow, steady rate of 1 to 2 pounds (0.5 to 1 kg) per week through balanced diet adjustments and exercise."
+        },
+        {
+          "question": "How does target weight affect my daily caloric needs?",
+          "answer": "As you lose weight, your Basal Metabolic Rate (BMR) decreases, meaning you will need slightly fewer calories to maintain or continue losing weight."
+        }
+      ]
+    }
+  }
+}

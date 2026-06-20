@@ -1,0 +1,62 @@
+{
+  "primary": {
+    "title": "GST Calculator - Free Online Goods & Services Tax Tool",
+    "description": "Calculate CGST, SGST, IGST, and gross invoice totals. Easily add or remove GST from base rates using standard tax percentages.",
+    "heading": "GST Calculator",
+    "seo_content": "<p>Our GST Calculator handles two key tax operations. Here is a guide with mathematical formulas and practical examples:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Add GST (Exclusive Mode)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Tax = (Base Price &times; GST Rate) / 100</code><br><em>Example:</em> Base price of $1,000 with 18% GST adds <strong>$180.00</strong> tax, making the total price <strong>$1,180.00</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Remove GST (Inclusive Mode)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Base = Price / (1 + (GST Rate / 100))</code><br><em>Example:</em> A tax-inclusive price of $1,180 with 18% GST extracts back to a base price of <strong>$1,000.00</strong> and <strong>$180.00</strong> tax.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Adding standard corporate tax rates",
+        "description": "For a base invoice cost of $1,000 at the standard corporate rate of 18%, entering these numbers details CGST ($90), SGST ($90), and a final gross bill of $1,180."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the difference between CGST and SGST?",
+        "answer": "CGST stands for Central Goods and Services Tax, which is collected by the national government. SGST stands for State Goods and Services Tax, which is collected by the local state government. For intra-state transactions, the total tax percentage is split equally between CGST and SGST."
+      },
+      {
+        "question": "Does this tool support reverse tax extraction?",
+        "answer": "Yes, standard tax addition is handled on the primary page. To extract tax backward, check our Reverse GST calculator."
+      }
+    ]
+  },
+  "programmatic": {
+    "gst-percentage-calculator": {
+      "title": "GST Percentage Calculator - Add tax to invoices",
+      "description": "Calculate exact tax percentages and CGST/SGST distributions. Easily compute your corporate tax filings online.",
+      "heading": "GST Percentage Calculator",
+      "seo_content": "<p>A GST percentage calculator allows you to apply varying tax rates (such as 5%, 12%, 18%, or 28%) to baseline rate costs. Here is the formula and example:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Add GST Formula</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Tax = (Base Price &times; GST Rate) / 100</code><br><em>Example:</em> A price of $500 with a 12% rate adds <code>($500 &times; 12) / 100</code> = <strong>$60.00</strong> tax.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Basic tax calculation",
+          "description": "Entering a base price of $500 with a 12% rate yields $60 total tax, divided equally into $30 CGST and $30 SGST."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do you calculate tax manually?",
+          "answer": "To find the tax charged, multiply the base rate by the tax percentage and divide by 100: Tax = (Base Rate &times; GST Rate) / 100."
+        }
+      ]
+    },
+    "reverse-gst-calculator": {
+      "title": "Reverse GST Calculator - Extract Tax Backward",
+      "description": "Extract base rate costs and tax values from a tax-inclusive final price. Formula and guides included.",
+      "heading": "Reverse GST Calculator",
+      "seo_content": "<p>A reverse GST calculator extracts the tax-exclusive base price and total tax from an all-inclusive final price tag. Here is the formula and example:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Reverse GST Formula</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Original Base = Inclusive Price / (1 + (GST Rate / 100))</code><br><em>Example:</em> If a final bill is $1,180 and includes an 18% tax rate, the base is <code>$1,180 / 1.18</code> = <strong>$1,000.00</strong>, with <strong>$180.00</strong> tax.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Extracting tax from a standard bill",
+          "description": "If a final bill is $1,180 and includes an 18% tax rate, reverse calculating reveals a base cost of exactly $1,000 and tax of $180."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is the reverse GST formula?",
+          "answer": "The formula to find the original base rate from an inclusive price is: Base Price = Inclusive Price / (1 + (GST Rate / 100)). The tax portion is then: Tax = Inclusive Price - Base Price."
+        }
+      ]
+    }
+  }
+}

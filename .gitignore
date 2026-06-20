@@ -1,0 +1,11 @@
+# Build output
+dist/
+node_modules/
+
+# Local IDEs and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log

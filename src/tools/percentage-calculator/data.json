@@ -1,0 +1,82 @@
+{
+  "primary": {
+    "title": "Percentage Calculator - Free Online Math Tool",
+    "description": "Calculate percentages, percentage values, fractions, and percentage differences instantly with our free client-side tool.",
+    "heading": "Percentage Calculator",
+    "seo_content": "<p>This calculator supports five essential percentage computations. Here is a quick reference guide with formulas and real-life examples:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Find Percentage Value (X% of Y)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>(X &times; Y) / 100</code><br><em>Example:</em> Finding a 15% tip on a $120 bill. The result is <strong>$18.00</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Find Part Ratio (X is what % of Y?)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>(X / Y) &times; 100</code><br><em>Example:</em> Answering 35 questions correctly out of 50 on a test. The result is <strong>70%</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>3. Percentage Change (Increase/Decrease)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>((End - Start) / Start) &times; 100</code><br><em>Example:</em> Your stock value grows from $80 to $100. This is a <strong>25% increase</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>4. Percentage Difference</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>(|X - Y| / ((X + Y) / 2)) &times; 100</code><br><em>Example:</em> Comparing a $50 product with a similar $80 product. The difference is <strong>46.15%</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>5. Find Base Value (X is Y% of what?)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>(X / Y) &times; 100</code><br><em>Example:</em> If a downpayment of $15 is 25% of the total cost, the total is <strong>$60.00</strong>.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Finding a percentage of a value",
+        "description": "If you want to find 15% of a $120 dinner bill, enter 15 in the rate field and 120 in the total field. The result is $18."
+      },
+      {
+        "title": "Calculating ratio parts",
+        "description": "If a student answers 35 questions correctly out of 50, enter 35 in the part field and 50 in the whole field. The result is 70%."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the basic formula for a percentage?",
+        "answer": "The basic mathematical formula is: Percentage = (Part / Whole) &times; 100. For example, 20 out of 80 is (20/80) &times; 100 = 25%."
+      },
+      {
+        "question": "How do you turn a decimal into a percentage?",
+        "answer": "To convert any decimal number to a percentage, simply multiply the decimal by 100 and add the percentage sign. For example, 0.45 becomes 45% (0.45 &times; 100)."
+      }
+    ]
+  },
+  "programmatic": {
+    "percentage-increase-calculator": {
+      "title": "Percentage Increase Calculator - Solve Growth Percentage",
+      "description": "Determine the percentage increase from one value to another. Learn the formula and see step-by-step math examples.",
+      "heading": "Percentage Increase Calculator",
+      "seo_content": "<p>A percentage increase measures the rate of growth from an original starting value to a final value. Here is a quick reference guide:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Percentage Growth Formula</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>((New Value - Old Value) / Old Value) &times; 100</code><br><em>Example:</em> If your hourly rate goes from $30 to $36, the increase is <code>(($36 - $30) / $30) &times; 100</code> = <strong>20% increase</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Salary raise calculation",
+          "description": "If your hourly rate goes from $30 to $36, the starting value is 30 and the ending value is 36. This is a 20% salary increase."
+        },
+        {
+          "title": "Website visitor growth",
+          "description": "If your monthly blog readers grow from 1,200 to 1,800, the starting value is 1200 and the ending value is 1800. This represents a 50% traffic increase."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is the percentage increase formula?",
+          "answer": "The formula to calculate percentage increase is: % Increase = ((New Value - Old Value) / Old Value) &times; 100. For example, if a price grows from $50 to $65, the increase is (($65 - $50) / $50) &times; 100 = 30%."
+        },
+        {
+          "question": "Can percentage increase exceed 100%?",
+          "answer": "Yes, if a value more than doubles, the percentage increase will exceed 100%. For instance, if an amount grows from 10 to 30, it is a 200% increase."
+        }
+      ]
+    },
+    "percentage-decrease-calculator": {
+      "title": "Percentage Decrease Calculator - Find Rate of Drop",
+      "description": "Calculate the percentage drop or decrease from a starting number to a final number. Formula and examples included.",
+      "heading": "Percentage Decrease Calculator",
+      "seo_content": "<p>A percentage decrease measures the rate of reduction from a starting value to a final lower value. Here is a quick reference guide:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Percentage Drop Formula</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>((Original Value - Final Value) / Original Value) &times; 100</code><br><em>Example:</em> If stock value drops from $100 to $70, the decrease is <code>(($100 - $70) / $100) &times; 100</code> = <strong>30% decrease</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Retail store sale",
+          "description": "If a winter jacket is marked down from $120 to $90, the initial price is 120 and the final price is 90. This represents a 25% price decrease."
+        },
+        {
+          "title": "Weight loss tracker",
+          "description": "If an athlete's body weight goes from 80 kg to 72 kg, the starting weight is 80 and the final weight is 72. This indicates a 10% decrease."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is the percentage decrease formula?",
+          "answer": "The formula to calculate percentage decrease is: % Decrease = ((Original Value - Final Value) / Original Value) &times; 100. For example, if stock drops from 100 to 70, the decrease is ((100 - 70) / 100) &times; 100 = 30%."
+        },
+        {
+          "question": "How does percentage decrease differ from percentage increase?",
+          "answer": "Percentage decrease measures the rate of reduction from a higher start point to a lower endpoint, while percentage increase measures growth from a lower start point to a higher endpoint."
+        }
+      ]
+    }
+  }
+}

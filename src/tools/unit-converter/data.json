@@ -1,0 +1,66 @@
+{
+  "primary": {
+    "title": "Unit Converter - Length, Weight, Temperature, and Cooking Volumes",
+    "description": "Convert lengths, weights, temperatures, and kitchen cooking measurements locally in your browser. Free daily unit conversion tool.",
+    "heading": "Unit Converter",
+    "seo_content": "<p>Our Unit Converter converts standard values across four categories. Here is a guide with examples:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Length & Weight (Multiplicative)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Target = Value &times; Factor</code><br><em>Examples:</em> Converting 10 meters to feet yields <strong>32.81 feet</strong>. Converting 70 kg to pounds yields <strong>154.32 lbs</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Temperature (Scale Offset)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>&deg;F = (&deg;C &times; 9/5) + 32</code> | <code>K = &deg;C + 273.15</code><br><em>Example:</em> Converting 25&deg;C room temperature to Fahrenheit yields <strong>77&deg;F</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>3. Cooking Volumes (Recipe Scaling)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Converts between standard kitchen measurements like cups, tablespoons, teaspoons, milliliters, and fluid ounces.<br><em>Example:</em> Converting 2.5 cups of water to milliliters yields <strong>591.47 ml</strong>.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Convert Kilograms to Pounds",
+        "description": "Converting 70 kg to pounds yields approximately 154.32 lbs."
+      },
+      {
+        "title": "Convert Cups to Milliliters for cooking recipes",
+        "description": "Converting 2.5 standard cups of milk yields exactly 591.47 ml of volume."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does this tool support cooking volume conversions?",
+        "answer": "Yes. The 'Cooking' category converts between common baking metrics like US cups, tablespoons, teaspoons, milliliters, and fluid ounces."
+      },
+      {
+        "question": "Is temperature converted linearly?",
+        "answer": "No. Temperature conversions use scale offset formulas (e.g. F = C &times; 1.8 + 32) rather than standard multiplication factors used in lengths or weights."
+      }
+    ]
+  },
+  "programmatic": {
+    "length-converter": {
+      "title": "Length Converter - Convert Metric and Imperial Lengths",
+      "description": "Convert meters, feet, inches, kilometers, miles, and centimeters instantly. Free length converter.",
+      "heading": "Length Converter",
+      "seo_content": "<p>A Length Converter converts dimensional metrics. Here is the primary metric-imperial ratio:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Inches to Centimeters</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>cm = inches &times; 2.54</code><br><em>Example:</em> A height of 6 feet (72 inches) calculates to <code>72 &times; 2.54</code> = <strong>182.88 cm</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Height conversion",
+          "description": "A height of 6 feet calculates to 182.88 centimeters."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is the formula for converting inches to centimeters?",
+          "answer": "1 inch is defined as exactly 2.54 centimeters. Multiply inches by 2.54 to get centimeters."
+        }
+      ]
+    },
+    "weight-converter": {
+      "title": "Weight Converter - Metric to Imperial Mass Calculator",
+      "description": "Convert kilograms, pounds, ounces, and grams. Free online weight scale converter.",
+      "heading": "Weight Converter",
+      "seo_content": "<p>The Weight Converter handles body mass, parcel weights, and cooking raw ingredients. Here is the primary mass formula:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Pounds to Kilograms</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>kg = lbs &times; 0.45359</code><br><em>Example:</em> A parcel weighing 3.5 pounds converts to <code>3.5 &times; 0.45359</code> = <strong>1.58 kg</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Postage package mass conversion",
+          "description": "A parcel weighing 3.5 pounds converts to 1.58 kilograms."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How many ounces are in a pound?",
+          "answer": "There are exactly 16 ounces in 1 pound (avoirdupois weight system)."
+        }
+      ]
+    }
+  }
+}

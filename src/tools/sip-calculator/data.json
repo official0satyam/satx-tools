@@ -1,0 +1,82 @@
+{
+  "primary": {
+    "title": "SIP Calculator - Free Online Mutual Fund Return Estimator",
+    "description": "Estimate future maturity returns from Systematic Investment Plans (SIP) in mutual funds. Free interactive client-side calculator.",
+    "heading": "SIP Calculator",
+    "seo_content": "<p>Our SIP Calculator projects the future value of your mutual fund investments. Here is how compounding is computed:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Systematic Investment Plan (SIP)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>M = P &times; [((1 + i)^n - 1) / i] &times; (1 + i)</code><br>Where: <code>P</code> = Monthly contribution, <code>i</code> = Monthly return rate, <code>n</code> = Total months.<br><em>Example:</em> Contributing $500/month at 12% returns for 10 years yields an estimated <strong>$116,169.54</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Lumpsum Investment</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>FV = PV &times; (1 + r)^n</code><br>Where: <code>PV</code> = One-time principal, <code>r</code> = Annual return rate, <code>n</code> = Duration in years.<br><em>Example:</em> A one-time lumpsum of $10,000 compounding at 12% for 15 years yields an estimated <strong>$54,735.66</strong>.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Wealth compounding over 10 years",
+        "description": "Investing $500 monthly at a 12% expected annual return over 10 years accumulates an estimated wealth of $116,169.54, with total contributions of $60,000."
+      },
+      {
+        "title": "Long term retirement planning",
+        "description": "A monthly contribution of $200 for 25 years at 10% returns grows into approximately $267,566.27."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the compounding formula for SIP?",
+        "answer": "The SIP maturity formula is: M = P &times; [((1 + i)^n - 1) / i] &times; (1 + i), where M is maturity wealth, P is monthly investment, i is monthly return rate (annual rate / 12 / 100), and n is total number of monthly payments."
+      },
+      {
+        "question": "What is rupee cost averaging in SIP?",
+        "answer": "Rupee cost averaging means you buy more mutual fund units when prices are low and fewer units when prices are high. Over time, this lowers your average purchase cost per unit."
+      }
+    ]
+  },
+  "programmatic": {
+    "mutual-fund-calculator": {
+      "title": "Mutual Fund Calculator - Estimate Future Wealth Returns",
+      "description": "Calculate estimated returns on your mutual fund investments. Evaluate SIP or lumpsum interest compounding growth.",
+      "heading": "Mutual Fund Calculator",
+      "seo_content": "<p>Calculate estimated returns on your mutual fund investments. Here is a standard calculation scenario:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Mutual Fund growth</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\"><em>Example:</em> A monthly index fund SIP of $300 at an 11% expected return rate for 15 years builds an estimated maturity sum of <strong>$134,809.00</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Standard index fund growth",
+          "description": "An investment of $300 per month in a standard index fund returning 11% annually over 15 years results in a final wealth of $134,809."
+        },
+        {
+          "title": "High growth mid cap mutual fund",
+          "description": "A monthly investment of $150 over 20 years at a 13% return rate yields a maturity value of $166,419."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Are mutual fund returns guaranteed?",
+          "answer": "No, mutual fund returns depend on stock and bond market performances, so they fluctuate. Calculators use average historical return rates (like 12%) for projections."
+        },
+        {
+          "question": "Can I increase my SIP amount over time?",
+          "answer": "Yes, many funds offer 'step-up' SIPs which let you grow contributions annually as your salary rises, accelerating wealth building."
+        }
+      ]
+    },
+    "lumpsum-calculator": {
+      "title": "Lumpsum Investment Calculator - Compound Interest Wealth",
+      "description": "Estimate future returns for one-time lumpsum mutual fund investments. Compound growth estimator tool.",
+      "heading": "Lumpsum Calculator",
+      "seo_content": "<p>Estimate compounding interest growth for one-time capital allocations. Here is a standard calculations comparison:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Lumpsum Compounding Formula</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>FV = PV &times; (1 + r)^n</code><br><em>Example:</em> A single lumpsum deposit of $10,000 compounding at 12% annually for 15 years yields an estimated future wealth of <strong>$54,735.66</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "One-time bonus deposit",
+          "description": "A single lumpsum deposit of $10,000 compounding at 12% annually for 15 years yields an estimated future wealth of $54,735."
+        },
+        {
+          "title": "Long-term legacy fund",
+          "description": "A $20,000 one-time deposit compounding at 10% interest over 25 years grows to approximately $216,694."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is the lumpsum compound interest formula?",
+          "answer": "The formula is: FV = PV &times; (1 + r)^n, where FV is Future Value, PV is Present Value (lumpsum amount), r is annual rate of return, and n is number of compounding years."
+        },
+        {
+          "question": "When should I choose lumpsum over SIP?",
+          "answer": "Choose lumpsum if you have a cash reserve ready to invest, particularly during market dips. Choose SIP if you prefer averaging risk from monthly income."
+        }
+      ]
+    }
+  }
+}

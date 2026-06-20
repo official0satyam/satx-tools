@@ -1,0 +1,50 @@
+<div class="form-group" style="margin-bottom: var(--space-md);">
+  <label>Select Category</label>
+  <div class="segmented-control" style="display: flex; gap: 6px; overflow-x: auto; padding: 2px;">
+    <button id="unit-cat-length" class="btn btn-secondary active" onclick="setUnitCategory('length', this)">Length</button>
+    <button id="unit-cat-weight" class="btn btn-secondary" onclick="setUnitCategory('weight', this)">Weight</button>
+    <button id="unit-cat-temp" class="btn btn-secondary" onclick="setUnitCategory('temp', this)">Temp</button>
+    <button id="unit-cat-cooking" class="btn btn-secondary" onclick="setUnitCategory('cooking', this)">Cooking</button>
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-bottom: var(--space-md);">
+  <div class="form-group">
+    <label for="unit-val">Value to Convert</label>
+    <input type="number" id="unit-val" class="input-control" value="10" step="any" oninput="convertUnits()">
+  </div>
+</div>
+
+<div class="grid-select-swap">
+  <div class="form-group" style="margin-bottom: 0;">
+    <label for="unit-from">From</label>
+    <select id="unit-from" class="input-control" onchange="convertUnits()">
+      <!-- Populated by script -->
+    </select>
+  </div>
+  
+  <button onclick="swapUnits()" class="btn btn-secondary" style="height: 48px; width: 48px; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+  </button>
+  
+  <div class="form-group" style="margin-bottom: 0;">
+    <label for="unit-to">To</label>
+    <select id="unit-to" class="input-control" onchange="convertUnits()">
+      <!-- Populated by script -->
+    </select>
+  </div>
+</div>
+
+<div class="result-panel success" style="margin-bottom: var(--space-md);">
+  <div class="result-label" style="text-align: left; margin-bottom: var(--space-sm); color: var(--secondary); font-family: var(--font-header); font-size: 1rem;">Conversion Output</div>
+  <div id="unit-output-text" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 500;">10.00 Meters =</div>
+  <div class="result-val" id="unit-output-val" style="font-size: 2.2rem; line-height: 1.2; margin-top: 4px;">32.81 Feet</div>
+  <div id="unit-formula-text" style="font-size: 0.75rem; color: var(--text-muted); margin-top: var(--space-sm);">Formula: multiply the length value by 3.281</div>
+</div>
+
+<div class="copy-btn-wrapper">
+  <button onclick="copyUnitResult(this)" class="btn btn-secondary btn-copy">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Conversion Summary
+  </button>
+</div>

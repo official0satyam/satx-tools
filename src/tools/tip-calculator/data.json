@@ -1,0 +1,82 @@
+{
+  "primary": {
+    "title": "Tip Calculator - Split Bills and Calculate Tips",
+    "description": "Split restaurant or event bills, calculate tip percentages, and find each person's exact share. Free, online bill splitter.",
+    "heading": "Tip Calculator",
+    "seo_content": "<p>Our Tip Calculator helps you split checks and gratuity shares. Here is how splitting is calculated:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Gratuity Tipping Share</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Total Tip = (Bill Amount &times; Tip %) / 100</code> | <code>Tip per Person = Total Tip / People</code><br><em>Example:</em> A $100 bill with a 15% tip split between 2 people gives a total tip of <strong>$15.00</strong> (<strong>$7.50</strong> per person).</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Split Total per Person</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Total per Person = (Bill Amount + Total Tip) / People</code><br><em>Example:</em> For the $100 bill above, each person pays exactly <strong>$57.50</strong> total.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Dinner split between 4 friends",
+        "description": "For a total dinner bill of $150 with a 15% tip split between 4 people, each person pays exactly $43.13, and the total tip is $22.50."
+      },
+      {
+        "title": "Simple taxi ride gratuity",
+        "description": "If your cab fare is $25 and you want to tip 10%, you add $2.50 for a total payment of $27.50."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a standard tipping percentage?",
+        "answer": "Standard gratuity rates typically range from 15% to 20% in the United States and Canada for satisfactory service. In many European and Asian countries, tips are smaller or service charges are already included."
+      },
+      {
+        "question": "Does this tool support tax splitting?",
+        "answer": "This calculator splits the final check amount, which typically includes tax. You can enter the total bill inclusive of tax, and specify the tip percentage relative to that total."
+      }
+    ]
+  },
+  "programmatic": {
+    "bill-splitter": {
+      "title": "Bill Splitter - Split Group Restaurant Check Online",
+      "description": "Split dining bills and group expenses between any number of people. Free, quick online check splitter.",
+      "heading": "Bill Splitter",
+      "seo_content": "<p>Split dining bills and group expenses between any number of people. Here is a standard calculations scenario:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Equal Group Division</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\"><em>Example:</em> Splitting a $60 lunch check evenly among 3 coworkers means each person pays exactly <strong>$20.00</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Even split for a lunch check",
+          "description": "Splitting a $60 lunch check evenly among 3 coworkers means each person pays exactly $20."
+        },
+        {
+          "title": "Party split with tip",
+          "description": "An event check of $500 with an 18% gratuity split among 10 guests comes out to $59 per person."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can I split bills unevenly?",
+          "answer": "This tool computes an even division of the bill and tip among a specified number of guests. For uneven splits, it is best to calculate individual items separately."
+        },
+        {
+          "question": "Does the calculator work for currencies other than dollars?",
+          "answer": "Yes. Our smart currency selection system lets you toggle symbols like Rupees, Euros, and Pounds, matching your local currency automatically."
+        }
+      ]
+    },
+    "gratuity-calculator": {
+      "title": "Gratuity Calculator - Find Tip Shares Instantly",
+      "description": "Find exact tips for delivery, dining, and hospitality services. Free online tip calculator.",
+      "heading": "Gratuity Calculator",
+      "seo_content": "<p>Find exact tips for delivery, dining, and hospitality services. Here is how gratuities are calculated:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Tip Gratuity Formula</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Tip Amount = Service Cost &times; (Tip Percentage / 100)</code><br><em>Example:</em> A hair salon service costing $80 with a 20% tip adds <strong>$16.00</strong> gratuity, for a total of <strong>$96.00</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Food delivery tip",
+          "description": "A food order of $35 with a 10% delivery tip adds $3.50, making the total order payment $38.50."
+        },
+        {
+          "title": "Hair salon gratuity",
+          "description": "For a salon service costing $80, a 20% tip is $16, totaling $96."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Should I tip on the pre-tax or post-tax bill?",
+          "answer": "Traditionally, gratuities are calculated on the pre-tax subtotal. However, many people tip on the final total for simplicity. You can choose either method by entering the corresponding bill amount."
+        },
+        {
+          "question": "How are custom tips calculated?",
+          "answer": "A custom tip is simply: Tip = (Bill Amount &times; Custom Percentage) / 100."
+        }
+      ]
+    }
+  }
+}

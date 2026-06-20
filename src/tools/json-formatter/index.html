@@ -1,0 +1,41 @@
+<div class="form-group">
+  <label for="json-input">Raw JSON Input</label>
+  <textarea id="json-input" class="input-control" rows="10" placeholder="Paste your minified or unformatted JSON here..." style="font-family: var(--font-mono); font-size: 0.9rem; resize: vertical;"></textarea>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-bottom: var(--space-lg); align-items: end;">
+  <div class="form-group" style="margin-bottom: 0;">
+    <label for="json-indent">Indentation Spacing</label>
+    <select id="json-indent" class="input-control">
+      <option value="2" selected>2 Spaces</option>
+      <option value="4">4 Spaces</option>
+      <option value="tab">Tabs</option>
+    </select>
+  </div>
+  <div style="display: flex; gap: 8px;">
+    <button onclick="beautifyJSON()" class="btn btn-primary" style="flex: 1; min-height: 46px; font-size: 0.9rem;">Beautify</button>
+    <button onclick="minifyJSON()" class="btn btn-secondary" style="flex: 1; min-height: 46px; font-size: 0.9rem;">Minify</button>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: flex-end; gap: var(--space-sm); margin-bottom: var(--space-md);">
+  <button onclick="clearJSON()" class="btn btn-secondary" style="padding: 8px 16px; min-height: unset; font-size: 0.85rem;">Clear Input</button>
+</div>
+
+<!-- Validation Status Banner -->
+<div id="json-status" class="result-panel success" style="display: none; padding: var(--space-md); margin-bottom: var(--space-lg); text-align: left;">
+  <div id="json-status-title" style="font-family: var(--font-header); font-weight: 800; font-size: 1.1rem; color: var(--secondary);">Valid JSON 💎</div>
+  <p id="json-status-msg" style="font-size: 0.85rem; margin-top: 4px; margin-bottom: 0; color: var(--text-body);">Parsing completed successfully.</p>
+</div>
+
+<div class="form-group">
+  <label for="json-output">Beautified / Minified Output</label>
+  <textarea id="json-output" class="input-control" rows="12" placeholder="Formatted output will appear here..." style="font-family: var(--font-mono); font-size: 0.9rem; resize: vertical; background-color: #f8fafc;" readonly></textarea>
+</div>
+
+<div class="copy-btn-wrapper">
+  <button id="btn-copy-json" onclick="copyJSONOutput(this)" class="btn btn-secondary btn-copy" disabled>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Formatted JSON
+  </button>
+</div>

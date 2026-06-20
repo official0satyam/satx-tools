@@ -1,0 +1,19 @@
+{
+  "name": "satx-tools",
+  "version": "1.0.0",
+  "description": "Smart Tools For Everyday Problems - Fast, free, and local web tools.",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "python serve.py"
+  },
+  "keywords": [
+    "tools",
+    "calculators",
+    "utility",
+    "static",
+    "seo"
+  ],
+  "author": "Satyam",
+  "license": "ISC"
+}

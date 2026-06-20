@@ -1,0 +1,66 @@
+<div class="form-group" style="display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: var(--space-md);">
+  <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); font-family: var(--font-header);">Currency:</span>
+  <select class="input-control currency-select" style="width: auto; padding: 4px 12px; min-height: unset; height: 32px; font-size: 0.85rem; border-radius: 8px; margin-top: 0;">
+    <option value="$">USD ($)</option>
+    <option value="₹">INR (₹)</option>
+    <option value="€">EUR (€)</option>
+    <option value="£">GBP (£)</option>
+    <option value="¥">JPY (¥)</option>
+  </select>
+</div>
+
+<div class="grid-2col">
+  <div class="form-group">
+    <label for="disc-price">Original Tag Price (<span class="currency-symbol">$</span>)</label>
+    <input type="number" id="disc-price" class="input-control" value="120">
+  </div>
+  <div class="form-group">
+    <label for="disc-percent">Discount Rate (%)</label>
+    <input type="number" id="disc-percent" class="input-control" value="25">
+  </div>
+</div>
+
+<div class="grid-2col" style="margin-bottom: var(--space-lg);">
+  <div class="form-group">
+    <label for="disc-additional">Additional Discount (% off)</label>
+    <input type="number" id="disc-additional" class="input-control" placeholder="e.g. 10" value="0">
+  </div>
+  <div class="form-group">
+    <label for="disc-tax">Sales Tax (%)</label>
+    <input type="number" id="disc-tax" class="input-control" placeholder="e.g. 8" value="0">
+  </div>
+</div>
+
+<div class="result-panel success">
+  <div class="result-label" style="text-align: left; margin-bottom: var(--space-md); color: var(--secondary); font-family: var(--font-header); font-size: 1.1rem; border-bottom: 2px dashed rgba(13, 148, 136, 0.2); padding-bottom: var(--space-sm);">Purchase Summary</div>
+  
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div class="invoice-row">
+      <span class="invoice-lbl">Original Price:</span>
+      <span id="disc-base" class="invoice-val">$120.00</span>
+    </div>
+    <div class="invoice-row">
+      <span class="invoice-lbl">Total Amount Saved:</span>
+      <span id="disc-saved" class="invoice-val" style="color: var(--secondary); font-weight: 700;">-$30.00</span>
+    </div>
+    <div class="invoice-row" id="disc-row-tax" style="display: none;">
+      <span class="invoice-lbl">Sales Tax Added:</span>
+      <span id="disc-tax-val" class="invoice-val">+$0.00</span>
+    </div>
+    <div class="invoice-row invoice-total-row">
+      <span class="invoice-lbl" style="font-family: var(--font-header);">Final Sale Price:</span>
+      <span id="disc-output-val" class="invoice-val" style="font-family: var(--font-header); font-weight: 800;">$90.00</span>
+    </div>
+  </div>
+  
+  <div class="progress-container" style="margin-top: var(--space-md);">
+    <div id="disc-visual-bar" class="progress-fill" style="background-color: var(--secondary); width: 75%;"></div>
+  </div>
+</div>
+
+<div class="copy-btn-wrapper">
+  <button onclick="copyDiscountResult(this)" class="btn btn-secondary btn-copy">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Deal Summary
+  </button>
+</div>

@@ -1,0 +1,66 @@
+{
+  "primary": {
+    "title": "Age Calculator - Calculate Exact Age Online",
+    "description": "Calculate your exact age in years, months, and days. Track how many days you have lived, estimated heartbeats, sleeping time, and equivalent dog years.",
+    "heading": "Age Calculator",
+    "seo_content": "<p>Our Age Calculator provides a precise breakdown of your age and life metrics. Here is what this tool computes:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Exact Calendar Age</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Calculates exact years, months, and days since your birth, automatically adjusting for leap years.<br><em>Example:</em> Born June 15, 1995. On June 20, 2026, exact age is <strong>31 Years, 0 Months, 5 Days</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Next Birthday Countdown</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Computes how many months and days remain until your next birthday, and shows what day of the week it will fall on.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>3. Life Telemetry Statistics</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Converts your total lifespan into cumulative months, weeks, days, hours, and minutes, alongside equivalent dog years.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Determining exact milestone ages",
+        "description": "If someone was born on June 15, 1995, entering their birthdate reveals exactly how many years, months, and days they have lived down to the current date."
+      },
+      {
+        "title": "Dog years equivalence check",
+        "description": "See how old you would be in dog years (usually calculated as human years multiplied by 7)."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How are dog years calculated?",
+        "answer": "Typically, dog years are calculated by multiplying human years by 7. However, the actual aging rate of dogs depends on their breed size and developmental stages."
+      },
+      {
+        "question": "Is my birthdate data saved on your servers?",
+        "answer": "No, all calculations are performed locally in your web browser using client-side JavaScript. We never collect or store your date of birth."
+      }
+    ]
+  },
+  "programmatic": {
+    "birthday-calculator": {
+      "title": "Birthday Calculator - Next Birthday Countdown",
+      "description": "Determine exactly when your next birthday is, what day of the week it falls on, and track a detailed countdown timer.",
+      "heading": "Birthday Calculator",
+      "seo_content": "<p>A birthday calculator helps you count down the time until your next annual celebration. Here is how it helps you plan:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Countdown Tracker</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Tells you exactly how many months, days, hours, and minutes are remaining before you turn a year older.<br><em>Example:</em> Input your birthday and instantly know if you have <strong>5 months and 12 days</strong> left.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Weekday Matcher</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Shows what day of the week your birthday falls on this year and next year to help organize weekend parties.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Countdown check for upcoming birthdays",
+          "description": "Input your birthday to find the exact days left and prepare your calendar arrangements."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Why does the weekday of my birthday change every year?",
+          "answer": "Because a standard year has 365 days, which is 52 weeks and 1 day, your birthday usually shifts forward by one day of the week each year (or two days in leap years)."
+        }
+      ]
+    },
+    "how-old-am-i": {
+      "title": "How Old Am I Calculator - Exact Age Finder",
+      "description": "Calculate your exact age in years, months, weeks, days, and seconds. Instant, private, and free client-side tool.",
+      "heading": "How Old Am I?",
+      "seo_content": "<p>If you've ever asked yourself 'How old am I exactly?', this calculator provides the breakdown. It details:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Lifespan Conversion Metrics</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Translates your exact age into months, weeks, days, hours, minutes, and seconds.<br><em>Example:</em> A 25-year-old has lived exactly <strong>300 months</strong> or over <strong>9,130 days</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Checking exact years, months, and days",
+          "description": "A quick input of any birthday instantly splits the duration into clean readable intervals."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How does this tool handle leap years?",
+          "answer": "The browser JavaScript Date object handles varying month sizes (28, 29, 30, or 31 days) automatically relative to historical leap years."
+        }
+      ]
+    }
+  }
+}

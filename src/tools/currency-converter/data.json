@@ -1,0 +1,66 @@
+{
+  "primary": {
+    "title": "Currency Converter - Live Exchange Rate Calculator",
+    "description": "Convert money values between major global currencies (USD, EUR, INR, GBP, JPY, CAD, AUD) with real-time conversion rates.",
+    "heading": "Currency Converter",
+    "seo_content": "<p>Our Currency Converter converts values between major currencies. Here is how conversions are computed:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Convert between currencies</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>USD Value = Amount / Rate[From]</code> | <code>Result = USD Value &times; Rate[To]</code><br><em>Example:</em> Converting 100 USD to INR at an exchange rate of 83.50 yields <strong>₹8,350.00</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Live Exchange Rate updates</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Fetches live rates from <code>open.er-api.com</code> and caches them in your browser for offline travel use.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Convert 100 USD to INR",
+        "description": "Converting $100 USD at an exchange rate of 83.50 INR yields ₹8,350.00 Indian Rupees."
+      },
+      {
+        "title": "Convert EUR to GBP for travel shopping",
+        "description": "Converting €250 Euros at a rate of 0.85 GBP yields £212.50 British Pounds."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Where do the exchange rates come from?",
+        "answer": "This calculator utilizes basic updated standard market reference rates. You can also manually customize or view live estimates directly on screen."
+      },
+      {
+        "question": "Is this converter safe to use offline?",
+        "answer": "Yes. If an internet connection is unavailable, the converter falls back to local preloaded rates, ensuring you can still perform calculations while traveling."
+      }
+    ]
+  },
+  "programmatic": {
+    "live-currency-rates": {
+      "title": "Live Currency Rates - Check Forex Exchange Values",
+      "description": "Check current foreign exchange rates for USD, INR, EUR, GBP, and JPY. Free online currency rate tracker.",
+      "heading": "Live Currency Rates",
+      "seo_content": "<p>Check current foreign exchange rates for major currencies. Here is an example of checking rates:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Forex Rate Tracking</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\"><em>Example:</em> Checking how many Euros (EUR) or Indian Rupees (INR) you get for exactly 1 US Dollar (USD).</p></li></ul>",
+      "examples": [
+        {
+          "title": "Forex rate comparisons",
+          "description": "Reviewing rates to find the relative strength of the Euro against the USD."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How often do rates update?",
+          "answer": "Rates are updated periodically. For critical transactions, verify rates with your banking provider."
+        }
+      ]
+    },
+    "exchange-rate-calculator": {
+      "title": "Exchange Rate Calculator - Convert Forex Currency Online",
+      "description": "Calculate conversion factors and cross rates for international transactions. Free forex calculator.",
+      "heading": "Exchange Rate Calculator",
+      "seo_content": "<p>Calculate conversion factors and cross rates for international transactions. Here is a calculation scenario:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Import Purchase calculation</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\"><em>Example:</em> Buying a £120 GBP item calculates to approximately <strong>$150.00 USD</strong> at a cross rate of 1.25.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Import purchase estimation",
+          "description": "Buying a £120 GBP item calculates to approximately $150 USD."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Are transaction fees included?",
+          "answer": "No. Most banks and credit cards charge a 1% to 3% foreign transaction fee, which you should account for on top of these mid-market rates."
+        }
+      ]
+    }
+  }
+}

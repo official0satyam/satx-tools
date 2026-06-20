@@ -1,0 +1,93 @@
+<div class="form-group" style="display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: var(--space-md);">
+  <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); font-family: var(--font-header);">Currency:</span>
+  <select class="input-control currency-select" style="width: auto; padding: 4px 12px; min-height: unset; height: 32px; font-size: 0.85rem; border-radius: 8px; margin-top: 0;">
+    <option value="$">USD ($)</option>
+    <option value="₹">INR (₹)</option>
+    <option value="€">EUR (€)</option>
+    <option value="£">GBP (£)</option>
+    <option value="¥">JPY (¥)</option>
+  </select>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-bottom: var(--space-md);">
+  <div class="form-group">
+    <label>Interest Type</label>
+    <div class="segmented-control" style="display: flex; gap: 8px; padding: 2px;">
+      <button id="ci-type-compound" class="btn btn-secondary active" onclick="setInterestType('compound', this)" style="flex: 1;">Compound Interest</button>
+      <button id="ci-type-simple" class="btn btn-secondary" onclick="setInterestType('simple', this)" style="flex: 1;">Simple Interest</button>
+    </div>
+  </div>
+</div>
+
+<div class="grid-2col">
+  <div class="form-group">
+    <label for="ci-principal">Initial Principal (<span class="currency-symbol">$</span>)</label>
+    <input type="number" id="ci-principal" class="input-control" value="10000" min="0" step="100" oninput="calculateCI()">
+  </div>
+  <div class="form-group">
+    <label for="ci-contribution">Monthly Deposit (<span class="currency-symbol">$</span>)</label>
+    <input type="number" id="ci-contribution" class="input-control" value="100" min="0" step="10" oninput="calculateCI()">
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="ci-rate" style="display: flex; justify-content: space-between;">
+    <span>Annual Interest Rate (%)</span>
+    <span id="ci-rate-lbl" style="color: var(--primary); font-weight: 800;">8%</span>
+  </label>
+  <input type="range" id="ci-rate" min="0.5" max="30" step="0.1" value="8" class="input-control" oninput="syncCISliders('rate')">
+  <input type="number" id="ci-rate-num" class="input-control" value="8" step="0.1" style="margin-top: 8px;" oninput="syncCISliders('rate-num')">
+</div>
+
+<div class="form-group">
+  <label for="ci-years" style="display: flex; justify-content: space-between;">
+    <span>Investment Period (Years)</span>
+    <span id="ci-years-lbl" style="color: var(--primary); font-weight: 800;">10 Years</span>
+  </label>
+  <input type="range" id="ci-years" min="1" max="50" step="1" value="10" class="input-control" oninput="syncCISliders('years')">
+  <input type="number" id="ci-years-num" class="input-control" value="10" min="1" max="100" step="1" style="margin-top: 8px;" oninput="syncCISliders('years-num')">
+</div>
+
+<div class="form-group" id="ci-freq-wrapper">
+  <label for="ci-frequency">Compounding Frequency</label>
+  <select id="ci-frequency" class="input-control" onchange="calculateCI()">
+    <option value="12" selected>Monthly (12/year)</option>
+    <option value="4">Quarterly (4/year)</option>
+    <option value="2">Semi-Annually (2/year)</option>
+    <option value="1">Annually (1/year)</option>
+    <option value="365">Daily (365/year)</option>
+  </select>
+</div>
+
+<div class="result-panel success">
+  <div class="result-label" style="text-align: left; margin-bottom: var(--space-md); color: var(--secondary); font-family: var(--font-header); font-size: 1.1rem; border-bottom: 2px dashed rgba(13, 148, 136, 0.2); padding-bottom: var(--space-sm);">Maturity Projection</div>
+  
+  <div class="result-val" id="ci-out-total">$22,203.66</div>
+  
+  <div style="display: flex; flex-direction: column; gap: 8px; margin-top: var(--space-md);">
+    <div class="invoice-row">
+      <span class="invoice-lbl">Total Contributions:</span>
+      <span id="ci-out-contributions" class="invoice-val">$22,000.00</span>
+    </div>
+    <div class="invoice-row">
+      <span class="invoice-lbl">Total Interest Earned:</span>
+      <span id="ci-out-interest" class="invoice-val" style="color: var(--secondary); font-weight: 700;">+$0.00</span>
+    </div>
+  </div>
+  
+  <div class="progress-container" style="margin-top: var(--space-md); height: 16px;">
+    <div id="ci-bar-contributions" class="progress-fill" style="background-color: var(--primary); width: 50%; float: left;" title="Contributions"></div>
+    <div id="ci-bar-interest" style="height: 100%; background-color: var(--secondary); width: 50%; float: left;" title="Interest Earned"></div>
+  </div>
+  <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; margin-top: 6px; color: var(--text-muted);">
+    <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; background: var(--primary); border-radius: 2px; display: inline-block;"></span> Deposits (<span id="ci-pct-contributions">50%</span>)</span>
+    <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; background: var(--secondary); border-radius: 2px; display: inline-block;"></span> Interest (<span id="ci-pct-interest">50%</span>)</span>
+  </div>
+</div>
+
+<div class="copy-btn-wrapper">
+  <button onclick="copyCIResult(this)" class="btn btn-secondary btn-copy">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Maturity Summary
+  </button>
+</div>

@@ -1,0 +1,63 @@
+<div class="form-group">
+  <label for="age-birthdate">Date of Birth</label>
+  <input type="date" id="age-birthdate" class="input-control" value="2000-01-01">
+</div>
+
+<!-- Main Age Result -->
+<div class="result-panel warning">
+  <div class="result-label">Exact Age</div>
+  <div class="result-val" id="age-output-val" style="font-size: clamp(1.8rem, 4vw, 2.5rem);">--</div>
+</div>
+
+<!-- Next Birthday Countdown -->
+<div class="result-panel success" style="margin-top: var(--space-md);">
+  <div class="result-label">Next Birthday Countdown</div>
+  <div class="result-val" id="birthday-countdown-val" style="font-size: clamp(1.4rem, 3vw, 2rem); color: var(--secondary);">--</div>
+  <p id="birthday-weekday-lbl" style="font-size: 0.95rem; color: var(--text-body); margin-top: 4px; margin-bottom: 0;">--</p>
+</div>
+
+<!-- Detailed Stats Grid -->
+<div class="glass-card" style="margin-top: var(--space-lg); padding: var(--space-md);">
+  <h3 style="margin-bottom: var(--space-md); font-family: var(--font-header); font-weight: 800; border-bottom: 2px dashed var(--border-color); padding-bottom: var(--space-xs);">Life Milestones & Detailed Statistics</h3>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-md); text-align: left;">
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Total Months</span>
+      <span class="result-detail-val" id="stat-months" style="color: var(--primary);">--</span>
+    </div>
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Total Weeks</span>
+      <span class="result-detail-val" id="stat-weeks" style="color: var(--primary);">--</span>
+    </div>
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Total Days</span>
+      <span class="result-detail-val" id="stat-days" style="color: var(--primary);">--</span>
+    </div>
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Total Hours</span>
+      <span class="result-detail-val" id="stat-hours" style="color: var(--primary);">--</span>
+    </div>
+  </div>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-md); text-align: left; margin-top: var(--space-md);">
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Est. Sleep Time</span>
+      <span class="result-detail-val" id="stat-sleep" style="color: var(--secondary);">--</span>
+    </div>
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Dog Years</span>
+      <span class="result-detail-val" id="stat-dog" style="color: var(--accent-rose);">--</span>
+    </div>
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Heartbeats</span>
+      <span class="result-detail-val" id="stat-heart" style="color: var(--accent-rose);">--</span>
+    </div>
+  </div>
+</div>
+
+<div class="copy-btn-wrapper">
+  <button onclick="copyAgeResult(this)" class="btn btn-secondary btn-copy">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Age Details
+  </button>
+</div>

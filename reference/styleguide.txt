@@ -1,0 +1,75 @@
+================================================================================
+SATX TOOLS - DESIGN SYSTEM & VISUAL BRANDING GUIDE
+================================================================================
+
+This document tracks the visual system, style guidelines, and layout adjustments
+implemented for the SatX Tools user interface. Use this file as a reference to
+understand the color palette variables, styling structure, and layout steps.
+
+--------------------------------------------------------------------------------
+1. CORE COLOR SYSTEM (PURPLE THEME)
+--------------------------------------------------------------------------------
+
+We have refactored the design system from a generic Indigo/Cyan scheme to a premium
+and cohesive Purple brand aesthetic.
+
+* PRIMARY PURPLE (Brand Primary): #7c3aed (Violet 600)
+  - Used for primary CTA buttons, active tabs, highlight borders, and category links.
+  - Variable mapping: --primary
+
+* DARK PURPLE (Primary Hover): #6d28d9 (Violet 700)
+  - Used for button hover states, interactive click targets, and deep accents.
+  - Variable mapping: --primary-dark
+
+* LIGHT PURPLE/LAVENDER (Background Base): #faf5ff (Purple 50)
+  - The default page canvas background color.
+  - Variable mapping: --bg / --bg-body
+
+* DARK INK PURPLE (Hero Background): #2e1065 (Purple 950)
+  - Background color for the centered homepage top banner to provide premium contrast.
+  - Variable mapping: --hero-bg
+
+* DEEP PURPLE HEADING (Text Title): #1e1b4b (Indigo 950)
+  - Primary text color for large display headings.
+  - Variable mapping: --text / --text-title
+
+* LAVENDER SHADOW (Elevated Components): rgba(124, 58, 237, 0.08)
+  - Used for soft flat-3D box shadows under primary cards.
+  - Variable mapping: --shadow-color
+
+--------------------------------------------------------------------------------
+2. TYPOGRAPHY SYSTEM
+--------------------------------------------------------------------------------
+
+* HEADINGS & BUTTONS: 'Fredoka', 'Outfit', sans-serif;
+  - A friendly, bold, and bouncy aesthetic that is easy to understand.
+* BODY COPY: 'Inter', system-ui, sans-serif;
+  - A highly legible geometric sans-serif font for tool guides, descriptions, and FAQs.
+* MONOSPACE DATA: 'Space Mono', monospace;
+  - For secure keys, results copy blocks, and code formats.
+
+--------------------------------------------------------------------------------
+3. STEP-BY-STEP LAYOUT WORKFLOW
+--------------------------------------------------------------------------------
+
+### STEP 1: GLOBAL BRAND VARIABLE REFACTOR
+Updated variable tokens inside 'src/assets/css/main.css' to overwrite generic values
+with the core purple theme colors listed above.
+
+### STEP 2: HERO BANNER REDESIGN (CENTERED CONTENT)
+- Rewrote the top hero section block in 'src/pages/index.html'.
+- Replaced the side-by-side grid with a single-column, centered layout.
+- Changed eyebrow text to: "⚡ 100% Client-Side & Private" (removed "Free · Fast · Mobile-Friendly").
+- Added a rich purple gradient background to '.hero-shell' inside 'main.css'.
+- Made the search input, description copy, and navigation categories fit centered alignment.
+
+### STEP 3: MOBILE & TABLET LAYOUT OPTIMIZATION (HIDING FLOATING CARDS)
+- Set up responsive rules: the floating visual scene container is completely hidden on all viewports below 1024px.
+- Avoids layout overlaps, prevents horizontal scroll issues, and maintains quick vertical scroll behavior.
+
+### STEP 4: DESKTOP FLOATING SCENE ADJUSTMENTS
+- Redesigned the desktop floating card visuals to frame the centered text box.
+- Placed two cards on the left side (Percentage, GST) and two on the right side (Password, Age) of the hero banner content on viewport widths >= 1024px.
+- Styled cards to use translucent purple-tinted glassmorphic properties.
+
+================================================================================

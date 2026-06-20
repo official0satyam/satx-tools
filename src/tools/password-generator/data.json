@@ -1,0 +1,62 @@
+{
+  "primary": {
+    "title": "Password Generator - Generate Secure Passwords Online",
+    "description": "Create secure, strong, random passwords instantly. Customize length, numbers, and symbols. 100% offline and secure client-side generation.",
+    "heading": "Password Generator",
+    "seo_content": "<p>A password is a string of characters used to verify identity during authentication. In the modern web, using basic passwords like 'password123' or birthdates makes accounts highly vulnerable to brute-force credential stuffing attacks.</p><p>Using a secure random password generator beats manual patterns by introducing high-entropy characters. Our generator creates custom keys in your browser window, ensuring no credentials are ever sent online.</p>",
+    "examples": [
+      {
+        "title": "Generating regular credentials",
+        "description": "Create a standard 16-character secure key containing numbers and special characters to safeguard your daily social accounts."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Are my generated passwords private?",
+        "answer": "Yes, absolutely. The generation runs completely on your computer via client-side JavaScript. Nothing is sent to our servers."
+      },
+      {
+        "question": "How long should a strong password be?",
+        "answer": "Security experts recommend using passwords containing at least 12 to 16 characters, combining lowercase, uppercase, numbers, and special symbols."
+      }
+    ]
+  },
+  "programmatic": {
+    "secure-password-generator": {
+      "title": "Secure Password Generator - Build Strong Credentials",
+      "description": "Formulate strong random credentials with high security combinations. Offline, safe, and instant client-side tool.",
+      "heading": "Secure Password Generator",
+      "seo_content": "<p>A secure password generator is a developer-grade security builder. It generates random, unguessable character arrays to protect databases, accounts, and server logins.</p><p>We employ random index mapping to guarantee high character randomness. Keep your digital files safe.</p>",
+      "examples": [
+        {
+          "title": "Database login credentials",
+          "description": "Build a long 24-character password with full numbers and symbols to secure database configurations."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can standard hackers guess these passwords?",
+          "answer": "Brute-force cracking a high-entropy 16-character password would take modern supercomputers billions of years."
+        }
+      ]
+    },
+    "random-string-generator": {
+      "title": "Random String Generator - Create Custom Cryptic Keys",
+      "description": "Build random alphanumeric string codes. Custom lengths, numbers, and special symbols supported.",
+      "heading": "Random String Generator",
+      "seo_content": "<p>A random string generator creates arbitrary arrays of letters and digits. Developers use these for generating API keys, session tokens, verification codes, or database salt values.</p><p>Configure character length limits and toggle specific symbols to match your specifications.</p>",
+      "examples": [
+        {
+          "title": "API token generation",
+          "description": "Create a clean alphanumeric 32-character string to serve as a secure API secret key."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What parameters can I customize?",
+          "answer": "You can customize string length limits (from 8 to 32 characters) and toggle digits or symbols to generate strictly alphanumeric keys."
+        }
+      ]
+    }
+  }
+}

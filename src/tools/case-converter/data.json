@@ -1,0 +1,82 @@
+{
+  "primary": {
+    "title": "Case Converter - Change Text Case Online",
+    "description": "Convert text between UPPERCASE, lowercase, Title Case, sentence case, slug-case, and camelCase instantly. Free online formatting tool.",
+    "heading": "Case Converter",
+    "seo_content": "<p>A Case Converter is a simple utility that converts blocks of text to standard typographical casing formats. When copying text from draft documents, spreadsheets, or code databases, headings or body copy may need rapid adjusting to match publisher guidelines.</p><p>Our web-based case converter runs fully client-side. Simply paste your text and select your target case structure to transform the text instantly without modifying original drafts.</p>",
+    "examples": [
+      {
+        "title": "Converting lowercase heading to Title Case",
+        "description": "Pasting 'hello world from satx' and clicking 'Title Case' outputs 'Hello World From Satx'."
+      },
+      {
+        "title": "Converting spaces to web URLs",
+        "description": "Pasting a phrase like 'Percent Off Calculator Guide' and clicking 'slug-case' transforms it to 'percent-off-calculator-guide' which is ready for browser routes."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is Sentence Case?",
+        "answer": "Sentence case capitalizes only the first letter of each sentence and leaves other letters in lowercase, similar to how standard sentences are structured in articles."
+      },
+      {
+        "question": "What is CamelCase?",
+        "answer": "CamelCase combines words without spaces, capitalizations representing word bounds (e.g. 'CamelCaseText'). This is widely used in coding languages like JavaScript and C++."
+      }
+    ]
+  },
+  "programmatic": {
+    "title-case-converter": {
+      "title": "Title Case Converter - Capitalize Headlines Online",
+      "description": "Convert titles, headings, and essay topics to standard Title Case instantly. Free online headline capitalizer.",
+      "heading": "Title Case Converter",
+      "seo_content": "<p>A Title Case Converter is a specialized formatting utility that capitalizes the first letter of major words in titles and headings. Standard conventions (such as AP Style, Chicago Manual, or MLA) recommend capitalizing nouns, verbs, pronouns, and adjectives, while leaving short articles and prepositions in lowercase.</p><p>This tool automates the casing rules so you can compile publication-ready headlines instantly.</p>",
+      "examples": [
+        {
+          "title": "AP style headline adjustment",
+          "description": "Transforming 'a guide to percentage calculations' yields 'A Guide to Percentage Calculations' under typical title rules."
+        },
+        {
+          "title": "Document title formatting",
+          "description": "Pasting 'SIP COMPOUND WEALTH FORMULAS' and converting it yields 'Sip Compound Wealth Formulas'."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Which words are kept lowercase in Title Case?",
+          "answer": "Generally, coordinating conjunctions (and, but, or), articles (a, an, the), and short prepositions (to, of, in, on, by) are kept lowercase unless they are the first or last word of the title."
+        },
+        {
+          "question": "Why is Title Case important?",
+          "answer": "Title Case draws reader attention, improves title readability, and lends a polished, professional look to articles, books, and blog posts."
+        }
+      ]
+    },
+    "uppercase-converter": {
+      "title": "Uppercase Converter - Convert Text to ALL CAPS",
+      "description": "Convert lowercase or mixed text blocks to UPPERCASE capital letters. Free, fast online text capitalizer.",
+      "heading": "Uppercase Converter",
+      "seo_content": "<p>An Uppercase Converter is a formatting utility to instantly make all characters in a text block capitalized (ALL CAPS). This is useful for writing shouts in chat layouts, creating warning banners, formatting database entries, or styling legal disclaimers.</p><p>Simply paste your text and convert it instantly with a single click.</p>",
+      "examples": [
+        {
+          "title": "legal clause capitalization",
+          "description": "Converting 'this agreement is valid' yields 'THIS AGREEMENT IS VALID' for contracts and disclaimers."
+        },
+        {
+          "title": "Code constant formatting",
+          "description": "Pasting 'max connections limit' and clicking uppercase converts it to 'MAX CONNECTIONS LIMIT'."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does uppercase conversion affect numbers or symbols?",
+          "answer": "No. Uppercase conversions only modify lowercase alphabetic characters (a-z). Numbers (0-9), punctuation marks, and special symbols are left unchanged."
+        },
+        {
+          "question": "Can I easily undo an uppercase conversion?",
+          "answer": "Yes, if you keep the original text copied, or you can run another conversion (like 'sentence case' or 'lowercase') to restore a standard sentence format."
+        }
+      ]
+    }
+  }
+}

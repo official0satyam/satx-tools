@@ -1,0 +1,73 @@
+<div class="form-group">
+  <label>Upload Image</label>
+  <div id="bg-dropzone" style="border: 2px dashed var(--primary); border-radius: 16px; padding: var(--space-lg); text-align: center; background: rgba(124, 58, 237, 0.02); cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"></path><circle cx="8.5" cy="10.5" r="1.5"></circle><polyline points="21 16 16 11 11 16 8 13 3 18"></polyline></svg>
+    <div style="font-weight: 700; font-family: var(--font-header); color: var(--text-color);">Drag & Drop Image Here</div>
+    <div style="font-size: 0.8rem; color: var(--text-muted);">solid or near-solid backgrounds work best</div>
+    <input type="file" id="bg-input" accept="image/*" style="display: none;">
+  </div>
+</div>
+
+<!-- Controls (Visible after image is loaded) -->
+<div id="bg-controls" style="display: none; border: 2px solid var(--border-color); border-radius: 16px; padding: var(--space-md); margin-top: var(--space-md); background: var(--card-bg);">
+  <h3 style="font-size: 1rem; font-family: var(--font-header); margin-bottom: var(--space-md); color: var(--text-color); border-bottom: 2px solid var(--border-color); padding-bottom: var(--space-sm);">Removal Settings</h3>
+  
+  <div class="grid-2col" style="align-items: center;">
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="bg-key-color">Key Color to Remove</label>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <input type="color" id="bg-key-color" value="#ffffff" style="width: 48px; height: 38px; border: 2px solid var(--border-color); border-radius: 8px; cursor: pointer; padding: 2px;" oninput="processBGRemoval()">
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">Click canvas preview to pick color</span>
+      </div>
+    </div>
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="bg-fill-type">Background Fill</label>
+      <select id="bg-fill-type" class="input-control" onchange="toggleFillType()">
+        <option value="transparent" selected>Transparent (PNG)</option>
+        <option value="solid">Replace with Solid Color</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group" id="bg-solid-picker-wrapper" style="display: none; margin-bottom: var(--space-md);">
+    <label for="bg-solid-color">Solid Background Color</label>
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <input type="color" id="bg-solid-color" value="#7c3aed" style="width: 48px; height: 38px; border: 2px solid var(--border-color); border-radius: 8px; cursor: pointer; padding: 2px;" oninput="processBGRemoval()">
+      <span style="font-size: 0.8rem; font-weight: 700;">Select fill color</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="bg-tolerance" style="display: flex; justify-content: space-between;">
+      <span>Color Tolerance</span>
+      <span id="bg-tolerance-lbl" style="color: var(--primary); font-weight: 800;">30%</span>
+    </label>
+    <input type="range" id="bg-tolerance" min="1" max="100" step="1" value="30" class="input-control" oninput="processBGRemoval()">
+  </div>
+
+  <div class="form-group" style="margin-bottom: 0;">
+    <label for="bg-feather" style="display: flex; justify-content: space-between;">
+      <span>Edge Feathering (Smoothness)</span>
+      <span id="bg-feather-lbl" style="color: var(--primary); font-weight: 800;">5px</span>
+    </label>
+    <input type="range" id="bg-feather" min="0" max="20" step="1" value="5" class="input-control" oninput="processBGRemoval()">
+  </div>
+</div>
+
+<!-- Output Preview Panel -->
+<div class="result-panel success" id="bg-result-panel" style="display: none; margin-top: var(--space-md);">
+  <div class="result-label" style="text-align: left; margin-bottom: var(--space-sm); color: var(--secondary); font-family: var(--font-header); font-size: 1.1rem; border-bottom: 2px dashed rgba(13, 148, 136, 0.2); padding-bottom: var(--space-sm);">Transparent Preview</div>
+  
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: var(--space-md);">
+    <div style="max-width: 100%; border: 2px solid var(--border-color); border-radius: 12px; overflow: auto; background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0px; display: flex; align-items: center; justify-content: center; max-height: 400px; box-shadow: var(--shadow-sm);">
+      <canvas id="bg-canvas" style="display: block; max-width: 100%; max-height: 400px; cursor: crosshair;" title="Click on image to select key color"></canvas>
+    </div>
+    
+    <div style="display: flex; gap: var(--space-sm); width: 100%; margin-top: var(--space-sm);">
+      <button onclick="downloadCutoutImage()" class="btn btn-primary" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download Cutout Image
+      </button>
+    </div>
+  </div>
+</div>

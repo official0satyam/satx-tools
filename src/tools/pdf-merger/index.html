@@ -1,0 +1,141 @@
+<div class="form-group" style="margin-bottom: var(--space-md);">
+  <label>PDF Tool Mode</label>
+  <div class="segmented-control" style="display: flex; gap: 6px; padding: 2px;">
+    <button id="pdf-tab-btn-merge" class="btn btn-secondary active" onclick="switchPdfTab('merge', this)">Merge PDFs</button>
+    <button id="pdf-tab-btn-split" class="btn btn-secondary" onclick="switchPdfTab('split', this)">Split/Extract Pages</button>
+    <button id="pdf-tab-btn-compress" class="btn btn-secondary" onclick="switchPdfTab('compress', this)">Optimize & Compress</button>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 1. MERGE WORKSPACE -->
+<!-- ========================================== -->
+<div id="pdf-mode-merge" class="pdf-mode-panel">
+  <div class="form-group">
+    <label>Upload PDF Files (Select 2 or more)</label>
+    <div id="pdf-dropzone" class="pdf-drop-area" style="border: 2px dashed var(--primary); border-radius: 16px; padding: var(--space-lg); text-align: center; background: rgba(124, 58, 237, 0.02); cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+      <div style="font-weight: 700; font-family: var(--font-header); color: var(--text-color);">Drag & Drop PDFs Here</div>
+      <div style="font-size: 0.8rem; color: var(--text-muted);">or click to browse from your device</div>
+      <input type="file" id="pdf-input" accept="application/pdf" multiple style="display: none;">
+    </div>
+  </div>
+
+  <div class="form-group" id="pdf-list-wrapper" style="display: none;">
+    <label style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+      <span style="font-weight: 700;">Selected Files (<span id="pdf-count">0</span>)</span>
+      <button onclick="clearPDFList()" class="btn btn-secondary" style="padding: 2px 10px; font-size: 0.75rem; min-height: unset; height: 26px; margin: 0;">Clear All</button>
+    </label>
+    <div id="pdf-file-list" style="display: flex; flex-direction: column; gap: 8px;">
+      <!-- Populated by script -->
+    </div>
+  </div>
+
+  <button id="pdf-merge-btn" onclick="mergePDFs()" class="btn btn-primary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: var(--space-md);" disabled>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+    Merge PDF Documents
+  </button>
+</div>
+
+<!-- ========================================== -->
+<!-- 2. SPLIT WORKSPACE -->
+<!-- ========================================== -->
+<div id="pdf-mode-split" class="pdf-mode-panel" style="display: none;">
+  <div class="form-group">
+    <label>Upload Single PDF to Split</label>
+    <div id="pdf-split-dropzone" class="pdf-drop-area" style="border: 2px dashed var(--primary); border-radius: 16px; padding: var(--space-lg); text-align: center; background: rgba(124, 58, 237, 0.02); cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="21" y1="12" x2="3" y2="12"></line></svg>
+      <div id="pdf-split-drop-txt" style="font-weight: 700; font-family: var(--font-header); color: var(--text-color);">Drag & Drop Single PDF Here</div>
+      <div id="pdf-split-drop-subtxt" style="font-size: 0.8rem; color: var(--text-muted);">or click to select file</div>
+      <input type="file" id="pdf-split-input" accept="application/pdf" style="display: none;">
+    </div>
+  </div>
+
+  <div id="pdf-split-config" style="display: none; border: 2px solid var(--border-color); border-radius: 16px; padding: var(--space-md); margin-top: var(--space-md); background: var(--card-bg);">
+    <h3 style="font-size: 1rem; font-family: var(--font-header); margin-bottom: var(--space-md); color: var(--text-color);">Extraction Details</h3>
+    <div class="invoice-row" style="margin-bottom: var(--space-md);">
+      <span class="invoice-lbl">Uploaded File Name:</span>
+      <span id="pdf-split-info-name" class="invoice-val" style="font-family: var(--font-body); font-weight: 700; font-size: 0.85rem;">filename.pdf</span>
+    </div>
+    <div class="invoice-row" style="margin-bottom: var(--space-md);">
+      <span class="invoice-lbl">Total Pages:</span>
+      <span id="pdf-split-info-pages" class="invoice-val">0 pages</span>
+    </div>
+    
+    <div class="form-group" style="margin-top: var(--space-md); margin-bottom: 0;">
+      <label for="pdf-split-ranges" style="display: flex; justify-content: space-between;">
+        <span>Page Ranges to Extract</span>
+        <span style="font-size: 0.75rem; color: var(--text-muted);">e.g., 1-3, 5, 8-10</span>
+      </label>
+      <input type="text" id="pdf-split-ranges" class="input-control" placeholder="e.g. 1-2, 4" value="1">
+    </div>
+  </div>
+
+  <button id="pdf-split-btn" onclick="splitPDF()" class="btn btn-primary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: var(--space-md);" disabled>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17l-5-5 5-5M18 17l-5-5 5-5"></path></svg>
+    Extract & Split PDF
+  </button>
+</div>
+
+<!-- ========================================== -->
+<!-- 3. COMPRESS WORKSPACE -->
+<!-- ========================================== -->
+<div id="pdf-mode-compress" class="pdf-mode-panel" style="display: none;">
+  <div class="form-group">
+    <label>Upload PDF to Compress</label>
+    <div id="pdf-comp-dropzone" class="pdf-drop-area" style="border: 2px dashed var(--primary); border-radius: 16px; padding: var(--space-lg); text-align: center; background: rgba(124, 58, 237, 0.02); cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85;"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M10 14l-7 7"></path></svg>
+      <div id="pdf-comp-drop-txt" style="font-weight: 700; font-family: var(--font-header); color: var(--text-color);">Drag & Drop PDF Here</div>
+      <div id="pdf-comp-drop-subtxt" style="font-size: 0.8rem; color: var(--text-muted);">or click to select file</div>
+      <input type="file" id="pdf-comp-input" accept="application/pdf" style="display: none;">
+    </div>
+  </div>
+
+  <div id="pdf-comp-config" style="display: none; border: 2px solid var(--border-color); border-radius: 16px; padding: var(--space-md); margin-top: var(--space-md); background: var(--card-bg);">
+    <h3 style="font-size: 1rem; font-family: var(--font-header); margin-bottom: var(--space-md); color: var(--text-color);">Compression Details</h3>
+    <div class="invoice-row" style="margin-bottom: var(--space-md);">
+      <span class="invoice-lbl">Uploaded File Name:</span>
+      <span id="pdf-comp-info-name" class="invoice-val" style="font-family: var(--font-body); font-weight: 700; font-size: 0.85rem;">filename.pdf</span>
+    </div>
+    <div class="invoice-row" style="margin-bottom: var(--space-md);">
+      <span class="invoice-lbl">Original File Size:</span>
+      <span id="pdf-comp-info-size" class="invoice-val">0 KB</span>
+    </div>
+    
+    <div class="form-group" style="margin-top: var(--space-md); margin-bottom: 0;">
+      <label for="pdf-comp-level">Compression Level</label>
+      <select id="pdf-comp-level" class="input-control">
+        <option value="high" selected>High Optimization (Strip Meta & Restructure Streams)</option>
+        <option value="medium">Standard Compression</option>
+      </select>
+    </div>
+  </div>
+
+  <button id="pdf-comp-btn" onclick="compressPDF()" class="btn btn-primary" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: var(--space-md);" disabled>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+    Optimize & Compress PDF
+  </button>
+</div>
+
+<!-- ========================================== -->
+<!-- UNIFIED RESULTS SECTION -->
+<!-- ========================================== -->
+<div class="result-panel success" id="pdf-result-panel" style="display: none; margin-top: var(--space-lg); margin-bottom: var(--space-md);">
+  <div class="result-label" style="text-align: left; margin-bottom: var(--space-sm); color: var(--secondary); font-family: var(--font-header); font-size: 1rem;">Process Output</div>
+  <div id="pdf-result-msg" style="font-size: 0.9rem; font-weight: 600; color: var(--text-color); margin-bottom: var(--space-md);">Process completed successfully!</div>
+  
+  <div id="pdf-compression-stats" class="glass-card" style="display: none; padding: 12px; margin-bottom: var(--space-md); border-color: rgba(13, 148, 136, 0.2); background: rgba(13, 148, 136, 0.02);">
+    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700;">
+      <span>Original Size: <span id="comp-stat-orig" style="color: var(--text-muted);">0 KB</span></span>
+      <span>Compressed Size: <span id="comp-stat-new" style="color: var(--secondary);">0 KB</span></span>
+      <span>Savings: <span id="comp-stat-saved" style="color: var(--green);">0%</span></span>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: var(--space-sm);">
+    <a id="pdf-download-link" href="#" class="btn btn-primary" style="flex: 1; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Download Output Document
+    </a>
+  </div>
+</div>

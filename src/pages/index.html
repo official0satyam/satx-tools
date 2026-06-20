@@ -1,0 +1,212 @@
+<!--
+{
+  "title": "Smart Tools For Everyday Problems",
+  "description": "Free online tools including calculators, student date tools, and secure password builders. Fast, free, and processed entirely locally in your web browser.",
+  "slug": "index.html"
+}
+-->
+<section class="hero reveal">
+  <div class="hero-shell">
+    <div class="hero-grid-centered">
+      
+      <!-- Interactive floating cards for desktop scene -->
+      <div class="scene" id="scene">
+        <div class="floating-card card-purple parallax card-a" data-depth="20" style="--rot:-7deg;">
+          <div class="mini">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 5L5 19"></path><circle cx="8" cy="8" r="1.5"></circle><circle cx="16" cy="16" r="1.5"></circle></svg>
+          </div>
+          <h3>Percentage Calculator</h3>
+          <p>Fast percentage math with clean results.</p>
+        </div>
+
+        <div class="floating-card card-cyan parallax card-b" data-depth="24" style="--rot:9deg;">
+          <div class="mini">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="4"></rect><path d="M9 9h6M9 12h6M9 15h3"></path></svg>
+          </div>
+          <h3>Password Generator</h3>
+          <p>Build strong secure passwords instantly.</p>
+        </div>
+
+        <div class="floating-card card-green parallax card-c" data-depth="14" style="--rot:5deg;">
+          <div class="mini">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14"></path><path d="M7 7v10a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7"></path><path d="M10 11h4M10 14h4"></path></svg>
+          </div>
+          <h3>GST Calculator</h3>
+          <p>Calculate GST on invoices in one tap.</p>
+        </div>
+
+        <div class="floating-card card-orange parallax card-d" data-depth="18" style="--rot:-5deg;">
+          <div class="mini">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v5l3 2"></path></svg>
+          </div>
+          <h3>Age Calculator</h3>
+          <p>Find your exact age in years, months, and days.</p>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:14px; height:14px; color:currentColor;">
+            <path d="M12 3l1.9 5.7L20 11l-6.1 2.3L12 19l-1.9-5.7L4 11l6.1-2.3L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          ⚡ 100% Client-Side & Private
+        </div>
+        
+        <h1>100+ Smart Tools.<br><span class="accent">Zero Confusion.</span></h1>
+        
+        <p class="hero-subtitle">Calculate percentages, determine exact ages, estimate GST, and generate secure passwords instantly in your web browser. No accounts. No tracking. No ads.</p>
+
+        <div class="search-box-container">
+          <div class="search-wrap" role="search" aria-label="Search tools">
+            <div class="search-input-wrapper">
+              <input id="hero-search" type="text" autocomplete="off" aria-label="Search tools input" />
+              <div class="placeholder-carousel" id="placeholder-carousel">
+                <span class="placeholder-slide active">Search for percentage calculator...</span>
+                <span class="placeholder-slide">Search for GST calculator...</span>
+                <span class="placeholder-slide">Search for age calculator...</span>
+                <span class="placeholder-slide">Search for password generator...</span>
+                <span class="placeholder-slide">Search for discount calculator...</span>
+              </div>
+            </div>
+            <button class="search-btn" id="searchBtn" onclick="document.getElementById('tools').scrollIntoView({ behavior: 'smooth' })" aria-label="Perform search">
+              <span class="btn-text">Search Tools</span>
+              <span class="btn-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; color: currentColor;">
+                  <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.5"></circle>
+                  <path d="M20 20l-3-3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div id="hero-search-results" class="search-results-dropdown" style="text-align: left;"></div>
+        </div>
+
+        <div class="chips" aria-label="Quick categories">
+          <a class="chip" href="/calculators/">Calculators</a>
+          <a class="chip" href="/student-tools/">Student Tools</a>
+          <a class="chip" href="/developer-tools/">Developer Tools</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Popular Tools Section -->
+<section class="section" id="tools">
+  <div class="section-head reveal">
+    <div>
+      <span class="section-chip">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:12px; height:12px;">
+          <path d="M4 8h16M4 16h16M8 4v16M16 4v16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        Popular Tools
+      </span>
+      <p>Start with our most used tools first. Keep every calculation simple, colorful, and fast.</p>
+    </div>
+  </div>
+  {{popular_tools_grid}}
+</section>
+
+<!-- Tool Categories Section -->
+<section class="section" id="categories">
+  <div class="section-head reveal">
+    <div>
+      <span class="section-chip">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:12px; height:12px;">
+          <path d="M4 7h6v6H4V7Zm10 0h6v6h-6V7ZM4 17h6v-6H4v6Zm10 0h6v-6h-6v6Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        Categories
+      </span>
+      <p>Explore our tools grouped by task areas. Select a category to find specific helpers.</p>
+    </div>
+  </div>
+  {{categories_grid}}
+</section>
+
+<!-- Recently Added Section -->
+<section class="section" id="recent">
+  <div class="section-head reveal">
+    <div>
+      <span class="section-chip">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:12px; height:12px;">
+          <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2.5"></circle><path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+        </svg>
+        Recently Added
+      </span>
+      <p>Check out our newest tools. Processed completely in your browser.</p>
+    </div>
+  </div>
+  {{recently_added_grid}}
+</section>
+
+<!-- Why Choose SatX Tools Section -->
+<section class="section" id="why">
+  <div class="section-head reveal">
+    <div>
+      <span class="section-chip">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:12px; height:12px;">
+          <path d="M12 4l3 6 6 .9-4.4 4.2L18 21l-6-3.1L6 21l1.4-5.9L3 10.9 9 10z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        Why SatX Tools
+      </span>
+      <p>We believe everyday utility tasks should be easy, private, and fun. Here is how we differ.</p>
+    </div>
+  </div>
+  
+  <div class="grid features-grid reveal">
+    <div class="feature">
+      <div class="bubble c-purple">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+      </div>
+      <h3>100% Client-Side</h3>
+      <p>Your numbers, dates, and values never leave your computer. We process everything in your web browser for complete privacy.</p>
+    </div>
+    
+    <div class="feature">
+      <div class="bubble c-green">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      </div>
+      <h3>Instant Speeds</h3>
+      <p>No slow databases, no registration menus, no API roundtrips. Load the page and calculate your answers immediately.</p>
+    </div>
+    
+    <div class="feature">
+      <div class="bubble c-cyan">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      </div>
+      <h3>No Accounts, No Ads</h3>
+      <p>No registration, subscription walls, or aggressive ads. Access premium-grade utilities completely free.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Band -->
+<section class="cta-band reveal" aria-label="Call to action">
+  <div class="cta-band-inner">
+    <div>
+      <h2>Smart Tools. Zero Confusion.</h2>
+      <p>Keep the first version simple, beautiful, and mobile-perfect. Add tools over time. Do not overload the first release.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="#tools" class="btn btn-primary">Start Using Tools</a>
+      <a href="/about.html" class="btn btn-secondary">About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- SEO Content Block -->
+<section class="tool-content reveal" style="border-top: 1px solid var(--border-color); padding-top: var(--space-xl); margin-top: var(--space-xl);">
+  <article class="tool-article" style="max-width: 800px; margin: 0 auto;">
+    <h2>Free Online Tools for Everyday Tasks</h2>
+    <p>
+      SatX Tools provides a growing collection of free online calculators, generators, converters, and productivity tools designed to help users solve everyday problems quickly and efficiently. Whether you need to calculate percentages, generate secure passwords, create QR codes, convert units, or perform financial calculations, our tools are built to be simple, fast, and mobile-friendly.
+    </p>
+    <p>
+      Our goal is to make useful online utilities accessible to everyone without requiring downloads, registrations, or complicated software. Most tools work directly inside your browser, helping you save time while maintaining privacy and convenience.
+    </p>
+    <p>
+      From students and professionals to developers and business owners, SatX Tools offers practical solutions for daily tasks in one convenient place.
+    </p>
+  </article>
+</section>

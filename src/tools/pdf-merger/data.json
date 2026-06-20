@@ -1,0 +1,70 @@
+{
+  "primary": {
+    "title": "PDF Tool Suite - Merge, Split and Compress PDFs Offline",
+    "description": "Perform essential PDF utilities locally in your web browser. Merge multiple documents, split or extract specific page ranges, and compress PDF file sizes securely.",
+    "heading": "PDF Tool Suite (Merge, Split, Compress)",
+    "seo_content": "<p>Our PDF Tool Suite provides three essential document operations that run 100% locally on your computer. Standard online tools require uploading your sensitive files to external servers, creating privacy vulnerabilities. By processing everything client-side in your web browser, your data remains completely private and secure.</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Merge PDF Documents</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Combine unlimited PDF files, arrange their order, and export a consolidated document in seconds.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Split & Extract PDF Pages</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Extract specific pages or page ranges (e.g. 1-3, 5, 8-10) into a new, separate PDF file instantly.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>3. Compress & Optimize PDF Size</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Reconstruct streams and strip obsolete metadata from PDF files to shrink their storage size without losing visual quality.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Extract specific pages from a report",
+        "description": "Upload a 10-page document, enter '2-4, 7' in the page range selector, and download a new PDF containing only those pages."
+      },
+      {
+        "title": "Compress a bloated document before emailing",
+        "description": "Upload your file to the compression tool, select High Optimization, and download an optimized version with up to 50% smaller file size."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How does the PDF compressor work offline?",
+        "answer": "It loads the PDF, strips redundant font mappings, cleans up edit metadata histories, and saves the binary using compressed object streams client-side, reducing size without degrading image resolution."
+      },
+      {
+        "question": "Is there a limit on pages I can split?",
+        "answer": "No. You can split any page range up to the total number of pages in the document. The split is performed instantly."
+      },
+      {
+        "question": "Are files saved or sent?",
+        "answer": "No files are sent to any server. Your PDFs are read, modified, and saved directly within your browser's local sandbox."
+      }
+    ]
+  },
+  "programmatic": {
+    "merge-pdf-files": {
+      "title": "Merge PDF Files - Combine PDFs offline in Browser",
+      "description": "Securely merge PDF files on your computer. Offline browser merging tool. No sign-ups required.",
+      "heading": "Merge PDF Files",
+      "seo_content": "<p>Merge PDF Files locally in your browser. Rearrange files, import multiple scans, and merge them without server uploads.</p>",
+      "examples": [
+        {
+          "title": "Join tax documents",
+          "description": "Upload your form files and combine them for easy submission."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does this support password-protected PDFs?",
+          "answer": "No, encrypted or password-protected PDF files must be decrypted before they can be merged by this client-side library."
+        }
+      ]
+    },
+    "pdf-joiner": {
+      "title": "PDF Joiner - Join Multiple PDF Pages Locally",
+      "description": "Join PDF pages and documents together. Easy drag-and-drop secure offline PDF union tool.",
+      "heading": "PDF Joiner",
+      "seo_content": "<p>The PDF Joiner provides a simple drag-and-drop workflow to drop files, inspect the order, remove selected items, and download the joined PDF document instantly.</p>",
+      "examples": [
+        {
+          "title": "Consolidate scanning outputs",
+          "description": "Join separately scanned pages into a single document."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Which browsers are supported?",
+          "answer": "Any modern web browser supporting standard File APIs and canvas operations, including Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge."
+        }
+      ]
+    }
+  }
+}

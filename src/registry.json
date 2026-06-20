@@ -1,0 +1,424 @@
+{
+  "site": {
+    "name": "SatX Tools",
+    "tagline": "Smart Tools For Everyday Problems",
+    "url": "https://satxtools.com",
+    "contactEmail": "hello@satex.fun",
+    "googleAnalyticsId": "G-XXXXXXXXXX"
+  },
+  "categories": [
+    {
+      "id": "calculators",
+      "name": "Calculators",
+      "slug": "calculators",
+      "description": "Free online calculators to solve financial, mathematical, and everyday estimation problems quickly."
+    },
+    {
+      "id": "student-tools",
+      "name": "Student Tools",
+      "slug": "student-tools",
+      "description": "Essential student and academic utilities, including grade estimators, timers, and learning converters."
+    },
+    {
+      "id": "developer-tools",
+      "name": "Developer Tools",
+      "slug": "developer-tools",
+      "description": "Useful utilities for developers, designers, and tech professionals including builders, converters, and generators."
+    }
+  ],
+  "tools": [
+    {
+      "slug": "percentage-calculator",
+      "name": "Percentage Calculator",
+      "category": [
+        "calculators",
+        "student-tools"
+      ],
+      "popular": true,
+      "shortDescription": "Calculate percentages, percentage increase, and percentage decrease easily.",
+      "pseos": [
+        {
+          "slug": "percentage-increase-calculator",
+          "name": "Percentage Increase Calculator"
+        },
+        {
+          "slug": "percentage-decrease-calculator",
+          "name": "Percentage Decrease Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "age-calculator",
+      "name": "Age Calculator",
+      "category": [
+        "calculators",
+        "student-tools"
+      ],
+      "popular": true,
+      "shortDescription": "Calculate your exact age in years, months, and days, and track your next birthday countdown.",
+      "pseos": [
+        {
+          "slug": "birthday-calculator",
+          "name": "Birthday Calculator"
+        },
+        {
+          "slug": "how-old-am-i",
+          "name": "How Old Am I Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "gst-calculator",
+      "name": "GST Calculator",
+      "category": "calculators",
+      "popular": true,
+      "shortDescription": "Quickly add or remove GST from prices using standard rates (5%, 12%, 18%, 28%) or custom tax inputs.",
+      "pseos": [
+        {
+          "slug": "gst-percentage-calculator",
+          "name": "GST Percentage Calculator"
+        },
+        {
+          "slug": "reverse-gst-calculator",
+          "name": "Reverse GST Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "discount-calculator",
+      "name": "Discount Calculator",
+      "category": "calculators",
+      "popular": false,
+      "shortDescription": "Calculate final discount prices, total amounts saved, and apply stacked coupon deductions.",
+      "pseos": [
+        {
+          "slug": "sale-price-calculator",
+          "name": "Sale Price Calculator"
+        },
+        {
+          "slug": "percent-off-calculator",
+          "name": "Percent Off Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "password-generator",
+      "name": "Password Generator",
+      "category": "developer-tools",
+      "popular": true,
+      "shortDescription": "Create strong, secure, and customizable passwords instantly to protect your online accounts.",
+      "pseos": [
+        {
+          "slug": "secure-password-generator",
+          "name": "Secure Password Generator"
+        },
+        {
+          "slug": "random-string-generator",
+          "name": "Random String Generator"
+        }
+      ]
+    },
+    {
+      "slug": "emi-calculator",
+      "name": "EMI Calculator",
+      "category": "calculators",
+      "popular": true,
+      "shortDescription": "Calculate monthly loan payments (EMI), total interest payable, and total repayment value.",
+      "pseos": [
+        {
+          "slug": "home-loan-calculator",
+          "name": "Home Loan Calculator"
+        },
+        {
+          "slug": "car-loan-calculator",
+          "name": "Car Loan Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "sip-calculator",
+      "name": "SIP Calculator",
+      "category": "calculators",
+      "popular": true,
+      "shortDescription": "Calculate estimated returns and future maturity wealth for monthly SIP investments.",
+      "pseos": [
+        {
+          "slug": "mutual-fund-calculator",
+          "name": "Mutual Fund Calculator"
+        },
+        {
+          "slug": "lumpsum-calculator",
+          "name": "Lumpsum Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "bmi-calculator",
+      "name": "BMI Calculator",
+      "category": "student-tools",
+      "popular": false,
+      "shortDescription": "Calculate Body Mass Index (BMI) and discover your ideal weight category range.",
+      "pseos": [
+        {
+          "slug": "ideal-weight-calculator",
+          "name": "Ideal Weight Calculator"
+        },
+        {
+          "slug": "weight-loss-calculator",
+          "name": "Weight Loss Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "date-calculator",
+      "name": "Date Calculator",
+      "category": [
+        "student-tools",
+        "calculators"
+      ],
+      "popular": false,
+      "shortDescription": "Calculate days between dates or add/subtract days from any specific calendar date.",
+      "pseos": [
+        {
+          "slug": "days-between-dates",
+          "name": "Days Between Dates"
+        },
+        {
+          "slug": "days-calculator",
+          "name": "Days Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "word-counter",
+      "name": "Word Counter",
+      "category": [
+        "student-tools",
+        "developer-tools"
+      ],
+      "popular": true,
+      "shortDescription": "Count words, characters, sentences, paragraphs, and estimate reading/speaking times.",
+      "pseos": [
+        {
+          "slug": "character-counter",
+          "name": "Character Counter"
+        },
+        {
+          "slug": "word-count-tool",
+          "name": "Word Count Tool"
+        }
+      ]
+    },
+    {
+      "slug": "case-converter",
+      "name": "Case Converter",
+      "category": [
+        "developer-tools",
+        "student-tools"
+      ],
+      "popular": false,
+      "shortDescription": "Convert text block casings easily (Sentence case, UPPERCASE, lowercase, Title Case, camelCase, slug-case).",
+      "pseos": [
+        {
+          "slug": "title-case-converter",
+          "name": "Title Case Converter"
+        },
+        {
+          "slug": "uppercase-converter",
+          "name": "Uppercase Converter"
+        }
+      ]
+    },
+    {
+      "slug": "json-formatter",
+      "name": "JSON Formatter & Validator",
+      "category": "developer-tools",
+      "popular": true,
+      "shortDescription": "Validate, parse, beautify, formatting with indentation options, or minify raw JSON string contents.",
+      "pseos": [
+        {
+          "slug": "json-validator",
+          "name": "JSON Validator"
+        },
+        {
+          "slug": "json-beautifier",
+          "name": "JSON Beautifier"
+        }
+      ]
+    },
+    {
+      "slug": "tip-calculator",
+      "name": "Tip Calculator",
+      "category": "calculators",
+      "popular": true,
+      "shortDescription": "Split restaurant or event bills between friends and calculate precise tip percentages.",
+      "pseos": [
+        {
+          "slug": "bill-splitter",
+          "name": "Bill Splitter"
+        },
+        {
+          "slug": "gratuity-calculator",
+          "name": "Gratuity Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "compound-interest-calculator",
+      "name": "Compound Interest Calculator",
+      "category": "calculators",
+      "popular": true,
+      "shortDescription": "Calculate how your savings grow over time with compounding interest.",
+      "pseos": [
+        {
+          "slug": "compound-savings-calculator",
+          "name": "Compound Savings Calculator"
+        },
+        {
+          "slug": "interest-calculator",
+          "name": "Interest Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "currency-converter",
+      "name": "Currency Converter",
+      "category": "calculators",
+      "popular": true,
+      "shortDescription": "Convert money values between global currencies using live exchange rates.",
+      "pseos": [
+        {
+          "slug": "live-currency-rates",
+          "name": "Live Currency Rates"
+        },
+        {
+          "slug": "exchange-rate-calculator",
+          "name": "Exchange Rate Calculator"
+        }
+      ]
+    },
+    {
+      "slug": "unit-converter",
+      "name": "Unit Converter",
+      "category": [
+        "student-tools",
+        "calculators"
+      ],
+      "popular": true,
+      "shortDescription": "Convert weights, lengths, temperatures, and kitchen measurements.",
+      "pseos": [
+        {
+          "slug": "length-converter",
+          "name": "Length Converter"
+        },
+        {
+          "slug": "weight-converter",
+          "name": "Weight Converter"
+        }
+      ]
+    },
+    {
+      "slug": "pdf-merger",
+      "name": "PDF Merger",
+      "category": [
+        "student-tools",
+        "developer-tools"
+      ],
+      "popular": true,
+      "shortDescription": "Combine multiple PDF files into a single PDF document securely in your browser.",
+      "pseos": [
+        {
+          "slug": "merge-pdf-files",
+          "name": "Merge PDF Files"
+        },
+        {
+          "slug": "pdf-joiner",
+          "name": "PDF Joiner"
+        }
+      ]
+    },
+    {
+      "slug": "qr-generator",
+      "name": "QR Code Generator",
+      "category": "developer-tools",
+      "popular": true,
+      "shortDescription": "Generate scannable QR codes for links, text, Wi-Fi credentials, or contacts.",
+      "pseos": [
+        {
+          "slug": "wifi-qr-generator",
+          "name": "Wi-Fi QR Code Generator"
+        },
+        {
+          "slug": "text-qr-generator",
+          "name": "Text QR Code Generator"
+        }
+      ]
+    },
+    {
+      "slug": "image-compressor",
+      "name": "Image Compressor",
+      "category": "developer-tools",
+      "popular": true,
+      "shortDescription": "Compress and resize JPEGs, PNGs, and WebPs locally to save storage.",
+      "pseos": [
+        {
+          "slug": "jpeg-compressor",
+          "name": "JPEG Compressor"
+        },
+        {
+          "slug": "png-compressor",
+          "name": "PNG Compressor"
+        }
+      ]
+    },
+    {
+      "slug": "bg-remover",
+      "name": "Background Remover",
+      "category": "developer-tools",
+      "popular": true,
+      "shortDescription": "Remove backgrounds from images locally with simple color threshold controls.",
+      "pseos": [
+        {
+          "slug": "remove-image-background",
+          "name": "Remove Image Background"
+        },
+        {
+          "slug": "transparent-image-maker",
+          "name": "Transparent Image Maker"
+        }
+      ]
+    }
+  ],
+  "blog": [
+    {
+      "slug": "how-to-calculate-percentage-quickly",
+      "title": "How To Calculate Percentage Quickly",
+      "description": "Learn rapid mental tricks and easy formulas to calculate percentages quickly in your head or with a calculator.",
+      "date": "2026-06-16"
+    },
+    {
+      "slug": "percentage-formula-explained",
+      "title": "Percentage Formula Explained with Simple Examples",
+      "description": "A complete beginner-friendly breakdown of the mathematical percentage formula, including increases and decreases.",
+      "date": "2026-06-16"
+    },
+    {
+      "slug": "what-is-gst-in-india",
+      "title": "What Is GST In India? A Beginner's Guide",
+      "description": "An introductory guide explaining the Goods and Services Tax (GST) system in India, its slabs, and its components.",
+      "date": "2026-06-16"
+    },
+    {
+      "slug": "how-gst-is-calculated",
+      "title": "How GST Is Calculated: Detailed Formula & Rules",
+      "description": "Understand the exact formulas used to calculate inclusive and exclusive GST rates with practical step-by-step examples.",
+      "date": "2026-06-16"
+    },
+    {
+      "slug": "strong-password-examples",
+      "title": "Strong Password Examples & Key Rules for Online Security",
+      "description": "Discover what makes a password secure, see practical examples, and learn why automated generation beats manual patterns.",
+      "date": "2026-06-16"
+    }
+  ]
+}

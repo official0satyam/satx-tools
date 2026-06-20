@@ -1,0 +1,82 @@
+{
+  "primary": {
+    "title": "Date Calculator - Find Days Between Dates Online",
+    "description": "Calculate the difference in days, weeks, months, or years between two dates, or add/subtract days from any target date. Free client-side tool.",
+    "heading": "Date Calculator",
+    "seo_content": "<p>Our Date Calculator performs calculations across two primary tabs. Here is a guide with examples:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Days Between Dates (Difference Tab)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Calculates the net span in days, weeks, months, or years between two calendar dates.<br><em>Example:</em> Duration between June 1 and August 15 is <strong>75 days</strong> (or <strong>10 weeks and 5 days</strong>).</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Add or Subtract Days (Offset Tab)</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Projects a new target date by adding or subtracting calendar units (days, weeks, months, years) from a start point.<br><em>Example:</em> Adding 45 days starting September 10 projects to <strong>October 25</strong>.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Project sprint duration",
+        "description": "To calculate the calendar duration between a start date of June 1 and end date of August 15, enter the dates in the difference tab. The result is 75 days (or 10 weeks and 5 days)."
+      },
+      {
+        "title": "Adding lead time to date",
+        "description": "If a manufacturing process requires 45 days of lead time starting September 10, add 45 days in the add/subtract tab to find the completion date of October 25."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How are calendar days computed between two dates?",
+        "answer": "Calendar days are computed by converting both dates into epoch timestamps (milliseconds elapsed since January 1, 1970), subtracting the start timestamp from the end timestamp, and dividing the difference by 86,400,000 (the number of milliseconds in a day)."
+      },
+      {
+        "question": "Does this calculator account for leap years?",
+        "answer": "Yes, our client-side JavaScript date library naturally accounts for leap years (e.g. February having 29 days) and varying lengths of different calendar months."
+      }
+    ]
+  },
+  "programmatic": {
+    "days-between-dates": {
+      "title": "Days Between Dates Calculator - Find Calendar Day Span",
+      "description": "Find the exact count of days, weeks, or months between two calendar dates. Free, fast online date difference tool.",
+      "heading": "Days Between Dates Calculator",
+      "seo_content": "<p>Find the exact count of days, weeks, or months between two calendar dates. Here is a standard tracking check:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Date Span tracking</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\"><em>Example:</em> Calculating the days between October 15 and January 1 of the following year yields exactly <strong>78 days</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "New Year countdown",
+          "description": "Calculating the days between October 15 and January 1 of the following year yields exactly 78 days."
+        },
+        {
+          "title": "Academic semester length",
+          "description": "A college semester running from August 28 to December 15 spans 109 calendar days."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can I include the end date in the day count?",
+          "answer": "Standard date span calculations exclude the end date (representing the net span). If you want to count total calendar days including both the start and end dates, simply add 1 to the final result."
+        },
+        {
+          "question": "How many business days are in a span?",
+          "answer": "This calculator counts absolute calendar days. To estimate business days, subtract the weekends (Saturdays and Sundays) from the total count."
+        }
+      ]
+    },
+    "days-calculator": {
+      "title": "Days Calculator - Add or Subtract Days from Date",
+      "description": "Find a target date by adding or subtracting days, weeks, months, or years. Free calendar date offset utility.",
+      "heading": "Days Calculator",
+      "seo_content": "<p>Find a target date by adding or subtracting days, weeks, months, or years. Here is a business payment terms example:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Invoice Due Date calculation</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\"><em>Example:</em> If you issue an invoice on May 15 with net-90 payment terms, adding 90 days results in a payment due date of <strong>August 13</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "90-day invoice terms",
+          "description": "If you issue an invoice on May 15 with net-90 payment terms, adding 90 days results in a payment due date of August 13."
+        },
+        {
+          "title": "Subtracting weeks for event prep",
+          "description": "If an exhibition is scheduled for November 20, and you need to start setup 6 weeks prior, subtracting 6 weeks gives a start date of October 9."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How does adding a month differ from adding 30 days?",
+          "answer": "Adding a month increments the month index directly (e.g. March 15 becomes April 15, which is 31 days). Adding 30 days increments the day count, meaning March 15 plus 30 days is April 14."
+        },
+        {
+          "question": "What happens if a calculation falls on February 29?",
+          "answer": "If you add or subtract years and the target year is not a leap year, the date will shift to February 28 to remain valid."
+        }
+      ]
+    }
+  }
+}

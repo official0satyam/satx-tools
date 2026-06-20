@@ -1,0 +1,73 @@
+<div class="form-group" style="display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: var(--space-md);">
+  <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); font-family: var(--font-header);">Currency:</span>
+  <select class="input-control currency-select" style="width: auto; padding: 4px 12px; min-height: unset; height: 32px; font-size: 0.85rem; border-radius: 8px; margin-top: 0;">
+    <option value="$">USD ($)</option>
+    <option value="₹">INR (₹)</option>
+    <option value="€">EUR (€)</option>
+    <option value="£">GBP (£)</option>
+    <option value="¥">JPY (¥)</option>
+  </select>
+</div>
+
+<!-- Segmented Tab Selectors for GST Calculation Direction -->
+<div class="segmented-control">
+  <button class="segment-btn active" id="btn-gst-add" onclick="switchGstTab('add')">Add GST (Exclusive)</button>
+  <button class="segment-btn" id="btn-gst-remove" onclick="switchGstTab('remove')">Remove GST (Inclusive)</button>
+</div>
+
+<div class="grid-2col" style="margin-bottom: var(--space-lg);">
+  <div class="form-group">
+    <label id="lbl-gst-price" for="gst-price">Base Price Value (<span class="currency-symbol">$</span>)</label>
+    <input type="number" id="gst-price" class="input-control" value="1000">
+  </div>
+  <div class="form-group">
+    <label for="gst-rate">Tax / GST Rate (%)</label>
+    <select id="gst-rate" class="input-control" onchange="toggleCustomGstRate()">
+      <option value="5">5% (Essentials)</option>
+      <option value="12">12% (Standard Utilities)</option>
+      <option value="18" selected>18% (Standard default)</option>
+      <option value="28">28% (Luxurious Surcharge)</option>
+      <option value="custom">Custom Rate %</option>
+    </select>
+  </div>
+</div>
+
+<!-- Hidden Custom Rate Input Block -->
+<div class="form-group" id="gst-custom-rate-group" style="display: none; margin-bottom: var(--space-lg);">
+  <label for="gst-custom-rate">Enter Custom Tax Rate (%)</label>
+  <input type="number" id="gst-custom-rate" class="input-control" placeholder="e.g. 15" value="15">
+</div>
+
+<div class="result-panel success">
+  <div class="result-label" id="lbl-gst-invoice-header" style="text-align: left; margin-bottom: var(--space-md); color: var(--secondary); font-family: var(--font-header); font-size: 1.1rem; border-bottom: 2px dashed rgba(13, 148, 136, 0.2); padding-bottom: var(--space-sm);">GST Invoice Breakdown</div>
+  
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div class="invoice-row">
+      <span class="invoice-lbl" id="lbl-invoice-net">Net Price (Base):</span>
+      <span id="invoice-base" class="invoice-val">$1,000.00</span>
+    </div>
+    <div class="invoice-row">
+      <span class="invoice-lbl">CGST (Central Tax):</span>
+      <span id="invoice-cgst" class="invoice-val">$90.00</span>
+    </div>
+    <div class="invoice-row">
+      <span class="invoice-lbl">SGST (State Tax):</span>
+      <span id="invoice-sgst" class="invoice-val">$90.00</span>
+    </div>
+    <div class="invoice-row" style="color: var(--secondary);">
+      <span class="invoice-lbl" style="color: var(--secondary); font-weight: 700;">Total Tax Amount:</span>
+      <span id="invoice-tax" class="invoice-val" style="color: var(--secondary); font-weight: 800;">+$180.00</span>
+    </div>
+    <div class="invoice-row invoice-total-row">
+      <span class="invoice-lbl" id="lbl-invoice-total">Gross Total Price:</span>
+      <span id="invoice-total" class="invoice-val">$1,180.00</span>
+    </div>
+  </div>
+</div>
+
+<div class="copy-btn-wrapper">
+  <button onclick="copyGSTResult(this)" class="btn btn-success btn-copy">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Full Breakdown
+  </button>
+</div>

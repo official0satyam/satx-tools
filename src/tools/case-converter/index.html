@@ -1,0 +1,27 @@
+<div class="form-group">
+  <label for="case-input">Enter Text To Convert</label>
+  <textarea id="case-input" class="input-control" rows="10" placeholder="Type or paste your text here and click any conversion action button below..." style="resize: vertical; font-family: var(--font-body); font-weight: 500;"></textarea>
+</div>
+
+<div style="display: flex; gap: var(--space-sm); margin-bottom: var(--space-lg); justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  <div style="color: var(--text-muted); font-size: 0.85rem; font-weight: 700;">
+    Characters: <span id="case-char-lbl" style="color: var(--primary);">0</span> | Words: <span id="case-word-lbl" style="color: var(--primary);">0</span>
+  </div>
+  <div style="display: flex; gap: var(--space-sm);">
+    <button onclick="clearCaseText()" class="btn btn-secondary" style="padding: 8px 16px; min-height: unset; font-size: 0.85rem;">Clear</button>
+    <button onclick="copyCaseText(this)" class="btn btn-secondary btn-copy" style="padding: 8px 16px; min-height: unset; font-size: 0.85rem;">Copy Output</button>
+  </div>
+</div>
+
+<div class="glass-card" style="padding: var(--space-md); margin-bottom: var(--space-md);">
+  <h3 style="margin-bottom: var(--space-md); font-family: var(--font-header); font-weight: 800; border-bottom: 2px dashed var(--border-color); padding-bottom: var(--space-xs);">Conversion Actions</h3>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-sm);">
+    <button onclick="convertCase('sentence')" class="btn btn-secondary" style="font-size: 0.85rem; padding: 10px;">Sentence case</button>
+    <button onclick="convertCase('upper')" class="btn btn-secondary" style="font-size: 0.85rem; padding: 10px;">UPPERCASE</button>
+    <button onclick="convertCase('lower')" class="btn btn-secondary" style="font-size: 0.85rem; padding: 10px;">lowercase</button>
+    <button onclick="convertCase('title')" class="btn btn-secondary" style="font-size: 0.85rem; padding: 10px;">Title Case</button>
+    <button onclick="convertCase('camel')" class="btn btn-secondary" style="font-size: 0.85rem; padding: 10px;">camelCase</button>
+    <button onclick="convertCase('slug')" class="btn btn-secondary" style="font-size: 0.85rem; padding: 10px;">slug-case</button>
+  </div>
+</div>

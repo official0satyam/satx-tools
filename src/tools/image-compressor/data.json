@@ -1,0 +1,66 @@
+{
+  "primary": {
+    "title": "Image Compressor - Compress and Resize Images Online",
+    "description": "Compress and resize JPEG, PNG, and WebP images locally in your browser. Reduce file size instantly without quality loss. 100% secure.",
+    "heading": "Image Compressor",
+    "seo_content": "<p>An Image Compressor is an essential tool for web developers, bloggers, and designers. Large image files slow down website loading speeds, inflate cloud hosting costs, and fail upload size restrictions on email attachments and application forms.</p><p>This tool runs entirely client-side, using the browser's Canvas API. Simply upload a JPEG, PNG, or WebP file, adjust quality percentages, resize dimensions, and download the compressed copy. Because files are processed locally, your photos never upload to remote servers, safeguarding your personal data.</p>",
+    "examples": [
+      {
+        "title": "Shrink JPEG camera photo size",
+        "description": "Upload a 5MB JPEG photo, slide the quality scale down to 75%, and save a compressed 600KB file that looks virtually identical."
+      },
+      {
+        "title": "Resize a logo image for social media",
+        "description": "Upload a large PNG logo, input new width dimensions (e.g. 800px), and download the resized, web-optimized copy."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What image formats are supported?",
+        "answer": "This tool supports standard formats including JPEG, PNG, WebP, and GIF (as static files). You can also convert formats during compression."
+      },
+      {
+        "question": "How does client-side compression work?",
+        "answer": "The browser reads your file as an image object, renders it on an off-screen HTML canvas at selected dimensions, and outputs the graphic back into JPEG/WebP formats using adjustable compression algorithms."
+      }
+    ]
+  },
+  "programmatic": {
+    "jpeg-compressor": {
+      "title": "JPEG Compressor - Shrink JPEG Photo Size Online",
+      "description": "Compress JPEG images without losing quality. Adjust image dimensions and quality locally. Free online JPEG shrinker.",
+      "heading": "JPEG Compressor",
+      "seo_content": "<p>JPEG is the standard format for web photography. Use our JPEG Compressor to scale down your photos to small file sizes suitable for websites and newsletters.</p>",
+      "examples": [
+        {
+          "title": "Shrink portfolio page photo size",
+          "description": "Compress high-res camera uploads to lightweight 200KB images."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Will I lose image detail?",
+          "answer": "A quality rating between 70% and 85% significantly reduces file sizes (often by 80%) while keeping the compression artifacting invisible to the human eye."
+        }
+      ]
+    },
+    "png-compressor": {
+      "title": "PNG Compressor - Compress Transparent PNG Images",
+      "description": "Optimize PNG files and transparent graphics offline. Convert PNG to WebP or JPEG for better compression.",
+      "heading": "PNG Compressor",
+      "seo_content": "<p>PNG images are lossless but often result in large files. Our compressor helps you downsize PNGs, preserve transparency, or convert them to WebP for much higher compression rates.</p>",
+      "examples": [
+        {
+          "title": "Compress vector logo asset",
+          "description": "Reduce a transparent banner PNG size for fast page loading."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can I keep transparency in my PNG?",
+          "answer": "Yes. If you save as PNG or WebP, the background transparency is preserved. Converting to JPEG will fill transparent areas with solid white."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "primary": {
+    "title": "Word Counter - Free Online Character Counter",
+    "description": "Count words, characters, sentences, paragraphs, and estimate reading/speaking times in real-time. Free online writing utility.",
+    "heading": "Word Counter",
+    "seo_content": "<p>A Word Counter is an essential utility for writers, editors, students, and content creators to track composition lengths. Writing for specific publishers, social media updates, or academic papers requires fitting within strict length ranges.</p><p>Our real-time word counter processes text instantly in your browser, generating counts for words, characters (with and without spacing), sentences, and paragraphs, alongside estimated time indicators.</p>",
+    "examples": [
+      {
+        "title": "Social media post check",
+        "description": "Paste your copy into the text area to see character counts instantly. Useful for keeping posts under specific character thresholds."
+      },
+      {
+        "title": "Academic essay length",
+        "description": "Paste your research draft to verify you have reached your target count (e.g. 1,000 words) without manually calculating pages."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the average reading speed used?",
+        "answer": "The average adult reading speed is estimated at 225 words per minute (WPM). The calculator divides your total word count by 225 to estimate reading time."
+      },
+      {
+        "question": "What is the average speaking speed used?",
+        "answer": "The average speaking speed for presentations or speeches is approximately 130 words per minute. The calculator divides your total word count by 130 to estimate speech duration."
+      }
+    ]
+  },
+  "programmatic": {
+    "character-counter": {
+      "title": "Character Counter - Real-time Character Count Tool",
+      "description": "Count characters with or without spaces in real-time. Keep text within strict limits for metadata, forms, or social posts.",
+      "heading": "Character Counter",
+      "seo_content": "<p>A Character Counter is highly useful when writing text that must fit within exact limits. Search engine title tags (max 60 characters), meta descriptions (max 160 characters), or social media updates all require precise tracking.</p><p>This tool counts every single keystroke, including punctuation, spaces, and line breaks, updating counts instantly as you type.</p>",
+      "examples": [
+        {
+          "title": "Google title tag optimization",
+          "description": "Type your SEO title tag into the text box to verify it is under the 60-character count limit to avoid truncation in search results."
+        },
+        {
+          "title": "Form input character checking",
+          "description": "If a database input field is restricted to 255 characters, write your text here first to guarantee it won't be chopped off on submission."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do spaces count as characters?",
+          "answer": "Yes, standard character counts include spaces. However, our tool displays two separate stats: 'Characters (with spaces)' and 'Characters (no spaces)' so you have both metrics."
+        },
+        {
+          "question": "How are line breaks counted?",
+          "answer": "Line breaks are counted as a single character in JavaScript text length properties, representing a carriage return or line feed."
+        }
+      ]
+    },
+    "word-count-tool": {
+      "title": "Word Count Tool - Free Essay & Article Checker",
+      "description": "Check word counts for your articles, blogs, essays, or drafts. Real-time online text counting helper.",
+      "heading": "Word Count Tool",
+      "seo_content": "<p>The Word Count Tool is optimized for long-form content writing like blogs, articles, essays, and reports. Staying within recommended lengths ensures your content is concise, covers key details, and fits publisher standards.</p><p>Simply paste or type your draft to see real-time statistics updating in a clean, user-friendly workspace.</p>",
+      "examples": [
+        {
+          "title": "Blog article draft check",
+          "description": "Verify your blog draft has reached the recommended length of 1,500 words for detailed search engine visibility."
+        },
+        {
+          "title": "Short story submittal check",
+          "description": "Ensure your creative writing submissions fit within short-story journal bounds (e.g. 3,000 to 5,000 words)."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does this tool save or upload my text?",
+          "answer": "No. Like all SatX Tools, the Word Counter operates 100% locally in your web browser. Your text never leaves your device or goes to any server, making it completely secure for drafts."
+        },
+        {
+          "question": "How are hyphenated words counted?",
+          "answer": "A hyphenated word (e.g. 'self-evident') is typically counted as a single word by standard regex counting rules, as it is separated by a hyphen rather than spacing."
+        }
+      ]
+    }
+  }
+}

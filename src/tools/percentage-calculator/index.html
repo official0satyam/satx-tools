@@ -1,0 +1,103 @@
+<!-- Segmented Tab Selectors -->
+<div class="segmented-control" style="flex-wrap: wrap; gap: 4px;">
+  <button class="segment-btn active" id="btn-tab-value" onclick="switchTab('value')">X% of Y</button>
+  <button class="segment-btn" id="btn-tab-ratio" onclick="switchTab('ratio')">X is what % of Y?</button>
+  <button class="segment-btn" id="btn-tab-change" onclick="switchTab('change')">% Change</button>
+  <button class="segment-btn" id="btn-tab-diff" onclick="switchTab('diff')">% Difference</button>
+  <button class="segment-btn" id="btn-tab-base" onclick="switchTab('base')">X is Y% of what?</button>
+</div>
+
+<!-- Tab 1: Calculate Value -->
+<div id="panel-value" class="tab-panel">
+  <div class="grid-2col">
+    <div class="form-group">
+      <label for="val-percent">Percentage (%)</label>
+      <input type="number" id="val-percent" class="input-control" placeholder="e.g. 15" value="15">
+    </div>
+    <div class="form-group">
+      <label for="val-total">Of Total Value</label>
+      <input type="number" id="val-total" class="input-control" placeholder="e.g. 250" value="250">
+    </div>
+  </div>
+  
+  <div class="result-panel">
+    <div class="result-val" id="res-value-val">37.5</div>
+    <div class="result-label" id="res-value-lbl">15% of 250</div>
+  </div>
+</div>
+
+<!-- Tab 2: Calculate Ratio -->
+<div id="panel-ratio" class="tab-panel" style="display: none;">
+  <div class="grid-2col">
+    <div class="form-group">
+      <label for="ratio-part">Part Value (X)</label>
+      <input type="number" id="ratio-part" class="input-control" placeholder="e.g. 50" value="50">
+    </div>
+    <div class="form-group">
+      <label for="ratio-whole">Whole Value (Y)</label>
+      <input type="number" id="ratio-whole" class="input-control" placeholder="e.g. 200" value="200">
+    </div>
+  </div>
+  
+  <div class="result-panel">
+    <div class="result-val" id="res-ratio-val">25%</div>
+    <div class="result-label" id="res-ratio-lbl">50 is what percent of 200</div>
+  </div>
+</div>
+
+<!-- Tab 3: Calculate Change -->
+<div id="panel-change" class="tab-panel" style="display: none;">
+  <div class="grid-2col">
+    <div class="form-group">
+      <label for="change-start">Starting Value</label>
+      <input type="number" id="change-start" class="input-control" placeholder="e.g. 80" value="80">
+    </div>
+    <div class="form-group">
+      <label for="change-end">Ending Value</label>
+      <input type="number" id="change-end" class="input-control" placeholder="e.g. 100" value="100">
+    </div>
+  </div>
+  
+  <div class="result-panel">
+    <div class="result-val" id="res-change-val">+25%</div>
+    <div class="result-label" id="res-change-lbl">Increase from 80 to 100</div>
+  </div>
+</div>
+
+<!-- Tab 4: Calculate Difference -->
+<div id="panel-diff" class="tab-panel" style="display: none;">
+  <div class="grid-2col">
+    <div class="form-group">
+      <label for="diff-val1">Value 1 (X)</label>
+      <input type="number" id="diff-val1" class="input-control" placeholder="e.g. 50" value="50">
+    </div>
+    <div class="form-group">
+      <label for="diff-val2">Value 2 (Y)</label>
+      <input type="number" id="diff-val2" class="input-control" placeholder="e.g. 80" value="80">
+    </div>
+  </div>
+  
+  <div class="result-panel">
+    <div class="result-val" id="res-diff-val">--</div>
+    <div class="result-label" id="res-diff-lbl">Percentage difference between 50 and 80</div>
+  </div>
+</div>
+
+<!-- Tab 5: Calculate Base -->
+<div id="panel-base" class="tab-panel" style="display: none;">
+  <div class="grid-2col">
+    <div class="form-group">
+      <label for="base-value">Value (X)</label>
+      <input type="number" id="base-value" class="input-control" placeholder="e.g. 15" value="15">
+    </div>
+    <div class="form-group">
+      <label for="base-percent">Is Percentage (%)</label>
+      <input type="number" id="base-percent" class="input-control" placeholder="e.g. 25" value="25">
+    </div>
+  </div>
+  
+  <div class="result-panel">
+    <div class="result-val" id="res-base-val">--</div>
+    <div class="result-label" id="res-base-lbl">15 is 25% of what value</div>
+  </div>
+</div>

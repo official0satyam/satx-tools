@@ -1,0 +1,76 @@
+<div class="form-group" style="display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: var(--space-md);">
+  <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); font-family: var(--font-header);">Currency:</span>
+  <select class="input-control currency-select" style="width: auto; padding: 4px 12px; min-height: unset; height: 32px; font-size: 0.85rem; border-radius: 8px; margin-top: 0;">
+    <option value="$">USD ($)</option>
+    <option value="₹">INR (₹)</option>
+    <option value="€">EUR (€)</option>
+    <option value="£">GBP (£)</option>
+    <option value="¥">JPY (¥)</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="tip-bill">Bill Amount (<span class="currency-symbol">$</span>)</label>
+  <input type="number" id="tip-bill" class="input-control" value="100" min="0" step="0.01" oninput="calculateTip()">
+</div>
+
+<div class="form-group">
+  <label for="tip-pct" style="display: flex; justify-content: space-between;">
+    <span>Tip Percentage (%)</span>
+    <span id="tip-pct-lbl" style="color: var(--primary); font-weight: 800;">15%</span>
+  </label>
+  <div class="segmented-control" style="display: flex; gap: 8px; margin-bottom: 8px; overflow-x: auto; padding: 2px;">
+    <button class="btn btn-secondary" onclick="setTipPreset(10, this)">10%</button>
+    <button class="btn btn-secondary active" onclick="setTipPreset(15, this)">15%</button>
+    <button class="btn btn-secondary" onclick="setTipPreset(18, this)">18%</button>
+    <button class="btn btn-secondary" onclick="setTipPreset(20, this)">20%</button>
+    <button class="btn btn-secondary" onclick="setTipPreset(25, this)">25%</button>
+  </div>
+  <input type="range" id="tip-pct" min="0" max="50" step="1" value="15" class="input-control" style="margin-top: 8px;" oninput="syncTipSliders('pct')">
+</div>
+
+<div class="form-group">
+  <label for="tip-people" style="display: flex; justify-content: space-between;">
+    <span>Split (Number of People)</span>
+    <span id="tip-people-lbl" style="color: var(--primary); font-weight: 800;">2 People</span>
+  </label>
+  <input type="range" id="tip-people" min="1" max="50" step="1" value="2" class="input-control" oninput="syncTipSliders('people-range')">
+  <input type="number" id="tip-people-num" class="input-control" value="2" min="1" step="1" style="margin-top: 8px;" oninput="syncTipSliders('people-num')">
+</div>
+
+<div class="result-panel success">
+  <div class="result-label" style="text-align: left; margin-bottom: var(--space-md); color: var(--secondary); font-family: var(--font-header); font-size: 1.1rem; border-bottom: 2px dashed rgba(13, 148, 136, 0.2); padding-bottom: var(--space-sm);">Bill Division</div>
+  
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); text-align: center; margin-bottom: var(--space-md);">
+    <div style="background: rgba(13, 148, 136, 0.05); padding: var(--space-sm); border-radius: 8px;">
+      <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Tip Per Person</div>
+      <div id="tip-out-per-person-tip" style="font-size: 1.5rem; font-weight: 800; color: var(--secondary);">$7.50</div>
+    </div>
+    <div style="background: rgba(124, 58, 237, 0.05); padding: var(--space-sm); border-radius: 8px;">
+      <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Total Per Person</div>
+      <div id="tip-out-per-person-total" style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">$57.50</div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div class="invoice-row">
+      <span class="invoice-lbl">Base Bill:</span>
+      <span id="tip-out-base" class="invoice-val">$100.00</span>
+    </div>
+    <div class="invoice-row">
+      <span class="invoice-lbl">Total Tip:</span>
+      <span id="tip-out-tip" class="invoice-val">+$15.00</span>
+    </div>
+    <div class="invoice-row invoice-total-row">
+      <span class="invoice-lbl" style="font-family: var(--font-header);">Grand Total:</span>
+      <span id="tip-out-total" class="invoice-val" style="font-family: var(--font-header); font-weight: 800;">$115.00</span>
+    </div>
+  </div>
+</div>
+
+<div class="copy-btn-wrapper">
+  <button onclick="copyTipResult(this)" class="btn btn-secondary btn-copy">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Split Details
+  </button>
+</div>

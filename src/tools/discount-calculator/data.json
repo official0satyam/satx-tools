@@ -1,0 +1,62 @@
+{
+  "primary": {
+    "title": "Discount Calculator - Find Final Sale Price Online",
+    "description": "Calculate markdowns, final sale prices, and money saved. Use our free, client-side discount calculator to calculate clearance prices.",
+    "heading": "Discount Calculator",
+    "seo_content": "<p>Our Discount Calculator helps you evaluate markdown promotions. Here is how deductions are structured:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>1. Standard Single Discount</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Savings = Price &times; (Discount % / 100)</code> | <code>Final = Price - Savings</code><br><em>Example:</em> A $120 coat at 25% off has <strong>$30.00</strong> savings, making the final price <strong>$90.00</strong>.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>2. Stacked (Double) Coupon Discount</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: Apply second discount percentage to the subtotal after the first discount.<br><em>Example:</em> $120 coat at 25% off, plus an extra 10% off. First discount makes it $90, and the second 10% off cuts another $9, resulting in <strong>$81.00</strong> final price.</p></li><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>3. Sales Tax Addition</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Tax = Discounted Price &times; (Tax Rate / 100)</code><br><em>Example:</em> Adding 8% sales tax on the discounted $90 price adds <strong>$7.20</strong>, making the checkout total <strong>$97.20</strong>.</p></li></ul>",
+    "examples": [
+      {
+        "title": "Shopping clearance tags",
+        "description": "If a winter coat priced at $120 is marked with a 25% off sticker, entering these parameters yields a final sale price of $90 and total savings of $30."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the formula to calculate a discount?",
+        "answer": "To calculate the final sale price, first find the savings: Savings = Original Price &times; (Discount % / 100). Then, subtract the savings from the original price: Final Price = Original Price - Savings."
+      },
+      {
+        "question": "How do you calculate a double discount?",
+        "answer": "For stacked discounts (like 20% off plus an extra 10% off), apply the first percentage to the original price to get a subtotal, then apply the second percentage to that subtotal."
+      }
+    ]
+  },
+  "programmatic": {
+    "sale-price-calculator": {
+      "title": "Sale Price Calculator - Find Retail Markdown Sums",
+      "description": "Instantly determine final sale prices and amount saved. Free, secure, client-side retail markdown tool.",
+      "heading": "Sale Price Calculator",
+      "seo_content": "<p>A sale price calculator is a handy utility for shoppers and retail managers. Here is the primary formula and example:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Markdown Formula</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Final Price = Tag Price - (Tag Price &times; Discount% / 100)</code><br><em>Example:</em> A $150 item with a 30% promo discount results in a final sale price of <strong>$105.00</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Retail markup & markdown comparison",
+          "description": "Input a standard tag price of $80 with a 15% promotional discount to find a final cost of $68."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How does sales tax affect the sale price?",
+          "answer": "Sales tax is typically added to the final discounted sale price, not the original sticker price. Calculate the discounted price first, then apply the local sales tax rate to that amount."
+        }
+      ]
+    },
+    "percent-off-calculator": {
+      "title": "Percent Off Calculator - Find Savings Instantly",
+      "description": "Calculate exact savings for any percentage off promotion. Supports custom rates and offline computations.",
+      "heading": "Percent Off Calculator",
+      "seo_content": "<p>Promotional offers like '30% off' or '40% off' are easy to resolve with our percent off calculator. Here is how it calculates:</p><ul style=\"list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 16px;\"><li style=\"background: rgba(95, 93, 251, 0.03); border: 1px solid rgba(95, 93, 251, 0.1); border-radius: 8px; padding: 12px;\"><strong>Percent Off Formula</strong><p style=\"margin: 4px 0 0 0; font-size: 0.95rem; color: var(--text-muted);\">Formula: <code>Savings = Original Price &times; (Percent Off / 100)</code><br><em>Example:</em> For a $200 purchase with a 40% off code, savings is <strong>$80.00</strong> and final price is <strong>$120.00</strong>.</p></li></ul>",
+      "examples": [
+        {
+          "title": "Evaluating a clearance sale",
+          "description": "For a $150 item at 40% off, the calculator shows savings of $60 and a net price of $90."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do you calculate 20% off in your head?",
+          "answer": "To quickly calculate 20% off mentally, divide the original price by 10 to get 10%, double that number to get 20%, and subtract it from the original price."
+        }
+      ]
+    }
+  }
+}

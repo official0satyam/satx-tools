@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{head_tags}}
+</head>
+<body>
+  <header>
+    {{header}}
+  </header>
+
+  <main>
+    <div class="container">
+      {{content}}
+    </div>
+  </main>
+
+  <footer>
+    {{footer}}
+  </footer>
+
+  <!-- Mobile Full-Page Search Overlay -->
+  <div id="mobile-search-overlay" class="mobile-search-overlay">
+    <div class="mobile-search-header">
+      <div class="mobile-search-bar-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="mobile-site-search" class="mobile-search-input" placeholder="Type to search all tools..." autocomplete="off">
+      </div>
+      <button id="mobile-search-close" class="mobile-search-close-btn" aria-label="Close search">Cancel</button>
+    </div>
+    <div class="mobile-search-body">
+      <div id="mobile-search-results" class="mobile-search-results-dropdown"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Sliding Side Menu Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Menu Options</span>
+      <button id="drawer-close" class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-content">
+      <a href="/" class="drawer-item">
+        <span class="drawer-icon">⌂</span>
+        <div class="drawer-text">
+          <strong>Home</strong>
+          <small>Back to main landing page</small>
+        </div>
+      </a>
+      <a href="/calculators/" class="drawer-item">
+        <span class="drawer-icon">🧮</span>
+        <div class="drawer-text">
+          <strong>Calculators</strong>
+          <small>Percentage, GST & Math helpers</small>
+        </div>
+      </a>
+      <a href="/student-tools/" class="drawer-item">
+        <span class="drawer-icon">🎓</span>
+        <div class="drawer-text">
+          <strong>Student Tools</strong>
+          <small>GPA, grades and study helpers</small>
+        </div>
+      </a>
+      <a href="/developer-tools/" class="drawer-item">
+        <span class="drawer-icon">⚙️</span>
+        <div class="drawer-text">
+          <strong>Developer Tools</strong>
+          <small>Base64, URL encode, passwords</small>
+        </div>
+      </a>
+      <a href="/blog/" class="drawer-item">
+        <span class="drawer-icon">▤</span>
+        <div class="drawer-text">
+          <strong>Blog</strong>
+          <small>Guides, updates and tech tips</small>
+        </div>
+      </a>
+      <a href="/about.html" class="drawer-item">
+        <span class="drawer-icon">ℹ️</span>
+        <div class="drawer-text">
+          <strong>About Us</strong>
+          <small>Our privacy mission & details</small>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+
+  <!-- Global scripts -->
+  <script src="/assets/js/main.js"></script>
+  {{additional_scripts}}
+</body>
+</html>

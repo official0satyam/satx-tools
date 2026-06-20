@@ -1,0 +1,81 @@
+<div class="form-group" style="display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: var(--space-md);">
+  <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); font-family: var(--font-header);">Currency:</span>
+  <select class="input-control currency-select" style="width: auto; padding: 4px 12px; min-height: unset; height: 32px; font-size: 0.85rem; border-radius: 8px; margin-top: 0;">
+    <option value="$">USD ($)</option>
+    <option value="₹">INR (₹)</option>
+    <option value="€">EUR (€)</option>
+    <option value="£">GBP (£)</option>
+    <option value="¥">JPY (¥)</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="emi-amount" style="display: flex; justify-content: space-between;">
+    <span>Loan Amount (<span class="currency-symbol">$</span>)</span>
+    <span id="emi-amount-lbl" style="color: var(--primary); font-weight: 800;"><span class="currency-symbol">$</span>50,000</span>
+  </label>
+  <input type="range" id="emi-amount" min="1000" max="1000000" step="1000" value="50000" class="input-control" oninput="calculateEMI()">
+  <input type="number" id="emi-amount-num" class="input-control" value="50000" style="margin-top: 8px;" oninput="syncEMISliders('amount')">
+</div>
+
+<div class="form-group">
+  <label for="emi-interest" style="display: flex; justify-content: space-between;">
+    <span>Interest Rate (% P.A.)</span>
+    <span id="emi-interest-lbl" style="color: var(--primary); font-weight: 800;">8.5%</span>
+  </label>
+  <input type="range" id="emi-interest" min="1" max="25" step="0.1" value="8.5" class="input-control" oninput="calculateEMI()">
+  <input type="number" id="emi-interest-num" class="input-control" value="8.5" step="0.1" style="margin-top: 8px;" oninput="syncEMISliders('interest')">
+</div>
+
+<div class="grid-tenure">
+  <div class="form-group" style="margin-bottom: 0;">
+    <label for="emi-tenure" style="display: flex; justify-content: space-between;">
+      <span>Loan Tenure</span>
+      <span id="emi-tenure-lbl" style="color: var(--primary); font-weight: 800;">5 Years</span>
+    </label>
+    <input type="range" id="emi-tenure" min="1" max="30" step="1" value="5" class="input-control" oninput="calculateEMI()">
+  </div>
+  <div class="form-group" style="margin-bottom: 0;">
+    <select id="emi-tenure-unit" class="input-control" onchange="updateEMITenureLimits()">
+      <option value="years" selected>Years</option>
+      <option value="months">Months</option>
+    </select>
+  </div>
+</div>
+
+<div class="result-panel success">
+  <div class="result-label" style="text-align: left; margin-bottom: var(--space-md); color: var(--secondary); font-family: var(--font-header); font-size: 1.1rem; border-bottom: 2px dashed rgba(13, 148, 136, 0.2); padding-bottom: var(--space-sm);">Monthly Payment (EMI)</div>
+  
+  <div class="result-val" id="emi-output-val">$1,025.83</div>
+  
+  <div style="display: flex; flex-direction: column; gap: 8px; margin-top: var(--space-md);">
+    <div class="invoice-row">
+      <span class="invoice-lbl">Principal Loan Amount:</span>
+      <span id="emi-res-principal" class="invoice-val">$50,000.00</span>
+    </div>
+    <div class="invoice-row">
+      <span class="invoice-lbl">Total Interest Payable:</span>
+      <span id="emi-res-interest" class="invoice-val">+$11,549.70</span>
+    </div>
+    <div class="invoice-row invoice-total-row">
+      <span class="invoice-lbl">Total Repayment Amount:</span>
+      <span id="emi-res-total" class="invoice-val">$61,549.70</span>
+    </div>
+  </div>
+  
+  <div class="progress-container" style="margin-top: var(--space-md); height: 16px;">
+    <div id="emi-bar-principal" class="progress-fill" style="background-color: var(--secondary); width: 81%; float: left;" title="Principal Portion"></div>
+    <div id="emi-bar-interest" style="height: 100%; background-color: var(--primary); width: 19%; float: left;" title="Interest Portion"></div>
+  </div>
+  <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; margin-top: 6px; color: var(--text-muted);">
+    <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; background: var(--secondary); border-radius: 2px; display: inline-block;"></span> Principal (<span id="emi-pct-principal">81%</span>)</span>
+    <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; background: var(--primary); border-radius: 2px; display: inline-block;"></span> Interest (<span id="emi-pct-interest">19%</span>)</span>
+  </div>
+</div>
+
+<div class="copy-btn-wrapper">
+  <button onclick="copyEMIResult(this)" class="btn btn-secondary btn-copy">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Loan Summary
+  </button>
+</div>

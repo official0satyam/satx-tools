@@ -1,0 +1,67 @@
+<div style="display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-bottom: var(--space-md);">
+  <div class="form-group">
+    <label for="curr-amount">Amount to Convert</label>
+    <input type="number" id="curr-amount" class="input-control" value="100" min="0" step="0.01" oninput="performConversion()">
+  </div>
+</div>
+
+<div class="grid-select-swap">
+  <div class="form-group" style="margin-bottom: 0;">
+    <label for="curr-from">From</label>
+    <select id="curr-from" class="input-control" onchange="performConversion()">
+      <option value="USD" selected>USD - US Dollar ($)</option>
+      <option value="INR">INR - Indian Rupee (₹)</option>
+      <option value="EUR">EUR - Euro (€)</option>
+      <option value="GBP">GBP - British Pound (£)</option>
+      <option value="JPY">JPY - Japanese Yen (¥)</option>
+      <option value="CAD">CAD - Canadian Dollar (C$)</option>
+      <option value="AUD">AUD - Australian Dollar (A$)</option>
+    </select>
+  </div>
+  
+  <button onclick="swapCurrencies()" class="btn btn-secondary" style="height: 48px; width: 48px; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-bottom: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+  </button>
+  
+  <div class="form-group" style="margin-bottom: 0;">
+    <label for="curr-to">To</label>
+    <select id="curr-to" class="input-control" onchange="performConversion()">
+      <option value="USD">USD - US Dollar ($)</option>
+      <option value="INR" selected>INR - Indian Rupee (₹)</option>
+      <option value="EUR">EUR - Euro (€)</option>
+      <option value="GBP">GBP - British Pound (£)</option>
+      <option value="JPY">JPY - Japanese Yen (¥)</option>
+      <option value="CAD">CAD - Canadian Dollar (C$)</option>
+      <option value="AUD">AUD - Australian Dollar (A$)</option>
+    </select>
+  </div>
+</div>
+
+<div class="result-panel success" style="margin-bottom: var(--space-md);">
+  <div class="result-label" style="text-align: left; margin-bottom: var(--space-sm); color: var(--secondary); font-family: var(--font-header); font-size: 1rem;">Converted Value</div>
+  <div id="curr-output-text" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 500;">100.00 USD =</div>
+  <div class="result-val" id="curr-output-val" style="font-size: 2.2rem; line-height: 1.2; margin-top: 4px;">₹8,350.00</div>
+  <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: var(--space-sm); display: flex; justify-content: space-between; align-items: center;">
+    <span id="curr-rate-text">1 USD = 83.50 INR</span>
+    <span id="curr-status" style="background: rgba(13, 148, 136, 0.1); color: var(--secondary); padding: 2px 8px; border-radius: 12px; font-weight: 700;">Offline Mode</span>
+  </div>
+</div>
+
+<div style="display: flex; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+  <button onclick="refreshRates(this)" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+    Update Rates Online
+  </button>
+  <button onclick="copyConversionResult(this)" class="btn btn-secondary btn-copy" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Summary
+  </button>
+</div>
+
+<!-- Popular Conversions Card -->
+<div class="popular-conversions-card" style="border: 2px solid var(--border-color); border-radius: 16px; padding: var(--space-md); background: var(--card-bg);">
+  <h3 id="curr-table-title" style="font-size: 1.05rem; font-family: var(--font-header); color: var(--text-color); margin-bottom: var(--space-sm); border-bottom: 2px solid var(--border-color); padding-bottom: 6px;">Popular USD Conversions</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);" id="curr-quick-rates">
+    <!-- Will be injected by script -->
+  </div>
+</div>

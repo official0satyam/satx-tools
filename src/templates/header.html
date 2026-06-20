@@ -1,0 +1,43 @@
+<div class="container header-nav">
+  <a href="/" class="brand" aria-label="SatX Tools home">
+    <img src="/assets/images/logo.png" alt="SatX Tools logo" width="32" height="32" style="object-fit: contain;">
+    <span class="brand-text">
+      <span>SatX Tools</span>
+      <small>Smart tools for everyday problems</small>
+    </span>
+  </a>
+
+  <!-- Desktop Search Bar (Hidden on Mobile) -->
+  <div class="header-search-wrapper desktop-search-only">
+    <div style="position: relative; display: flex; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 14px; color: var(--text-light);">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="site-search" class="input-control" placeholder="Search 100+ free online tools..." aria-label="Search tools">
+    </div>
+    <div id="search-results" class="search-results-dropdown"></div>
+  </div>
+
+  <!-- Mobile Search Trigger Icon (Only visible on Mobile) -->
+  <button id="mobile-search-trigger" class="mobile-search-trigger-btn" aria-label="Open search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </button>
+
+  <!-- Mobile Toggle Menu Button -->
+  <button id="nav-toggle" class="nav-toggle-btn" aria-label="Toggle Navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Desktop Navigation Menu -->
+  <nav id="nav-menu" class="nav-links">
+    <a href="/calculators/" class="nav-item">Calculators</a>
+    <a href="/student-tools/" class="nav-item">Student Tools</a>
+    <a href="/developer-tools/" class="nav-item">Developer Tools</a>
+    <a href="/blog/" class="nav-item">Blog</a>
+    <a href="/about.html" class="nav-item">About</a>
+  </nav>
+</div>

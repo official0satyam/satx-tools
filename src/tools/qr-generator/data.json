@@ -1,0 +1,66 @@
+{
+  "primary": {
+    "title": "QR Code Generator - Create Scannable QR Codes Online",
+    "description": "Generate standard custom QR codes for website URLs, Wi-Fi networks, text blocks, and contacts locally in your browser. Free online QR maker.",
+    "heading": "QR Code Generator",
+    "seo_content": "<p>A QR Code Generator creates pixelated barcode graphics that mobile camera scanners can instantly convert into text, URLs, contacts, or system commands. They are widely used for menu links, marketing brochures, virtual business cards, and automated Wi-Fi joins.</p><p>This tool is constructed entirely browser-side. It offers customizable content types (Web Link, Plain Text, Wi-Fi Network), lets you choose custom colors for the code blocks and canvas backgrounds, and exports high-definition PNG images or vectors ready for print.</p>",
+    "examples": [
+      {
+        "title": "Generate a website link QR code",
+        "description": "Select the 'Web Link' tab, type your website URL, choose a brand color, and download your customized QR code."
+      },
+      {
+        "title": "Create a Wi-Fi share QR code for guests",
+        "description": "Select the 'Wi-Fi Network' tab, input your network SSID, security encryption type, and password. Guests scan the QR code to connect instantly."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can these QR codes expire?",
+        "answer": "No. These are static QR codes. They embed the raw content directly into the graphic. Since they do not rely on dynamic redirect servers or databases, they will work indefinitely."
+      },
+      {
+        "question": "How large should I print the QR code?",
+        "answer": "For basic scanning distances (under 1 meter), the QR code should be at least 2 cm × 2 cm. For larger distances, increase the scale proportionally."
+      }
+    ]
+  },
+  "programmatic": {
+    "wifi-qr-generator": {
+      "title": "Wi-Fi QR Code Generator - Share Home Wi-Fi Password",
+      "description": "Create a secure Wi-Fi login QR code. Let guests scan to connect to your internet network instantly. Free QR tool.",
+      "heading": "Wi-Fi QR Code Generator",
+      "seo_content": "<p>The Wi-Fi QR Code Generator creates a standardized connection code. When a user scans the code using an Android or iOS smartphone camera, the system prompts them to join the Wi-Fi network automatically without typing the password.</p>",
+      "examples": [
+        {
+          "title": "Guest room Wi-Fi network setup",
+          "description": "Enter the home Wi-Fi SSID and WPA password to get a scannable credential sheet."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is my Wi-Fi password kept private?",
+          "answer": "Yes. The QR code is compiled entirely in your browser. No data is sent to our servers. Your password is only embedded into the local barcode graphic."
+        }
+      ]
+    },
+    "text-qr-generator": {
+      "title": "Text QR Code Generator - Convert Messages to QR Barcodes",
+      "description": "Convert raw text paragraphs, instructions, or coupon codes into scannable QR graphics offline. Free QR generator.",
+      "heading": "Text QR Code Generator",
+      "seo_content": "<p>The Text QR Code Generator converts standard text notes, addresses, guidelines, or keys into static QR arrays. Ideal for inventory labels, physical note shares, or logistics trackers.</p>",
+      "examples": [
+        {
+          "title": "Product inventory listing key",
+          "description": "Input a product ID and batch number to create a scannable sticker tag."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is the maximum character limit for a text QR code?",
+          "answer": "Static QR codes can store up to 4,296 alphanumeric characters. However, as you add more text, the QR pattern becomes denser and harder for phone cameras to scan from a distance."
+        }
+      ]
+    }
+  }
+}

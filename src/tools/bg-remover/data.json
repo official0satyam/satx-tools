@@ -1,0 +1,66 @@
+{
+  "primary": {
+    "title": "Background Remover - Create Transparent Images Online",
+    "description": "Remove image backgrounds locally in your browser using smart color thresholds (chroma-keying). 100% free, offline, and secure.",
+    "heading": "Background Remover",
+    "seo_content": "<p>A Background Remover isolates the subject of an image by stripping out its backing colors, making them transparent. It is highly valued for producing product photos, e-commerce listings, custom collage decals, profile avatars, and design layouts.</p><p>This tool performs background subtraction entirely within your local browser sandbox. By reading pixels on an HTML canvas, it lets you select any color (e.g. solid white, studio green screens, or backdrops) and erase it by tuning matching thresholds and edge tolerances. Since it runs client-side, your high-resolution images are never uploaded to any remote servers, ensuring absolute privacy.</p>",
+    "examples": [
+      {
+        "title": "Erase studio background from a product photo",
+        "description": "Upload a product photo taken against a solid white backdrop, click the backdrop to select the target color, and slide the tolerance slider to make the background perfectly transparent."
+      },
+      {
+        "title": "Chroma-key green screen cutout",
+        "description": "Upload an image with a solid green backing, target the green hue, and download a transparent cutout PNG ready for composites."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I remove complex multi-color backgrounds?",
+        "answer": "This client-side tool uses chroma-key (color range) extraction, which works best on solid or near-solid backgrounds (like studio white, grey, or green). For highly complex, busy backgrounds, advanced AI segmentation is typically needed."
+      },
+      {
+        "question": "Which formats support transparency?",
+        "answer": "Only PNG and WebP formats support alpha channels (transparency). Exporting as a JPEG will replace transparent areas with a solid background color (usually white)."
+      }
+    ]
+  },
+  "programmatic": {
+    "remove-image-background": {
+      "title": "Remove Image Background - Free Offline Background Eraser",
+      "description": "Erase photo backgrounds. Select solid colors and delete them offline in your browser. Free online PNG creator.",
+      "heading": "Remove Image Background",
+      "seo_content": "<p>Remove Image Backgrounds for free. Select a color, adjust the transparency threshold, and extract your main subject instantly.</p>",
+      "examples": [
+        {
+          "title": "Cutout profile portrait background",
+          "description": "Remove a solid wall backing from a selfie portrait."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Are my files uploaded?",
+          "answer": "No. The background removal happens on your local device. No servers see your photographs, making this tool completely private."
+        }
+      ]
+    },
+    "transparent-image-maker": {
+      "title": "Transparent Image Maker - Create Transparent PNGs",
+      "description": "Make image backgrounds transparent online. Cut out logos and graphics locally. Free transparent file converter.",
+      "heading": "Transparent Image Maker",
+      "seo_content": "<p>The Transparent Image Maker is a web utility for designers needing transparent logo files, stickers, or overlay assets without watermarks.</p>",
+      "examples": [
+        {
+          "title": "Make logo background transparent",
+          "description": "Upload a jpeg logo with a white background, key out the white color, and export a clean transparent logo PNG."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How do I choose the background color to remove?",
+          "answer": "You can click on the image preview to pick the exact color directly from the image pixels, or use the color picker widget."
+        }
+      ]
+    }
+  }
+}

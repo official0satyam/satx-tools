@@ -1,0 +1,61 @@
+<div class="form-group">
+  <label for="word-input">Enter / Paste Your Text</label>
+  <textarea id="word-input" class="input-control" rows="10" placeholder="Type or paste your text here to begin counting in real-time..." style="resize: vertical; font-family: var(--font-body); font-weight: 500;" oninput="countText()"></textarea>
+</div>
+
+<div style="display: flex; gap: var(--space-sm); margin-bottom: var(--space-lg); justify-content: flex-end;">
+  <button onclick="clearText()" class="btn btn-secondary" style="padding: 8px 16px; min-height: unset; font-size: 0.85rem;">Clear Text</button>
+  <button onclick="copyInputText()" class="btn btn-secondary" style="padding: 8px 16px; min-height: unset; font-size: 0.85rem;">Copy Text</button>
+</div>
+
+<div class="result-panel success">
+  <div class="result-label" style="text-align: left; margin-bottom: var(--space-md); color: var(--secondary); font-family: var(--font-header); font-size: 1.1rem; border-bottom: 2px dashed rgba(13, 148, 136, 0.2); padding-bottom: var(--space-sm);">Live Document Statistics</div>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-md); text-align: left;">
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Words</span>
+      <span class="result-detail-val" id="stat-words" style="color: var(--primary); font-size: 1.8rem;">0</span>
+    </div>
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Chars (With Spaces)</span>
+      <span class="result-detail-val" id="stat-chars-spaces" style="color: var(--primary); font-size: 1.8rem;">0</span>
+    </div>
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Chars (No Spaces)</span>
+      <span class="result-detail-val" id="stat-chars-no-spaces" style="color: var(--primary); font-size: 1.8rem;">0</span>
+    </div>
+  </div>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-md); text-align: left; margin-top: var(--space-md);">
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Sentences</span>
+      <span class="result-detail-val" id="stat-sentences" style="color: var(--secondary); font-size: 1.8rem;">0</span>
+    </div>
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Paragraphs</span>
+      <span class="result-detail-val" id="stat-paragraphs" style="color: var(--secondary); font-size: 1.8rem;">0</span>
+    </div>
+  </div>
+</div>
+
+<div class="glass-card" style="margin-top: var(--space-lg); padding: var(--space-md);">
+  <h3 style="margin-bottom: var(--space-md); font-family: var(--font-header); font-weight: 800; border-bottom: 2px dashed var(--border-color); padding-bottom: var(--space-xs);">Estimated Time Commitments</h3>
+  
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); text-align: left;">
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Reading Time</span>
+      <span class="result-detail-val" id="stat-read-time" style="color: var(--primary);">0s</span>
+    </div>
+    <div class="result-detail-item">
+      <span class="result-detail-lbl">Speaking Time</span>
+      <span class="result-detail-val" id="stat-speak-time" style="color: var(--primary);">0s</span>
+    </div>
+  </div>
+</div>
+
+<div class="copy-btn-wrapper">
+  <button onclick="copyWordStatsResult(this)" class="btn btn-secondary btn-copy">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Document Stats
+  </button>
+</div>

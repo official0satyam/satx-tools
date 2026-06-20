@@ -1,0 +1,168 @@
+================================================================================
+SATX TOOLS - MASTER PROJECT PLAN & EXECUTION ROADMAP
+================================================================================
+
+This document contains the complete project plan, current execution status, 
+architectural constraints, coding standards, and future expansion paths for 
+SatX Tools ("Smart Tools For Everyday Problems").
+
+Keep this file as a reference for any future developers or AI agents working 
+on this repository.
+
+--------------------------------------------------------------------------------
+1. PROJECT MISSION & GOAL
+--------------------------------------------------------------------------------
+Build a fast, beautiful, mobile-first tools website that solves everyday 
+calculation, conversion, and utility problems, gaining traffic through search 
+engines (Google Search) with zero ongoing hosting maintenance or costs.
+
+Key Philosophy:
+- Instant Speed: Pages must load immediately.
+- Clean UI: Intuitive layouts, bright colors, readable text, no clutter.
+- Privacy First: Calculations happen locally in the browser.
+
+--------------------------------------------------------------------------------
+2. CURRENT POSITION OF THE PROJECT
+--------------------------------------------------------------------------------
+We have fully executed the Phase 1 implementation and design system refactoring:
+
+- Design & Style: Playful light-theme layout matching the Sora (headings) and 
+  Inter (body copy) design specs. Uses smooth CSS radial gradient backgrounds, 
+  drifting background blobs, and tactile Duolingo-style 3D buttons.
+- Desktop Parallax: Animated hero header featuring floating depth-based cards 
+  and orbs that move on pointer movement, throttled with requestAnimationFrame.
+- Mobile Fallbacks: Automatically collapses the 3D desktop scene into a static 
+  2x2 grid below 780px and presents a sticky mobile bottom navigation bar 
+  with safe-area height adjustments.
+- Search Engine Autocomplete: Instant client-side search autocomplete dropdowns 
+  connected to both the header and hero search bars.
+- 5 Core Calculators: Fully functional and styled client-side tools compiled:
+  1. Percentage Calculator (value, ratio, increase/decrease change tabs)
+  2. Age Calculator (with Heartbeats, Time Asleep, and Dog Years estimates)
+  3. GST Calculator (invoice breakdown with Central CGST and State SGST)
+  4. Discount Calculator (clearance savings visual slider progress bar)
+  5. Password Generator (secure password generator with password strength metrics)
+- Programmatic SEO: Master registry automatically compiles 19 SEO-optimized tool 
+  variations (e.g. reverse-gst, sale-price, percent-off calculators) under clean, 
+  individual directory paths (e.g. /reverse-gst-calculator/).
+- Local serving: Double-clickable "go-live.bat" and port-robust "serve.py" server 
+  automatically fallback to port 5501 if 5500 is occupied.
+
+--------------------------------------------------------------------------------
+3. ARCHITECTURE & CODEBASE LAYOUT
+--------------------------------------------------------------------------------
+The project is built as a pure static site compiler using vanilla Node.js:
+
+d:/tool website/
+├── .vscode/               # VS Code Live Server routing adjustments
+├── dist/                  # Compiled production files (Deploy destination)
+├── reference/             # UI references and plan documents
+│   ├── sampleui.html      # UI reference file
+│   └── plan.txt           # [This File] Master project plan
+├── src/                   # Source templates and pages
+│   ├── assets/            # Uncompiled static assets
+│   │   ├── css/           # main.css (Global theme) & tools.css (Form elements)
+│   │   ├── js/            # main.js (Global utilities, search, parallax)
+│   │   └── images/        # Static visual assets
+│   ├── blog/              # HTML articles compiled into /blog/
+│   ├── pages/             # Main static pages (index, privacy, about, terms)
+│   ├── templates/         # Reusable layouts (head, header, footer, layout)
+│   ├── tools/             # Calculator workspace directories
+│   └── registry.json      # Master data config mapping all categories & metadata
+├── build.js               # Node compilation compiler script
+├── serve.py               # Local live-server launcher script
+├── go-live.bat            # Double-clickable Windows shortcut
+└── package.json           # Basic configuration meta
+
+--------------------------------------------------------------------------------
+4. TECHNICAL CONSTRAINTS & NON-NEGOTIABLES
+--------------------------------------------------------------------------------
+To ensure the site runs forever on Cloudflare Pages for free:
+- NO DATABASE: Do not add backend databases. Use localStorage if user storage is 
+  needed.
+- NO USER ACCOUNTS: Do not build register, login, or profile dashboards.
+- NO BACKEND SCRIPTS: No server processes or web APIs. 100% Client-side JS.
+- NO PLACEHOLDERS: All images/illustrations must be functional SVGs or 
+  pre-generated assets.
+- PERFORMANCE FIRST: Avoid external libraries or large packages. Clean 
+  vanilla HTML, CSS, and JS.
+
+--------------------------------------------------------------------------------
+5. CODE QUALITY & DEVELOPMENT RULES
+--------------------------------------------------------------------------------
+- Keep it beginner-friendly: Write simple code with explanatory variable names.
+- CSS Variables: Rely on defined global tokens in main.css. Do not write hardcoded 
+  colors, margins, or padding.
+- JS Separation: HTML templates contain only markup. Keep script logic inside 
+  tools/[tool-slug]/script.js.
+- Comments: Document the 'why' for complex calculations, formulas, or UI quirks.
+
+--------------------------------------------------------------------------------
+6. FUTURE SCALE ROADMAP (PHASES 2 - 5)
+--------------------------------------------------------------------------------
+
+PHASE 2: Category & Tool Expansion
+- Target: 100+ daily organic visitors.
+- Actions: Build additional tools using the existing layout structure:
+  * Currency Converter
+  * BMI Calculator
+  * SIP Calculator
+  * Loan / EMI Calculator
+  * Date/Time Calculator
+  * text helpers (JSON Formatter, Case Converter)
+
+PHASE 3: Traffic Scale & Monetization
+- Target: 1,000+ daily organic visitors.
+- Actions: 
+  * Apply for Google AdSense or alternative privacy-friendly ad platforms.
+  * Write more targeted blog posts connecting to individual tools to capture 
+    Google search intents.
+
+PHASE 4: Rich Client Features
+- Target: 10,000+ daily organic visitors.
+- Actions:
+  * Build a "Favorites" list using localStorage.
+  * Add custom tool layout collections.
+  * Add light/dark mode switch.
+  * Convert the site to a Progressive Web App (PWA) so tools work offline.
+
+PHASE 5: Authority Tools Portal
+- Target: 50,000+ daily organic visitors.
+- Actions: Expand tool count to 100+ items across multiple domains.
+
+--------------------------------------------------------------------------------
+7. MAINTAINING THE PROJECT (DEVELOPER INSTRUCTIONS)
+--------------------------------------------------------------------------------
+
+A. HOW TO ADD A NEW TOOL
+1. Create a directory inside `src/tools/[new-tool-slug]`.
+2. Add three files:
+   - `index.html`: The HTML markup for inputs, select, progress bars, and results.
+   - `script.js`: The calculation javascript file. Bind functions to window scope.
+   - `data.json`: SEO metadata and copy for programmatic SEO sub-pages.
+3. Open `src/registry.json` and register the tool:
+   - Add it to the "tools" array with a slug, name, category, shortDescription, 
+     and optional programmatic pages config.
+4. Run compiler command `node build.js` to rebuild.
+
+B. HOW TO ADD A NEW BLOG POST
+1. Create an HTML file in `src/blog/[post-slug].html`.
+2. Add a JSON metadata block at the top:
+   <!--
+   {
+     "title": "Your Blog Title",
+     "description": "Short SEO excerpt...",
+     "slug": "post-slug",
+     "date": "2026-06-17"
+   }
+   -->
+3. Write clean, semantic HTML article tags below the header block.
+4. Run `node build.js` to rebuild. It will auto-compile it and add a link card 
+   to the Blog Index.
+
+C. HOW TO TEST LOCALLY
+- Double-click `go-live.bat` at the root folder or run `python serve.py`.
+- It will build the pages, launch a local web server on port 5500 (or 5501) 
+  and automatically open the preview in your browser.
+- Use the local network IP printout to test the responsive view on your phone.
+================================================================================

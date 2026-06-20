@@ -1,0 +1,141 @@
+<div class="form-group" style="margin-bottom: var(--space-md);">
+  <label>QR Code Type</label>
+  <div class="segmented-control" style="display: flex; gap: 6px; padding: 2px;">
+    <button id="qr-tab-url" class="btn btn-secondary active" onclick="setQRType('url', this)">Web Link</button>
+    <button id="qr-tab-text" class="btn btn-secondary" onclick="setQRType('text', this)">Plain Text</button>
+    <button id="qr-tab-wifi" class="btn btn-secondary" onclick="setQRType('wifi', this)">Wi-Fi Network</button>
+  </div>
+</div>
+
+<!-- Input forms -->
+<div id="qr-form-url" class="qr-form-group">
+  <div class="form-group">
+    <label for="qr-url">Website URL</label>
+    <input type="url" id="qr-url" class="input-control" placeholder="https://example.com" value="https://satxtools.com" oninput="generateQR()">
+  </div>
+</div>
+
+<div id="qr-form-text" class="qr-form-group" style="display: none;">
+  <div class="form-group">
+    <label for="qr-text">Text Content</label>
+    <textarea id="qr-text" class="input-control" rows="3" placeholder="Enter text to encode into QR code..." oninput="generateQR()">Hello from SatX Tools!</textarea>
+  </div>
+</div>
+
+<div id="qr-form-wifi" class="qr-form-group" style="display: none;">
+  <div class="form-group">
+    <label for="qr-wifi-ssid">Network SSID (Name)</label>
+    <input type="text" id="qr-wifi-ssid" class="input-control" placeholder="e.g. MyHomeWiFi" oninput="generateQR()">
+  </div>
+  <div class="form-group">
+    <label for="qr-wifi-pass">Password</label>
+    <input type="text" id="qr-wifi-pass" class="input-control" placeholder="Leave empty if open network" oninput="generateQR()">
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-top: var(--space-sm);">
+    <div class="form-group">
+      <label for="qr-wifi-enc">Security Type</label>
+      <select id="qr-wifi-enc" class="input-control" onchange="generateQR()">
+        <option value="WPA" selected>WPA/WPA2</option>
+        <option value="WEP">WEP</option>
+        <option value="nopass">None (Open)</option>
+      </select>
+    </div>
+    <div class="form-group" style="display: flex; align-items: flex-end; padding-bottom: 4px;">
+      <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; cursor: pointer;">
+        <input type="checkbox" id="qr-wifi-hidden" onchange="generateQR()"> Hidden Network
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- Customization Options -->
+<div class="glass-card" style="margin-top: var(--space-md); border-color: rgba(124, 58, 237, 0.15); padding: var(--space-md);">
+  <h3 style="font-size: 1.05rem; font-family: var(--font-header); margin-bottom: var(--space-md); display: flex; align-items: center; gap: 8px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+    Advanced Design Options
+  </h3>
+  
+  <div class="grid-2col" style="margin-bottom: var(--space-md);">
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="qr-color-fg">QR Code Color</label>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <input type="color" id="qr-color-fg" value="#7c3aed" style="width: 50px; height: 42px; border: 2px solid var(--border-color); border-radius: 8px; cursor: pointer; padding: 2px;" oninput="generateQR()">
+        <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-body);">Foreground Code</span>
+      </div>
+    </div>
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="qr-color-bg">Background Color</label>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <input type="color" id="qr-color-bg" value="#ffffff" style="width: 50px; height: 42px; border: 2px solid var(--border-color); border-radius: 8px; cursor: pointer; padding: 2px;" oninput="generateQR()">
+        <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-body);">Background Card</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2col" style="margin-top: var(--space-md); margin-bottom: var(--space-md);">
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="qr-size">Output Resolution</label>
+      <select id="qr-size" class="input-control" onchange="generateQR()">
+        <option value="256">Standard Web (256px)</option>
+        <option value="512" selected>High Definition (512px)</option>
+        <option value="1024">Print Resolution (1024px)</option>
+        <option value="2048">Ultra Print (2048px)</option>
+      </select>
+    </div>
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="qr-margin">Quiet Zone (Margin Size)</label>
+      <input type="range" id="qr-margin" min="0" max="8" value="2" class="input-control" oninput="generateQR()">
+    </div>
+  </div>
+
+  <div class="grid-2col" style="margin-bottom: var(--space-md);">
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="qr-ecc">Error Correction Level</label>
+      <select id="qr-ecc" class="input-control" onchange="generateQR()">
+        <option value="L">Low (7% recovery)</option>
+        <option value="M">Medium (15% recovery)</option>
+        <option value="Q">Quartile (25% recovery)</option>
+        <option value="H" selected>High (30% recovery - Ideal for Logos)</option>
+      </select>
+    </div>
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="qr-format">Download Format</label>
+      <select id="qr-format" class="input-control">
+        <option value="png" selected>PNG Image</option>
+        <option value="jpeg">JPEG Image</option>
+      </select>
+    </div>
+  </div>
+
+  <div style="border-top: 1px dashed var(--border-color); padding-top: var(--space-md); margin-top: var(--space-md);">
+    <div class="form-group" style="margin-bottom: 0;">
+      <label for="qr-logo-upload">Add Center Logo (Optional)</label>
+      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <input type="file" id="qr-logo-upload" accept="image/*" class="input-control" style="flex: 1; min-width: 200px; padding: 6px 12px; font-size: 0.85rem;" onchange="handleLogoUpload(this)">
+        <button id="qr-logo-clear" class="btn btn-secondary" onclick="clearLogo()" style="min-height: 38px; display: none; padding: 4px 12px; font-size: 0.85rem; align-items: center; justify-content: center;">Clear Logo</button>
+      </div>
+    </div>
+    <div class="form-group" id="logo-size-group" style="display: none; margin-top: var(--space-md); margin-bottom: 0;">
+      <label for="qr-logo-size" style="display: flex; justify-content: space-between;">
+        <span>Logo Scale Size</span>
+        <span id="qr-logo-size-lbl" style="color: var(--primary); font-weight: 800;">20%</span>
+      </label>
+      <input type="range" id="qr-logo-size" min="10" max="30" value="20" class="input-control" oninput="updateLogoScale(this)">
+    </div>
+  </div>
+</div>
+
+<div class="result-panel success" style="margin-top: var(--space-md); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-lg);">
+  <div class="result-label" style="align-self: flex-start; margin-bottom: var(--space-md); color: var(--secondary); font-family: var(--font-header); font-size: 1rem;">QR Code Output</div>
+  
+  <div id="qr-canvas-container" style="background: white; padding: 12px; border-radius: 12px; box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: center; width: auto; max-width: 100%;">
+    <!-- Will contain canvas -->
+  </div>
+  
+  <div style="display: flex; gap: var(--space-sm); width: 100%; margin-top: var(--space-md);">
+    <button onclick="downloadQR(this)" class="btn btn-primary" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Download QR Code
+    </button>
+  </div>
+</div>

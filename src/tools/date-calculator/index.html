@@ -1,0 +1,74 @@
+<!-- Segmented Tab Selectors for Date Modes -->
+<div class="segmented-control">
+  <button class="segment-btn active" id="btn-date-diff" onclick="switchDateTab('diff')">Difference Between Dates</button>
+  <button class="segment-btn" id="btn-date-addsub" onclick="switchDateTab('addsub')">Add / Subtract Days</button>
+</div>
+
+<!-- Tab 1: Calculate Difference -->
+<div id="panel-date-diff" class="date-panel">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-bottom: var(--space-lg);">
+    <div class="form-group">
+      <label for="date-start">Start Date</label>
+      <input type="date" id="date-start" class="input-control" onchange="calculateDate()">
+    </div>
+    <div class="form-group">
+      <label for="date-end">End Date</label>
+      <input type="date" id="date-end" class="input-control" onchange="calculateDate()">
+    </div>
+  </div>
+  
+  <div class="result-panel success">
+    <div class="result-label">Calendar Day Difference</div>
+    <div class="result-val" id="date-diff-val">--</div>
+    <div id="date-diff-breakdown" style="font-family: var(--font-header); font-weight: 800; font-size: 1.15rem; color: var(--secondary); margin-top: 4px;">--</div>
+  </div>
+</div>
+
+<!-- Tab 2: Add / Subtract Days -->
+<div id="panel-date-addsub" class="date-panel" style="display: none;">
+  <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--space-md); margin-bottom: var(--space-md);">
+    <div class="form-group">
+      <label for="date-ref">Reference Start Date</label>
+      <input type="date" id="date-ref" class="input-control" onchange="calculateDate()">
+    </div>
+    <div class="form-group">
+      <label for="date-op">Operation</label>
+      <select id="date-op" class="input-control" onchange="calculateDate()">
+        <option value="add" selected>Add (+)</option>
+        <option value="subtract">Subtract (-)</option>
+      </select>
+    </div>
+  </div>
+  
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: var(--space-lg);">
+    <div class="form-group">
+      <label for="date-val-years" style="font-size: 0.8rem;">Years</label>
+      <input type="number" id="date-val-years" class="input-control" value="0" min="0" oninput="calculateDate()">
+    </div>
+    <div class="form-group">
+      <label for="date-val-months" style="font-size: 0.8rem;">Months</label>
+      <input type="number" id="date-val-months" class="input-control" value="0" min="0" oninput="calculateDate()">
+    </div>
+    <div class="form-group">
+      <label for="date-val-weeks" style="font-size: 0.8rem;">Weeks</label>
+      <input type="number" id="date-val-weeks" class="input-control" value="0" min="0" oninput="calculateDate()">
+    </div>
+    <div class="form-group">
+      <label for="date-val-days" style="font-size: 0.8rem;">Days</label>
+      <input type="number" id="date-val-days" class="input-control" value="30" min="0" oninput="calculateDate()">
+    </div>
+  </div>
+  
+  <div class="result-panel success">
+    <div class="result-label">Calculated Target Date</div>
+    <div class="result-val" id="date-addsub-val" style="font-size: clamp(1.4rem, 3.5vw, 2.2rem);">--</div>
+    <div id="date-addsub-desc" style="font-family: var(--font-header); font-weight: 800; font-size: 1.1rem; color: var(--secondary); margin-top: 4px;">--</div>
+  </div>
+</div>
+
+<div class="copy-btn-wrapper">
+  <button onclick="copyDateResult(this)" class="btn btn-secondary btn-copy">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+    Copy Date Result
+  </button>
+</div>
