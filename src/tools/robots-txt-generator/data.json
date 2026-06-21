@@ -1,0 +1,66 @@
+{
+  "primary": {
+    "title": "Robots.txt Generator - Create Robots.txt Files Online",
+    "description": "Generate optimized robots.txt files for your site to control crawler access, direct search engines, and reference sitemaps. Free online robots builder.",
+    "heading": "Robots.txt Generator",
+    "seo_content": "<p>A Robots.txt Generator is a developer and SEO tool that formats text instructions for search engine web crawlers. The resulting robots.txt file sits at the root of a domain (e.g. tools.satex.fun/robots.txt) and tells bots (like Googlebot or Bingbot) which paths they are allowed or disallowed from crawling and indexing.</p><p>Using a robots.txt file is crucial to prevent search engines from crawling administration screens, duplicate content directories, or private member folders. Prefilling your robots.txt file with a link to your sitemap.xml ensures search bots discover all your web pages immediately.</p>",
+    "examples": [
+      {
+        "title": "Generate standard robots.txt file",
+        "description": "Prefill your sitemap URL, enter directory paths you want blocked (like /admin/), select crawl pace delays, and download the output text file."
+      },
+      {
+        "title": "Block specific crawler bots",
+        "description": "Uncheck specific crawlers from the configuration grid to explicitly instruct search engine crawlers (like Baiduspider or Yandexbot) to stay off your site."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Where should I upload the robots.txt file?",
+        "answer": "You must upload the robots.txt file to the root directory of your website server. It must be accessible at: https://yourdomain.com/robots.txt."
+      },
+      {
+        "question": "Can robots.txt hide pages from showing up in Google Search?",
+        "answer": "No. Robots.txt restricts crawling, not indexing. If another website links to a blocked URL, Google may still index the page without crawling it. To completely prevent indexing, use the 'noindex' meta tag instead."
+      }
+    ]
+  },
+  "programmatic": {
+    "robots-txt-builder": {
+      "title": "Robots.txt Builder - Custom Search Bot Directives",
+      "description": "Build robots.txt configurations to prevent index bloat and manage bot crawling traffic. Free online crawler directives tool.",
+      "heading": "Robots.txt Builder",
+      "seo_content": "<p>The Robots.txt Builder is a visual generator that builds custom crawl rules for individual user agents. It helps webmasters structure directives that prevent server load spikes caused by aggressive crawling bots.</p>",
+      "examples": [
+        {
+          "title": "Exclude staging folder",
+          "description": "Enter the staging or test folder name in the blocked paths input to create the Disallow command."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is Crawl-delay?",
+          "answer": "Crawl-delay is a directive that instructs bots to wait a specific number of seconds between page loads. While Bing and Yandex support this, Google does not, as Google manages crawl rates automatically in Search Console."
+        }
+      ]
+    },
+    "create-robots-txt": {
+      "title": "Create Robots.txt Online - Quick Config Generator",
+      "description": "Create a standard robots.txt file with sitemap declarations for blogger, wordpress, or custom html websites.",
+      "heading": "Create Robots.txt Online",
+      "seo_content": "<p>Creating a robots.txt file online allows you to specify sitemap listings and block bad bots instantly. This utility outputs clean, valid text compliant with the standard Robots Exclusion Protocol.</p>",
+      "examples": [
+        {
+          "title": "Create default robots.txt with sitemap",
+          "description": "Enter your site sitemap XML path and copy the generated output to paste into your blogger or wordpress admin panels."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What is the correct syntax for a sitemap inside robots.txt?",
+          "answer": "The sitemap directive is specified with a capitalized 'Sitemap' label, followed by a colon, a space, and the full absolute URL: Sitemap: https://example.com/sitemap.xml."
+        }
+      ]
+    }
+  }
+}

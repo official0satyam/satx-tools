@@ -24,6 +24,12 @@
       "name": "Developer Tools",
       "slug": "developer-tools",
       "description": "Useful utilities for developers, designers, and tech professionals including builders, converters, and generators."
+    },
+    {
+      "id": "seo-tools",
+      "name": "SEO Tools",
+      "slug": "seo-tools",
+      "description": "Professional search engine optimization utilities, including meta tag analyzers, robots.txt builders, and keyword estimators."
     }
   ],
   "tools": [
@@ -385,6 +391,66 @@
         {
           "slug": "transparent-image-maker",
           "name": "Transparent Image Maker"
+        }
+      ]
+    },
+    {
+      "slug": "meta-tag-generator",
+      "name": "Meta Tag Generator",
+      "category": [
+        "seo-tools",
+        "developer-tools"
+      ],
+      "popular": true,
+      "shortDescription": "Generate search-engine-optimized Meta tags, Open Graph card snippets, and Twitter previews in real-time.",
+      "pseos": [
+        {
+          "slug": "meta-description-generator",
+          "name": "Meta Description Generator"
+        },
+        {
+          "slug": "open-graph-generator",
+          "name": "Open Graph Tag Generator"
+        }
+      ]
+    },
+    {
+      "slug": "robots-txt-generator",
+      "name": "Robots.txt Generator",
+      "category": [
+        "seo-tools",
+        "developer-tools"
+      ],
+      "popular": true,
+      "shortDescription": "Generate optimized robots.txt files for your site to control crawler access and reference sitemaps.",
+      "pseos": [
+        {
+          "slug": "robots-txt-builder",
+          "name": "Robots.txt Builder"
+        },
+        {
+          "slug": "create-robots-txt",
+          "name": "Create Robots.txt Online"
+        }
+      ]
+    },
+    {
+      "slug": "keyword-density-checker",
+      "name": "Keyword Density Checker",
+      "category": [
+        "seo-tools",
+        "developer-tools"
+      ],
+      "popular": false,
+      "shortDescription": "Analyze and calculate keyword density of any text body, filtering out stop words to avoid keyword stuffing.",
+      "pseos": [
+        {
+          "slug": "keyword-frequency-analyzer",
+          "name": "Keyword Frequency Analyzer"
+        },
+        {
+          "slug": "keyword-stuffing-checker",
+          "name": "Keyword Stuffing Checker"
         }
       ]
     }

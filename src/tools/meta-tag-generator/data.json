@@ -1,0 +1,66 @@
+{
+  "primary": {
+    "title": "Meta Tag Generator - Create SEO Meta Tags Online",
+    "description": "Generate search-engine-optimized Meta HTML tags, Open Graph card snippets, and Twitter previews in real-time. Free online meta description generator.",
+    "heading": "Meta Tag Generator",
+    "seo_content": "<p>A Meta Tag Generator is an essential search engine optimization (SEO) utility that helps developers, bloggers, and digital marketers create HTML meta tags for their web pages. These tags provide metadata about an HTML document to web search engines and social platforms. Google, Bing, Facebook, and Twitter read these tags to display your website title, description, and preview image in their search results and user feeds.</p><p>Using a visual meta tag generator with a real-time preview ensures that your title and description fit within Google's character boundaries. Titles should ideally be under 60 characters and descriptions under 160 characters to avoid truncation (getting cut off with three dots '...').</p>",
+    "examples": [
+      {
+        "title": "Configure standard website SEO tags",
+        "description": "Type in your homepage title and description. Add relevant keywords, set indexing to 'index, follow', and copy the generated head code into your HTML template."
+      },
+      {
+        "title": "Prepare social sharing previews",
+        "description": "Set up a featured card image URL and choose your layout format. View the live preview for Facebook and Twitter card snippets to ensure your branding looks professional."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why are meta tags important for SEO?",
+        "answer": "Meta tags are important because they directly influence how your website appears on search engine result pages (SERPs) and social media feeds. A well-written title and meta description will increase your click-through rate (CTR), driving more organic traffic to your website."
+      },
+      {
+        "question": "What is the character limit for Google search descriptions?",
+        "answer": "Google generally truncates meta descriptions that are longer than 155-160 characters. Keeping your descriptions within this limit ensures that searchers can read the entire summary."
+      }
+    ]
+  },
+  "programmatic": {
+    "meta-description-generator": {
+      "title": "Meta Description Generator - Optimize Google SERP Snippets",
+      "description": "Create optimized page summaries and meta descriptions to improve your Google CTR and search rankings. Free online snippet preview tool.",
+      "heading": "Meta Description Generator",
+      "seo_content": "<p>The Meta Description Generator is a specialized SEO snippet tool that helps you write compelling web page summaries. It features live character counting and length recommendations to ensure your text fits perfectly within the desktop and mobile search boundaries on Google.</p>",
+      "examples": [
+        {
+          "title": "Write a high-converting blog post summary",
+          "description": "Enter your article's main value proposition and keywords. Watch the character counter to keep it between 120 and 155 characters for optimal Google display."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Does Google use meta descriptions as a direct ranking factor?",
+          "answer": "No, Google does not use the meta description tag as a direct ranking factor. However, it is a massive indirect factor because a compelling description boosts your click-through rate (CTR), which signals search engines that your page is relevant."
+        }
+      ]
+    },
+    "open-graph-generator": {
+      "title": "Open Graph Tag Generator - Customize Social Media Cards",
+      "description": "Generate standard Open Graph (OG) tags for Facebook, Discord, and Twitter feeds. Create beautiful rich media social shares instantly.",
+      "heading": "Open Graph Tag Generator",
+      "seo_content": "<p>The Open Graph Tag Generator builds protocols that turn standard web pages into rich objects in social graphs. When users share your website link on platforms like Facebook, LinkedIn, Discord, and Twitter, the platforms display a structured card containing a custom image, bold title, and summary.</p>",
+      "examples": [
+        {
+          "title": "Generate social tags for an article",
+          "description": "Enter the article title, a concise description, a direct link to the cover photo, and select 'article' as the Open Graph type to format the media correctly."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What happens if I don't include Open Graph tags?",
+          "answer": "If you don't define OG tags, social media platforms will attempt to scrape your page content automatically. This often leads to incomplete cards, generic fallback images, or blank descriptions, making your shared links look spammy or untrustworthy."
+        }
+      ]
+    }
+  }
+}
