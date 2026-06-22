@@ -74,32 +74,32 @@
 }
 
 .dark-theme {
-  --bg: #0b0914;
+  --bg: #05030e;
   --bg-body: var(--bg);
-  --surface: rgba(20, 18, 33, 0.9);
+  --surface: rgba(13, 10, 31, 0.78);
   --bg-card: var(--surface);
-  --surface-strong: #161324;
-  --text: #f3f4f6;
+  --surface-strong: #0f0b24;
+  --text: #f1f0fb;
   --text-title: var(--text);
-  --text-body: #c7c6eb;
-  --muted: #9ca3af;
+  --text-body: #a9a6dc;
+  --muted: #7975a6;
   --text-muted: var(--muted);
-  --border: rgba(167, 139, 250, 0.15);
+  --border: rgba(139, 92, 246, 0.22);
   --border-color: var(--border);
-  --text-light: #6b7280;
-  --primary-light: rgba(167, 139, 250, 0.1);
+  --text-light: #5a5688;
+  --primary-light: rgba(139, 92, 246, 0.12);
   
-  --result-bg-end: #161324;
-  --input-bg: #161324;
-  --nav-bg: rgba(11, 9, 20, 0.85);
+  --result-bg-end: #0f0b24;
+  --input-bg: #080517;
+  --nav-bg: rgba(5, 3, 14, 0.88);
 
-  --bg-blob-1: rgba(124, 58, 237, 0.06);
-  --bg-blob-2: rgba(192, 132, 252, 0.05);
-  --bg-blob-3: rgba(167, 139, 250, 0.04);
-  --bg-blob-4: rgba(232, 121, 249, 0.04);
+  --bg-blob-1: rgba(139, 92, 246, 0.18);
+  --bg-blob-2: rgba(59, 130, 246, 0.15);
+  --bg-blob-3: rgba(167, 139, 250, 0.12);
+  --bg-blob-4: rgba(6, 182, 212, 0.10);
   
-  --border-hover: rgba(167, 139, 250, 0.3);
-  --bg-card-hover: rgba(167, 139, 250, 0.03);
+  --border-hover: rgba(139, 92, 246, 0.45);
+  --bg-card-hover: rgba(139, 92, 246, 0.04);
 }
 
 /* Reset */
@@ -903,6 +903,7 @@ footer {
 .chips {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-top: 18px;
 }
@@ -1755,6 +1756,7 @@ footer {
     color: #ffffff;
   }
   .chips {
+    justify-content: center;
     gap: 8px;
     margin-top: 12px;
   }
@@ -1816,4 +1818,191 @@ footer {
     font-size: clamp(1.15rem, 8vw, 1.8rem);
     letter-spacing: -0.03em;
   }
+}
+
+/* ==========================================================================
+   Dark Theme Cosmic Overrides & Neon Highlights
+   ========================================================================== */
+
+.dark-theme body {
+  background: var(--bg-body);
+}
+
+.dark-theme .tool-card {
+  background: linear-gradient(180deg, rgba(16, 12, 36, 0.85), rgba(12, 8, 24, 0.98));
+  border-color: rgba(139, 92, 246, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .tool-card:hover {
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.18);
+  background: linear-gradient(180deg, rgba(22, 17, 48, 0.9), rgba(16, 11, 32, 0.99));
+}
+
+.dark-theme .tool-card .open {
+  background: var(--primary);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.dark-theme .tool-card:hover .open {
+  background: transparent;
+  color: #c084fc;
+  border-color: #c084fc;
+}
+
+.dark-theme .chip {
+  background: rgba(25, 20, 52, 0.6);
+  border-color: rgba(139, 92, 246, 0.15);
+  color: var(--text-body);
+}
+
+.dark-theme .chip:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  color: var(--text-title);
+}
+
+.dark-theme .search-wrap {
+  background: rgba(15, 11, 35, 0.7);
+  border-color: rgba(139, 92, 246, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.dark-theme .search-wrap:focus-within {
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow: 0 12px 50px rgba(139, 92, 246, 0.25);
+}
+
+.dark-theme .search-input-wrapper input {
+  color: var(--text);
+}
+
+.dark-theme .search-results-dropdown {
+  background: rgba(15, 11, 35, 0.95);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .search-result-item {
+  border-bottom-color: rgba(139, 92, 246, 0.1);
+}
+
+.dark-theme .search-result-item:hover {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.dark-theme .search-result-name {
+  color: var(--text-title);
+}
+
+.dark-theme .search-result-desc {
+  color: var(--text-body);
+}
+
+.dark-theme .header-search-wrapper input {
+  background: rgba(15, 11, 35, 0.6);
+  border-color: rgba(139, 92, 246, 0.15);
+}
+
+.dark-theme .header-search-wrapper input:focus {
+  border-color: rgba(139, 92, 246, 0.5);
+  background: rgba(15, 11, 35, 0.85);
+}
+
+.dark-theme .mobile-search-overlay {
+  background: rgba(6, 4, 17, 0.98);
+}
+
+.dark-theme .mobile-search-bar-wrap {
+  background: rgba(15, 11, 35, 0.8);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.dark-theme .drawer-content {
+  background: #05030e;
+}
+
+.dark-theme .mobile-drawer {
+  background: #080517;
+  border-left: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.dark-theme .drawer-header {
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+  background: #080517;
+}
+
+.dark-theme .drawer-item {
+  border-bottom: 1px solid rgba(139, 92, 246, 0.08);
+}
+
+.dark-theme .drawer-item:hover {
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.dark-theme .drawer-text strong {
+  color: var(--text-title);
+}
+
+.dark-theme .drawer-text small {
+  color: var(--text-body);
+}
+
+.dark-theme .mobile-nav {
+  background: rgba(8, 5, 20, 0.92);
+  border-top: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .mobile-nav a {
+  color: var(--text-body);
+}
+
+.dark-theme .mobile-nav a.active {
+  color: #c084fc;
+}
+
+/* Card star button styling & dark theme overrides */
+.card-star-btn {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--text-light);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.card-star-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--orange);
+}
+
+.card-star-btn.active {
+  color: var(--orange);
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.dark-theme .card-star-btn {
+  background: rgba(15, 11, 35, 0.6);
+  border-color: rgba(139, 92, 246, 0.15);
+}
+
+.dark-theme .card-star-btn:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.45);
+}
+
+.dark-theme .card-star-btn.active {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.3);
 }

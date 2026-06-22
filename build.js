@@ -382,7 +382,7 @@ function compileStaticPages(templates, searchIndexJson) {
       popularTools.forEach(t => {
         const visual = toolVisuals[t.slug] || { color: 'c-purple', svg: '' };
         popularHtml += `
-          <article class="tool-card" onclick="location.href='/${t.slug}/'">
+          <article class="tool-card" data-slug="${t.slug}" onclick="location.href='/${t.slug}/'">
             <div class="top">
               <div class="icon-badge ${visual.color}">${visual.svg}</div>
               <div>
@@ -396,12 +396,12 @@ function compileStaticPages(templates, searchIndexJson) {
       });
       popularHtml += `</div>`;
 
-      // Generate recently added grid (show all initial 5 tools)
+      // Generate recently added grid (show first 6 tools max)
       let recentHtml = `<div class="grid tools-grid">`;
-      registry.tools.forEach(t => {
+      registry.tools.slice(0, 6).forEach(t => {
         const visual = toolVisuals[t.slug] || { color: 'c-purple', svg: '' };
         recentHtml += `
-          <article class="tool-card" onclick="location.href='/${t.slug}/'">
+          <article class="tool-card" data-slug="${t.slug}" onclick="location.href='/${t.slug}/'">
             <div class="top">
               <div class="icon-badge ${visual.color}">${visual.svg}</div>
               <div>
@@ -414,12 +414,20 @@ function compileStaticPages(templates, searchIndexJson) {
         `;
       });
       recentHtml += `</div>`;
+      recentHtml += `
+        <div style="text-align: center; margin-top: var(--space-xl); width: 100%;">
+          <a href="/all-tools/" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; font-weight: 800; padding: 12px 28px; border-radius: var(--radius-md); text-decoration: none;">
+            View All Tools
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s ease;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      `;
 
       // Generate categories grid
       let categoriesHtml = `<div class="grid category-grid">`;
       registry.categories.forEach(c => {
         const visual = categoryVisuals[c.slug] || { color: 'c-purple', svg: '' };
-        const count = registry.tools.filter(t => t.category === c.id).length;
+        const count = registry.tools.filter(t => t.category === c.id || (Array.isArray(t.category) && t.category.includes(c.id))).length;
         categoriesHtml += `
           <a href="/${c.slug}/" class="category ${visual.color}">
             <div class="cat-top">
@@ -435,6 +443,49 @@ function compileStaticPages(templates, searchIndexJson) {
       content = content.replace(/{{popular_tools_grid}}/g, popularHtml);
       content = content.replace(/{{recently_added_grid}}/g, recentHtml);
       content = content.replace(/{{categories_grid}}/g, categoriesHtml);
+    } else if (file === 'all-tools.html') {
+      let allToolsHtml = '';
+      registry.categories.forEach(cat => {
+        const catTools = registry.tools.filter(t => 
+          t.category === cat.id || 
+          (Array.isArray(t.category) && t.category.includes(cat.id))
+        );
+
+        if (catTools.length > 0) {
+          allToolsHtml += `
+            <div class="category-block" style="margin-top: var(--space-xl); margin-bottom: var(--space-xxl);">
+              <h2 style="font-size: 1.65rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: var(--space-sm); color: var(--text-main); display: flex; align-items: center; gap: 10px;">
+                ${cat.name}
+              </h2>
+              <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: var(--space-lg); max-width: 700px;">${cat.description}</p>
+              <div class="grid tools-grid">
+          `;
+
+          catTools.forEach(t => {
+            const visual = toolVisuals[t.slug] || { color: 'c-purple', svg: '' };
+            allToolsHtml += `
+              <article class="tool-card" data-slug="${t.slug}" onclick="location.href='/${t.slug}/'">
+                <div class="top">
+                  <div class="icon-badge ${visual.color}">${visual.svg}</div>
+                  <div>
+                    <h3>${t.name}</h3>
+                    <p>${t.shortDescription}</p>
+                  </div>
+                </div>
+                <button class="open" onclick="event.stopPropagation(); location.href='/${t.slug}/'">Open Tool &rarr;</button>
+              </article>
+            `;
+          });
+
+          allToolsHtml += `
+              </div>
+            </div>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: var(--space-xxl) 0;">
+          `;
+        }
+      });
+      allToolsHtml = allToolsHtml.replace(/<hr style="border: 0; border-top: 1px solid var(--border); margin: var(--space-xxl) 0;">\s*$/, '');
+      content = content.replace(/{{all_tools_by_category}}/g, allToolsHtml);
     }
 
     let additionalHeadTags = '';
@@ -496,7 +547,7 @@ function compileCategoryPages(templates, searchIndexJson) {
       categoryTools.forEach(tool => {
         const visual = toolVisuals[tool.slug] || { color: 'c-purple', svg: '' };
         categoryHtml += `
-          <article class="tool-card" onclick="location.href='/${tool.slug}/'">
+          <article class="tool-card" data-slug="${tool.slug}" onclick="location.href='/${tool.slug}/'">
             <div class="top">
               <div class="icon-badge ${visual.color}">${visual.svg}</div>
               <div>
