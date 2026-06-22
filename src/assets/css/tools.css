@@ -36,7 +36,7 @@
 .input-control {
   width: 100%;
   padding: 0.85rem 1.15rem;
-  background-color: #ffffff;
+  background-color: var(--input-bg);
   border: 2px solid rgba(95, 93, 251, 0.28); /* Increased contrast purple tint */
   background-image: linear-gradient(135deg, rgba(95, 93, 251, 0.01), rgba(95, 93, 251, 0.02));
   border-radius: var(--radius-md);
@@ -182,7 +182,7 @@ select.input-control {
 
 /* Highlighted Playful Results Panel */
 .result-panel {
-  background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--result-bg-end) 100%);
   border: 2px dashed rgba(99, 102, 241, 0.4);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
@@ -192,12 +192,12 @@ select.input-control {
 }
 
 .result-panel.success {
-  background: linear-gradient(135deg, var(--secondary-light) 0%, #ffffff 100%);
+  background: linear-gradient(135deg, var(--secondary-light) 0%, var(--result-bg-end) 100%);
   border-color: rgba(13, 148, 136, 0.4);
 }
 
 .result-panel.warning {
-  background: linear-gradient(135deg, var(--accent-rose-light) 0%, #ffffff 100%);
+  background: linear-gradient(135deg, var(--accent-rose-light) 0%, var(--result-bg-end) 100%);
   border-color: rgba(225, 29, 72, 0.4);
 }
 
@@ -320,7 +320,7 @@ select.input-control {
 /* Password & String Output Box */
 .text-output-block {
   font-family: var(--font-mono);
-  background-color: #f8fafc;
+  background-color: var(--input-bg);
   border: 2px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 1rem 1.25rem;

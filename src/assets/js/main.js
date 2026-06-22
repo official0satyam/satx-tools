@@ -4,6 +4,8 @@
 */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initDarkMode();
+  initFavorites();
   initSearch();
   initMobileMenu();
   initScrollReveal();
@@ -637,4 +639,181 @@ function initSearchResultsPage() {
       performSearch(e.target.value);
     }
   });
+}
+
+function initDarkMode() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+
+  const sunIcon = toggleBtn.querySelector('.sun-icon');
+  const moonIcon = toggleBtn.querySelector('.moon-icon');
+
+  // Check stored theme or default to system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  const isDark = savedTheme === 'dark' || (!savedTheme && systemPrefersDark);
+
+  if (isDark) {
+    document.documentElement.classList.add('dark-theme');
+    if (sunIcon) sunIcon.style.display = 'block';
+    if (moonIcon) moonIcon.style.display = 'none';
+  } else {
+    document.documentElement.classList.remove('dark-theme');
+    if (sunIcon) sunIcon.style.display = 'none';
+    if (moonIcon) moonIcon.style.display = 'block';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const isCurrentlyDark = document.documentElement.classList.contains('dark-theme');
+    if (isCurrentlyDark) {
+      document.documentElement.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light');
+      if (sunIcon) sunIcon.style.display = 'none';
+      if (moonIcon) moonIcon.style.display = 'block';
+    } else {
+      document.documentElement.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
+      if (sunIcon) sunIcon.style.display = 'block';
+      if (moonIcon) moonIcon.style.display = 'none';
+    }
+  });
+}
+
+function initFavorites() {
+  // A. Handle Tool Page Star Button Injection
+  const toolTitle = document.querySelector('.tool-layout h1');
+  if (toolTitle) {
+    // We are on a tool workspace page!
+    const pathname = window.location.pathname;
+    // Extract slug: e.g. '/percentage-calculator/' -> 'percentage-calculator'
+    const slugMatch = pathname.match(/\/([^\/]+)\/?$/) || pathname.match(/\/([^\/]+)\/([^\/]+)\/?$/);
+    // If it is a programmatic subpage (like /percentage-increase-calculator/), use that, else use tool slug
+    const slug = slugMatch ? slugMatch[1] : '';
+    
+    if (slug) {
+      const toolName = toolTitle.innerText;
+      const toolDesc = document.querySelector('.tool-layout p')?.innerText || '';
+
+      // Check if already favorited
+      let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+      const isFavorited = favorites.some(f => f.slug === slug);
+
+      // Create the Star Toggle button
+      const starBtn = document.createElement('button');
+      starBtn.className = 'btn btn-secondary star-btn';
+      starBtn.style.cssText = 'padding: 0; width: 38px; height: 38px; min-height: unset; margin: 0 0 0 12px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); border-color: rgba(245, 158, 11, 0.2); vertical-align: middle; cursor: pointer;';
+      starBtn.setAttribute('title', isFavorited ? 'Remove from Favorites' : 'Add to Favorites');
+      
+      const goldStarColor = 'var(--orange)';
+      const starIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="${isFavorited ? goldStarColor : 'none'}" stroke="${isFavorited ? goldStarColor : 'currentColor'}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transition: all 0.2s ease;">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+      `;
+      starBtn.innerHTML = starIcon;
+
+      // Wrap toolTitle and inject starBtn next to it
+      const wrapper = document.createElement('div');
+      wrapper.style.cssText = 'display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: var(--space-sm); width: 100%;';
+      toolTitle.parentNode.insertBefore(wrapper, toolTitle);
+      wrapper.appendChild(toolTitle);
+      wrapper.appendChild(starBtn);
+      toolTitle.style.marginBottom = '0'; // Clean margin overrides
+
+      starBtn.addEventListener('click', () => {
+        let favList = JSON.parse(localStorage.getItem('favorites') || '[]');
+        const index = favList.findIndex(f => f.slug === slug);
+
+        if (index > -1) {
+          // Remove
+          favList.splice(index, 1);
+          starBtn.querySelector('svg').setAttribute('fill', 'none');
+          starBtn.querySelector('svg').setAttribute('stroke', 'currentColor');
+          starBtn.setAttribute('title', 'Add to Favorites');
+        } else {
+          // Add
+          favList.push({ slug, name: toolName, desc: toolDesc, url: pathname });
+          starBtn.querySelector('svg').setAttribute('fill', goldStarColor);
+          starBtn.querySelector('svg').setAttribute('stroke', goldStarColor);
+          starBtn.setAttribute('title', 'Remove from Favorites');
+        }
+
+        localStorage.setItem('favorites', JSON.stringify(favList));
+      });
+    }
+  }
+
+  // B. Handle Homepage Favorites Section Injection
+  const isHomepage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+  if (isHomepage) {
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    if (favorites.length > 0) {
+      const popularSection = document.getElementById('tools');
+      if (popularSection) {
+        const favSection = document.createElement('section');
+        favSection.className = 'section reveal show';
+        favSection.id = 'favorites-section';
+        favSection.style.marginBottom = 'var(--space-xl)';
+
+        let gridHtml = `
+          <div class="section-head reveal show">
+            <div>
+              <span class="section-chip" style="background: rgba(245, 158, 11, 0.1); color: var(--orange); border-color: rgba(245, 158, 11, 0.2);">
+                ⭐ My Favorite Tools
+              </span>
+              <p>Quick access to your most frequently used calculators and converters.</p>
+            </div>
+          </div>
+          <div class="grid tools-grid">
+        `;
+
+        favorites.forEach(fav => {
+          let baseSlug = fav.slug;
+          if (!toolVisuals[baseSlug]) {
+            if (baseSlug.includes('percentage')) baseSlug = 'percentage-calculator';
+            else if (baseSlug.includes('age') || baseSlug.includes('old') || baseSlug.includes('birthday')) baseSlug = 'age-calculator';
+            else if (baseSlug.includes('gst')) baseSlug = 'gst-calculator';
+            else if (baseSlug.includes('discount') || baseSlug.includes('off') || baseSlug.includes('sale')) baseSlug = 'discount-calculator';
+            else if (baseSlug.includes('password') || baseSlug.includes('string')) baseSlug = 'password-generator';
+            else if (baseSlug.includes('emi') || baseSlug.includes('loan')) baseSlug = 'emi-calculator';
+            else if (baseSlug.includes('sip') || baseSlug.includes('mutual') || baseSlug.includes('lumpsum')) baseSlug = 'sip-calculator';
+            else if (baseSlug.includes('bmi') || baseSlug.includes('weight')) baseSlug = 'bmi-calculator';
+            else if (baseSlug.includes('date') || baseSlug.includes('days')) baseSlug = 'date-calculator';
+            else if (baseSlug.includes('word') || baseSlug.includes('character')) baseSlug = 'word-counter';
+            else if (baseSlug.includes('case') || baseSlug.includes('uppercase') || baseSlug.includes('title')) baseSlug = 'case-converter';
+            else if (baseSlug.includes('json')) baseSlug = 'json-formatter';
+            else if (baseSlug.includes('tip') || baseSlug.includes('bill')) baseSlug = 'tip-calculator';
+            else if (baseSlug.includes('compound') || baseSlug.includes('savings') || baseSlug.includes('interest')) baseSlug = 'compound-interest-calculator';
+            else if (baseSlug.includes('currency') || baseSlug.includes('exchange')) baseSlug = 'currency-converter';
+            else if (baseSlug.includes('unit') || baseSlug.includes('length')) baseSlug = 'unit-converter';
+            else if (baseSlug.includes('pdf')) baseSlug = 'pdf-merger';
+            else if (baseSlug.includes('qr') || baseSlug.includes('wifi')) baseSlug = 'qr-generator';
+            else if (baseSlug.includes('compress') || baseSlug.includes('jpeg') || baseSlug.includes('png')) baseSlug = 'image-compressor';
+            else if (baseSlug.includes('bg') || baseSlug.includes('background') || baseSlug.includes('transparent')) baseSlug = 'bg-remover';
+          }
+
+          const visual = toolVisuals[baseSlug] || { color: 'c-purple', svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5L5 19"></path><circle cx="8" cy="8" r="1.5"></circle><circle cx="16" cy="16" r="1.5"></circle></svg>` };
+          
+          gridHtml += `
+            <article class="tool-card" onclick="location.href='${fav.url}'">
+              <div class="top">
+                <div class="icon-badge ${visual.color}">${visual.svg}</div>
+                <div>
+                  <h3>${fav.name}</h3>
+                  <p>${fav.desc || 'Quick dynamic calculator.'}</p>
+                </div>
+              </div>
+              <button class="open" onclick="event.stopPropagation(); location.href='${fav.url}'">Open Tool &rarr;</button>
+            </article>
+          `;
+        });
+
+        gridHtml += `</div>`;
+        favSection.innerHTML = gridHtml;
+
+        popularSection.parentNode.insertBefore(favSection, popularSection);
+      }
+    }
+  }
 }

@@ -267,6 +267,19 @@ function copyAssets() {
   if (fs.existsSync(srcAssets)) {
     copyRecursive(srcAssets, path.join(DIST_DIR, 'assets'));
   }
+
+  // Copy PWA files to dist root
+  const manifestSrc = path.join(SRC_DIR, 'manifest.json');
+  const manifestDest = path.join(DIST_DIR, 'manifest.json');
+  if (fs.existsSync(manifestSrc)) {
+    fs.copyFileSync(manifestSrc, manifestDest);
+  }
+
+  const swSrc = path.join(SRC_DIR, 'sw.js');
+  const swDest = path.join(DIST_DIR, 'sw.js');
+  if (fs.existsSync(swSrc)) {
+    fs.copyFileSync(swSrc, swDest);
+  }
 }
 
 /**
