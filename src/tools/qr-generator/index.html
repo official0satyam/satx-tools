@@ -31,7 +31,7 @@
     <label for="qr-wifi-pass">Password</label>
     <input type="text" id="qr-wifi-pass" class="input-control" placeholder="Leave empty if open network" oninput="generateQR()">
   </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin-top: var(--space-sm);">
+  <div class="grid-2col" style="margin-top: var(--space-sm);">
     <div class="form-group">
       <label for="qr-wifi-enc">Security Type</label>
       <select id="qr-wifi-enc" class="input-control" onchange="generateQR()">

@@ -555,4 +555,16 @@ select.input-control {
   }
 }
 
+.grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 480px) {
+  .grid-4col {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
 
