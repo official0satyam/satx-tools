@@ -5,7 +5,9 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "dev": "python serve.py"
+    "dev": "python serve.py",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "keywords": [
     "tools",
@@ -15,5 +17,8 @@
     "seo"
   ],
   "author": "Satyam",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "^4.103.0"
+  }
 }
