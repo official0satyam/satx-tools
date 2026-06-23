@@ -334,22 +334,21 @@ function renderLayout(templates, headTags, content, additionalScripts = '') {
  */
 function writeOutputFile(relativeRoute, htmlContent) {
   let targetPath;
-  if (relativeRoute === 'index.html') {
+  let cleanRoute = relativeRoute;
+  if (cleanRoute.endsWith('.html') && cleanRoute !== 'index.html') {
+    cleanRoute = cleanRoute.replace(/\.html$/, '');
+  }
+
+  if (cleanRoute === 'index.html') {
     targetPath = path.join(DIST_DIR, 'index.html');
     generatedUrls.push('/');
   } else {
-    // Convert e.g., 'about.html' -> dist/about.html or clean routes like 'calculators' -> dist/calculators/index.html
-    if (relativeRoute.endsWith('.html')) {
-      targetPath = path.join(DIST_DIR, relativeRoute);
-      generatedUrls.push(`/${relativeRoute}`);
-    } else {
-      const dirPath = path.join(DIST_DIR, relativeRoute);
-      if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath, { recursive: true });
-      }
-      targetPath = path.join(dirPath, 'index.html');
-      generatedUrls.push(`/${relativeRoute}/`);
+    const dirPath = path.join(DIST_DIR, cleanRoute);
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true });
     }
+    targetPath = path.join(dirPath, 'index.html');
+    generatedUrls.push(`/${cleanRoute}/`);
   }
   fs.writeFileSync(targetPath, htmlContent, 'utf8');
 }
@@ -371,8 +370,12 @@ function compileStaticPages(templates, searchIndexJson) {
 
     const title = metadata.title || registry.site.name;
     const description = metadata.description || registry.site.tagline;
-    const slug = metadata.slug || file;
-    const canonical = `${SITE_URL}/${slug === 'index.html' ? '' : slug}`;
+    
+    let slug = metadata.slug || file;
+    if (slug.endsWith('.html') && slug !== 'index.html') {
+      slug = slug.replace(/\.html$/, '');
+    }
+    const canonical = `${SITE_URL}/${slug === 'index.html' ? '' : slug + '/'}`;
 
     let content = contentOnly;
     if (file === 'index.html') {
